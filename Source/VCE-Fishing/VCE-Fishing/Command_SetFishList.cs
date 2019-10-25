@@ -20,13 +20,39 @@ namespace VCE_Fishing
 
         public Command_SetFishList()
         {
-            defaultDesc = "VCEF_ChooseFishDesc".Translate();
-            defaultLabel = "VCEF_ChooseFish".Translate();
-            icon = ContentFinder<Texture2D>.Get("UI/Commands/VCEF_Command_ChooseFish", true);
            
-        
-            
-            
+           
+            ThingDef thingDef = null;
+            bool flag = false;
+            foreach (object current in Find.Selector.SelectedObjects)
+            {
+                Zone_Fishing fishArea = current as Zone_Fishing;
+                if (fishArea != null)
+                {
+                    if (thingDef != null && thingDef != fishArea.GetFishToCatch())
+                    {
+                        flag = true;
+                        break;
+                    }
+                    thingDef = fishArea.GetFishToCatch();
+                }
+            }
+            if (flag)
+            {
+                this.icon = ContentFinder<Texture2D>.Get("UI/Commands/VCEF_Command_ChooseFish", true);
+                defaultDesc = "VCEF_ChooseFishDesc".Translate();
+                defaultLabel = "VCEF_ChooseFish".Translate();
+            }
+            else
+            {
+                this.icon = thingDef.uiIcon;
+                this.iconAngle = thingDef.uiIconAngle;
+                this.iconOffset = thingDef.uiIconOffset;
+                this.defaultLabel = "CommandSelectPlantToGrow".Translate(thingDef.LabelCap);
+            }
+
+
+
 
         }
 
