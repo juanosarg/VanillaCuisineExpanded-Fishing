@@ -20,8 +20,14 @@ namespace VCE_Fishing
 
         public Command_SetFishList()
         {
+            defaultDesc = "VCEF_ChooseFishDesc".Translate();
+            defaultLabel = "VCEF_ChooseFish".Translate();
+            icon = ContentFinder<Texture2D>.Get("UI/Commands/VCEF_Command_ChooseFish", true);
            
+        
             
+            
+
         }
 
         public override void ProcessInput(Event ev)
@@ -38,10 +44,9 @@ namespace VCE_Fishing
                         {
                             zone.SetFishToCatch(element.thingDef);
                             thingSelected = element.thingDef;
-                            //Log.Message(thingSelected.uiIcon.ToString());
-                            this.icon = thingSelected.uiIcon;
-                            this.iconAngle = thingSelected.uiIconAngle;
-                            this.iconOffset = thingSelected.uiIconOffset;
+
+
+
                         }, MenuOptionPriority.Default, null, null, 29f, null, null));
                         
                     }

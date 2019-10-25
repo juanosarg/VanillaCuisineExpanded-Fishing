@@ -12,9 +12,7 @@ namespace VCE_Fishing
         {
             return new Command_SetFishList()
             {
-                defaultDesc = "VCEF_ChooseFishDesc".Translate(),
-                defaultLabel = "VCEF_ChooseFish".Translate(),
-                icon = ContentFinder<Texture2D>.Get("UI/Commands/VCEF_Command_ChooseFish", true),
+                
                 hotKey = KeyBindingDefOf.Misc1,
                 map = map,
                 zone = zone
