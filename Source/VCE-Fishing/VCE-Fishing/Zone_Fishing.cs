@@ -9,19 +9,13 @@ using RimWorld;
 
 namespace VCE_Fishing
 {
-    public class Zone_Fishing : Zone, IPlantToGrowSettable
+    public class Zone_Fishing : Zone
     {
-        private ThingDef plantDefToGrow = ThingDef.Named("BR_NutrientBrothPlant");
+        private ThingDef fishToCatch = ThingDef.Named("VCEF_RawMackerel");
 
         public bool allowSow = true;
 
-        IEnumerable<IntVec3> IPlantToGrowSettable.Cells
-        {
-            get
-            {
-                return base.Cells;
-            }
-        }
+        
 
         public override bool IsMultiselectable
         {
@@ -47,7 +41,7 @@ namespace VCE_Fishing
 
         public Zone_Fishing()
         {
-             plantDefToGrow = ThingDefOf.Plant_Potato;
+             fishToCatch = ThingDef.Named("VCEF_RawMackerel");
 
 
         }
@@ -59,7 +53,7 @@ namespace VCE_Fishing
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Defs.Look<ThingDef>(ref this.plantDefToGrow, "plantDefToGrow");
+            Scribe_Defs.Look<ThingDef>(ref this.fishToCatch, "fishToCatch");
             Scribe_Values.Look<bool>(ref this.allowSow, "allowSow", true, false);
         }
 
@@ -114,9 +108,8 @@ namespace VCE_Fishing
             {
                 yield return g;
             }
-            if (ResearchProjectDef.Named("BR_Xenobotany").IsFinished)
-            {
-                yield return PlantToGrowSettableUtility.SetPlantToGrowCommand(this);
+            
+                yield return FishToCatchSettableUtility.SetFishToCatchCommand(this, this.Map);
                 yield return new Command_Toggle
                 {
                     defaultLabel = "CommandAllowSow".Translate(),
@@ -129,7 +122,7 @@ namespace VCE_Fishing
                         this.allowSow = !this.allowSow;
                     }
                 };
-            }
+            
 
         }
 
@@ -139,17 +132,17 @@ namespace VCE_Fishing
             yield return DesignatorUtility.FindAllowedDesignator<Designator_ZoneAdd_Fishing_Expand>();
         }
 
-        public ThingDef GetPlantDefToGrow()
+        public ThingDef GetFishToCatch()
         {
            
-                return this.plantDefToGrow;
+                return this.fishToCatch;
            
 
         }
 
-        public void SetPlantDefToGrow(ThingDef plantDef)
+        public void SetFishToCatch(ThingDef fishDef)
         {
-            this.plantDefToGrow = plantDef;
+            this.fishToCatch = fishDef;
         }
 
         public bool CanAcceptSowNow()

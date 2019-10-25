@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  
+   <VCE_Fishing.FishableTerrainDef>
+      <defName>VCEF_VanillaFishableTerrains</defName>        
+      <allowedTerrains>
+         <li>WaterDeep</li>
+		 <li>WaterOceanDeep</li>
+		 <li>WaterMovingChestDeep</li>
+		 <li>WaterShallow</li>
+		 <li>WaterOceanShallow</li>
+		 <li>WaterMovingShallow</li>
+		 <li>Marsh</li>
+      </allowedTerrains>      
+   </VCE_Fishing.FishableTerrainDef>
+   
+  
+   
+ 
+   
+</Defs>

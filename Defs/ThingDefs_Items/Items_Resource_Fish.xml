@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!--=====================================================================-->
+	<!--=============================== Fish ================================-->
+	<!--=====================================================================-->
+
+
+	<ThingDef Name="VCEF_RawFishBase" Abstract="True" ParentName="OrganicProductBase">
+		<label>Base raw fish properties</label>
+		<comps>
+			<li Class="CompProperties_Rottable">
+				<daysToRotStart>2</daysToRotStart>
+				<rotDestroys>True</rotDestroys>
+			</li>
+		</comps>
+		<statBases>
+			<Nutrition>0.05</Nutrition>
+			<Flammability>0.5</Flammability>
+			<FoodPoisonChanceFixedHuman>0.1</FoodPoisonChanceFixedHuman>
+
+		</statBases>
+		<ingestible>
+			<foodType>Meat</foodType>
+			<preferability>DesperateOnly</preferability>
+			<ingestEffect>EatMeat</ingestEffect>
+			<ingestSound>RawMeat_Eat</ingestSound>		
+		</ingestible>
+		<thingCategories>
+			<li>MeatRaw</li>
+		</thingCategories>
+	</ThingDef>
+
+
+	<!-- Mackerel -->
+
+
+	<ThingDef ParentName="VCEF_RawFishBase">
+		<defName>VCEF_RawMackerel</defName>
+		<label>raw mackerel</label>
+		<description>Raw mackerel.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/VCEF_RawMackerel</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<Mass>0.03</Mass>
+
+			<MarketValue>2</MarketValue>
+		</statBases>
+		<ingestible>
+			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
+		</ingestible>
+		<tools>
+			<li>
+				<label>raw fish</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>10</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<equippedAngleOffset>-180</equippedAngleOffset>
+		 <uiIconForStackCount>1</uiIconForStackCount>
+		<equipmentType>Primary</equipmentType>
+		<techLevel>Neolithic</techLevel>
+		<comps>
+			<li>
+				<compClass>CompEquippable</compClass>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	<!-- Bass -->
+
+	
+	<ThingDef ParentName="VCEF_RawFishBase">
+		<defName>VCEF_RawBass</defName>
+		<label>raw bass</label>
+		<description>Raw bass.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/VCEF_AlphaFish</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<Mass>0.03</Mass>
+
+			<MarketValue>2</MarketValue>
+		</statBases>
+		<ingestible>
+			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
+		</ingestible>
+		<tools>
+			<li>
+				<label>raw fish</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>10</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		    <equippedAngleOffset>-180</equippedAngleOffset>
+ <uiIconForStackCount>1</uiIconForStackCount>
+		<equipmentType>Primary</equipmentType>
+		<techLevel>Neolithic</techLevel>
+		<comps>
+			<li>
+				<compClass>CompEquippable</compClass>
+			</li>
+		</comps>
+	</ThingDef>
+
+
+
+</Defs>
