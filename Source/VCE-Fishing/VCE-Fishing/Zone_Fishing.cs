@@ -11,7 +11,7 @@ namespace VCE_Fishing
 {
     public class Zone_Fishing : Zone
     {
-        private ThingDef fishToCatch = ThingDef.Named("VCEF_RawMackerel");
+        private ThingDef fishToCatch = null;
 
         public bool allowSow = true;
 

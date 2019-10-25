@@ -15,6 +15,7 @@ namespace VCE_Fishing
         public Zone_Fishing zone;
         public Thing drone;
         public ThingDef thingSelected = null;
+        public bool flagZoneSet = false;
 
 
 
@@ -24,12 +25,17 @@ namespace VCE_Fishing
            
             ThingDef thingDef = null;
             bool flag = false;
+           
+
             foreach (object current in Find.Selector.SelectedObjects)
             {
                 Zone_Fishing fishArea = current as Zone_Fishing;
                 if (fishArea != null)
                 {
-                    if (thingDef != null && thingDef != fishArea.GetFishToCatch())
+                    if (fishArea.GetFishToCatch() == null)
+                    {
+                        flagZoneSet = true;
+                    } else if (thingDef != null && thingDef != fishArea.GetFishToCatch())
                     {
                         flag = true;
                         break;
@@ -37,7 +43,13 @@ namespace VCE_Fishing
                     thingDef = fishArea.GetFishToCatch();
                 }
             }
-            if (flag)
+            if (flagZoneSet)
+            {
+                this.icon = ContentFinder<Texture2D>.Get("UI/Commands/VCEF_Command_ChooseFish", true);
+                defaultDesc = "VCEF_ChooseFishDesc".Translate();
+                defaultLabel = "VCEF_ChooseFish".Translate();
+            }
+            else if (flag)
             {
                 this.icon = ContentFinder<Texture2D>.Get("UI/Commands/VCEF_Command_ChooseFish", true);
                 defaultDesc = "VCEF_ChooseFishDesc".Translate();
@@ -48,7 +60,8 @@ namespace VCE_Fishing
                 this.icon = thingDef.uiIcon;
                 this.iconAngle = thingDef.uiIconAngle;
                 this.iconOffset = thingDef.uiIconOffset;
-                this.defaultLabel = "CommandSelectPlantToGrow".Translate(thingDef.LabelCap);
+                defaultDesc = "VCEF_ChooseFishDesc".Translate();
+                defaultLabel = "VCEF_ChooseFish".Translate();
             }
 
 
@@ -70,7 +83,7 @@ namespace VCE_Fishing
                         {
                             zone.SetFishToCatch(element.thingDef);
                             thingSelected = element.thingDef;
-
+                          
 
 
                         }, MenuOptionPriority.Default, null, null, 29f, null, null));
