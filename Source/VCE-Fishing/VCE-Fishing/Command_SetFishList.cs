@@ -13,56 +13,45 @@ namespace VCE_Fishing
 
         public Map map;
         public Zone_Fishing zone;
-        public Thing drone;
-        public ThingDef thingSelected = null;
-        public bool flagZoneSet = false;
-
-
+       
+       
 
         public Command_SetFishList()
         {
-           
-           
-            ThingDef thingDef = null;
-            bool flag = false;
-           
 
-            foreach (object current in Find.Selector.SelectedObjects)
+            defaultDesc = "VCEF_ChooseFishDesc".Translate();
+            defaultLabel = "VCEF_ChooseFish".Translate();
+
+            foreach (object obj in Find.Selector.SelectedObjects)
             {
-                Zone_Fishing fishArea = current as Zone_Fishing;
-                if (fishArea != null)
+                Zone_Fishing zone = obj as Zone_Fishing;
+                if (zone != null)
                 {
-                    if (fishArea.GetFishToCatch() == null)
+                    if (zone.GetFishToCatch() == FishSizeCategory.Small)
                     {
-                        flagZoneSet = true;
-                    } else if (thingDef != null && thingDef != fishArea.GetFishToCatch())
-                    {
-                        flag = true;
-                        break;
+                        this.icon = ContentFinder<Texture2D>.Get("UI/Commands/VCEF_Command_ChooseSmallFish", true);
+
                     }
-                    thingDef = fishArea.GetFishToCatch();
-                }
+                    else if (zone.GetFishToCatch() == FishSizeCategory.Medium)
+                    {
+                        this.icon = ContentFinder<Texture2D>.Get("UI/Commands/VCEF_Command_ChooseMediumFish", true);
+
+                    }
+                    else if (zone.GetFishToCatch() == FishSizeCategory.Large)
+                    {
+                        this.icon = ContentFinder<Texture2D>.Get("UI/Commands/VCEF_Command_ChooseLargeFish", true);
+
+                    }
+                } else 
+                this.icon = ContentFinder<Texture2D>.Get("UI/Commands/VCEF_Command_ChooseMediumFish", true);
             }
-            if (flagZoneSet)
-            {
-                this.icon = ContentFinder<Texture2D>.Get("UI/Commands/VCEF_Command_ChooseFish", true);
-                defaultDesc = "VCEF_ChooseFishDesc".Translate();
-                defaultLabel = "VCEF_ChooseFish".Translate();
-            }
-            else if (flag)
-            {
-                this.icon = ContentFinder<Texture2D>.Get("UI/Commands/VCEF_Command_ChooseFish", true);
-                defaultDesc = "VCEF_ChooseFishDesc".Translate();
-                defaultLabel = "VCEF_ChooseFish".Translate();
-            }
-            else
-            {
-                this.icon = thingDef.uiIcon;
-                this.iconAngle = thingDef.uiIconAngle;
-                this.iconOffset = thingDef.uiIconOffset;
-                defaultDesc = "VCEF_ChooseFishDesc".Translate();
-                defaultLabel = "VCEF_ChooseFish".Translate();
-            }
+
+
+            
+
+            
+
+            
 
 
 
@@ -74,43 +63,26 @@ namespace VCE_Fishing
             base.ProcessInput(ev);
             List<FloatMenuOption> list = new List<FloatMenuOption>();
 
-            foreach (FishDef element in DefDatabase<FishDef>.AllDefs)
-            {
-                foreach (string allowed in element.allowedBiomes)
-                {
-                    if (allowed == map.Biome.defName) {
-                        list.Add(new FloatMenuOption(element.thingDef.LabelCap, delegate
-                        {
-                            zone.SetFishToCatch(element.thingDef);
-                            thingSelected = element.thingDef;
+            
+           list.Add(new FloatMenuOption("VCEF_ChooseFishSmallLabel".Translate(), delegate
+           {
+            zone.SetFishToCatch(FishSizeCategory.Small);
+           
                           
-
-
-                        }, MenuOptionPriority.Default, null, null, 29f, null, null));
-                        
-                    }
-                    
-                }
-
-                    
-                    
-                
-
-            }
-
-
-
-            if (list.Count > 0)
+           }, MenuOptionPriority.Default, null, null, 29f, null, null));
+            list.Add(new FloatMenuOption("VCEF_ChooseFishMediumLabel".Translate(), delegate
             {
+                zone.SetFishToCatch(FishSizeCategory.Medium);
+              
 
-            }
-            else
+            }, MenuOptionPriority.Default, null, null, 29f, null, null));
+            list.Add(new FloatMenuOption("VCEF_ChooseFishLargeLabel".Translate(), delegate
             {
-                list.Add(new FloatMenuOption("VCEF_NoFish".Translate(), delegate
-                {
+                zone.SetFishToCatch(FishSizeCategory.Large);
+              
 
-                }, MenuOptionPriority.Default, null, null, 29f, null, null));
-            }
+            }, MenuOptionPriority.Default, null, null, 29f, null, null));
+
             Find.WindowStack.Add(new FloatMenu(list));
         }
 

@@ -8,15 +8,15 @@ namespace VCE_Fishing
 {
     public static class FishToCatchSettableUtility
     {
-        public static Command_SetFishList SetFishToCatchCommand(Zone_Fishing zone, Map map)
+        public static Command_SetFishList SetFishToCatchCommand(Zone_Fishing passingZone, Map passingMap)
         {
             return new Command_SetFishList()
             {
                 
                 hotKey = KeyBindingDefOf.Misc1,
-                map = map,
-                zone = zone
-               
+                map = passingMap,
+                zone = passingZone
+
             };
         }
 

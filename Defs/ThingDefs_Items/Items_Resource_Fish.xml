@@ -27,7 +27,7 @@
 			<ingestSound>RawMeat_Eat</ingestSound>		
 		</ingestible>
 		<thingCategories>
-			<li>MeatRaw</li>
+			<li>VCEF_RawFishCategory</li>
 		</thingCategories>
 	</ThingDef>
 
@@ -53,7 +53,7 @@
 		</ingestible>
 		<tools>
 			<li>
-				<label>raw fish</label>
+				<label>raw mackerel</label>
 				<capacities>
 					<li>Blunt</li>
 				</capacities>
@@ -62,19 +62,19 @@
 			</li>
 		</tools>
 		<equippedAngleOffset>-180</equippedAngleOffset>
-		 <uiIconForStackCount>1</uiIconForStackCount>
+		<uiIconForStackCount>1</uiIconForStackCount>
 		<equipmentType>Primary</equipmentType>
-		<techLevel>Neolithic</techLevel>
+		<techLevel>Spacer</techLevel>
 		<comps>
 			<li>
 				<compClass>CompEquippable</compClass>
 			</li>
 		</comps>
 	</ThingDef>
-	
+
 	<!-- Bass -->
 
-	
+
 	<ThingDef ParentName="VCEF_RawFishBase">
 		<defName>VCEF_RawBass</defName>
 		<label>raw bass</label>
@@ -93,7 +93,7 @@
 		</ingestible>
 		<tools>
 			<li>
-				<label>raw fish</label>
+				<label>raw bass</label>
 				<capacities>
 					<li>Blunt</li>
 				</capacities>
@@ -101,10 +101,677 @@
 				<cooldownTime>2</cooldownTime>
 			</li>
 		</tools>
-		    <equippedAngleOffset>-180</equippedAngleOffset>
- <uiIconForStackCount>1</uiIconForStackCount>
+		<equippedAngleOffset>-180</equippedAngleOffset>
+		<uiIconForStackCount>1</uiIconForStackCount>
 		<equipmentType>Primary</equipmentType>
-		<techLevel>Neolithic</techLevel>
+		<techLevel>Spacer</techLevel>
+		<comps>
+			<li>
+				<compClass>CompEquippable</compClass>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<!-- Clownfish -->
+
+
+	<ThingDef ParentName="VCEF_RawFishBase">
+		<defName>VCEF_RawClownfish</defName>
+		<label>raw clownfish</label>
+		<description>Raw clownfish.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/VCEF_AlphaFish</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<Mass>0.02</Mass>
+			<Nutrition>0.02</Nutrition>
+			<MarketValue>1</MarketValue>
+		</statBases>
+		<ingestible>
+			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
+		</ingestible>
+		<tools>
+			<li>
+				<label>raw clownfish</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>2</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<equippedAngleOffset>-180</equippedAngleOffset>
+		<uiIconForStackCount>1</uiIconForStackCount>
+		<equipmentType>Primary</equipmentType>
+		<techLevel>Spacer</techLevel>
+		<comps>
+			<li>
+				<compClass>CompEquippable</compClass>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<!-- Goldfish -->
+
+
+	<ThingDef ParentName="VCEF_RawFishBase">
+		<defName>VCEF_RawGoldfish</defName>
+		<label>raw goldfish</label>
+		<description>Raw goldfish.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/VCEF_AlphaFish</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<Mass>0.01</Mass>
+			<Nutrition>0.01</Nutrition>
+			<MarketValue>10</MarketValue>
+		</statBases>
+		<ingestible>
+			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
+		</ingestible>
+		<tools>
+			<li>
+				<label>raw goldfish</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>1</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<equippedAngleOffset>-180</equippedAngleOffset>
+		<uiIconForStackCount>1</uiIconForStackCount>
+		<equipmentType>Primary</equipmentType>
+		<techLevel>Spacer</techLevel>
+		<comps>
+			<li>
+				<compClass>CompEquippable</compClass>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<!-- Guppy -->
+
+
+	<ThingDef ParentName="VCEF_RawFishBase">
+		<defName>VCEF_RawGuppy</defName>
+		<label>raw guppy</label>
+		<description>Raw guppy.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/VCEF_AlphaFish</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<Mass>0.01</Mass>
+			<Nutrition>0.01</Nutrition>
+			<MarketValue>1</MarketValue>
+		</statBases>
+		<ingestible>
+			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
+		</ingestible>
+		<tools>
+			<li>
+				<label>raw guppy</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>1</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<equippedAngleOffset>-180</equippedAngleOffset>
+		<uiIconForStackCount>1</uiIconForStackCount>
+		<equipmentType>Primary</equipmentType>
+		<techLevel>Spacer</techLevel>
+		<comps>
+			<li>
+				<compClass>CompEquippable</compClass>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<!-- Koi -->
+
+
+	<ThingDef ParentName="VCEF_RawFishBase">
+		<defName>VCEF_RawKoi</defName>
+		<label>raw koi</label>
+		<description>Raw koi.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/VCEF_AlphaFish</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<Mass>0.1</Mass>
+			<Nutrition>0.1</Nutrition>
+			<MarketValue>4</MarketValue>
+		</statBases>
+		<ingestible>
+			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
+		</ingestible>
+		<tools>
+			<li>
+				<label>raw koi</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>6</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<equippedAngleOffset>-180</equippedAngleOffset>
+		<uiIconForStackCount>1</uiIconForStackCount>
+		<equipmentType>Primary</equipmentType>
+		<techLevel>Spacer</techLevel>
+		<comps>
+			<li>
+				<compClass>CompEquippable</compClass>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<!-- Minnow -->
+
+	<ThingDef ParentName="VCEF_RawFishBase">
+		<defName>VCEF_RawMinnow</defName>
+		<label>raw minnow</label>
+		<description>Raw minnow.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/VCEF_AlphaFish</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<Mass>0.01</Mass>
+			<Nutrition>0.01</Nutrition>
+			<MarketValue>1</MarketValue>
+		</statBases>
+		<ingestible>
+			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
+		</ingestible>
+		<tools>
+			<li>
+				<label>raw minnow</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>1</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<equippedAngleOffset>-180</equippedAngleOffset>
+		<uiIconForStackCount>1</uiIconForStackCount>
+		<equipmentType>Primary</equipmentType>
+		<techLevel>Spacer</techLevel>
+		<comps>
+			<li>
+				<compClass>CompEquippable</compClass>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<!-- Perch -->
+
+	<ThingDef ParentName="VCEF_RawFishBase">
+		<defName>VCEF_RawPerch</defName>
+		<label>raw perch</label>
+		<description>Raw perch.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/VCEF_AlphaFish</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<Mass>0.03</Mass>
+
+			<MarketValue>2</MarketValue>
+		</statBases>
+		<ingestible>
+			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
+		</ingestible>
+		<tools>
+			<li>
+				<label>raw perch</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>7</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<equippedAngleOffset>-180</equippedAngleOffset>
+		<uiIconForStackCount>1</uiIconForStackCount>
+		<equipmentType>Primary</equipmentType>
+		<techLevel>Spacer</techLevel>
+		<comps>
+			<li>
+				<compClass>CompEquippable</compClass>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<!-- Salmon -->
+
+	<ThingDef ParentName="VCEF_RawFishBase">
+		<defName>VCEF_RawSalmon</defName>
+		<label>raw salmon</label>
+		<description>Raw salmon.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/VCEF_AlphaFish</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<Mass>0.10</Mass>
+			<Nutrition>0.25</Nutrition>
+			<MarketValue>10</MarketValue>
+		</statBases>
+		<ingestible>
+			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
+		</ingestible>
+		<tools>
+			<li>
+				<label>raw salmon</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>10</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<equippedAngleOffset>-180</equippedAngleOffset>
+		<uiIconForStackCount>1</uiIconForStackCount>
+		<equipmentType>Primary</equipmentType>
+		<techLevel>Spacer</techLevel>
+		<comps>
+			<li>
+				<compClass>CompEquippable</compClass>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<!-- Trout -->
+
+	<ThingDef ParentName="VCEF_RawFishBase">
+		<defName>VCEF_RawTrout</defName>
+		<label>raw trout</label>
+		<description>Raw trout.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/VCEF_AlphaFish</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<Mass>0.03</Mass>
+			<Nutrition>0.05</Nutrition>
+			<MarketValue>2</MarketValue>
+		</statBases>
+		<ingestible>
+			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
+		</ingestible>
+		<tools>
+			<li>
+				<label>raw trout</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>5</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<equippedAngleOffset>-180</equippedAngleOffset>
+		<uiIconForStackCount>1</uiIconForStackCount>
+		<equipmentType>Primary</equipmentType>
+		<techLevel>Spacer</techLevel>
+		<comps>
+			<li>
+				<compClass>CompEquippable</compClass>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<!-- Tuna -->
+
+	<ThingDef ParentName="VCEF_RawFishBase">
+		<defName>VCEF_RawTuna</defName>
+		<label>raw tuna</label>
+		<description>Raw tuna.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/VCEF_AlphaFish</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<Mass>0.25</Mass>
+			<Nutrition>0.10</Nutrition>
+			<MarketValue>4</MarketValue>
+		</statBases>
+		<ingestible>
+			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
+		</ingestible>
+		<tools>
+			<li>
+				<label>raw tuna</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>10</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<equippedAngleOffset>-180</equippedAngleOffset>
+		<uiIconForStackCount>1</uiIconForStackCount>
+		<equipmentType>Primary</equipmentType>
+		<techLevel>Spacer</techLevel>
+		<comps>
+			<li>
+				<compClass>CompEquippable</compClass>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<!-- Angelfish -->
+
+	<ThingDef ParentName="VCEF_RawFishBase">
+		<defName>VCEF_RawAngelfish</defName>
+		<label>raw angelfish</label>
+		<description>Raw angelfish.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/VCEF_AlphaFish</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<Mass>0.03</Mass>
+			<Nutrition>0.05</Nutrition>
+			<MarketValue>3</MarketValue>
+		</statBases>
+		<ingestible>
+			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
+		</ingestible>
+		<tools>
+			<li>
+				<label>raw angelfish</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>5</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<equippedAngleOffset>-180</equippedAngleOffset>
+		<uiIconForStackCount>1</uiIconForStackCount>
+		<equipmentType>Primary</equipmentType>
+		<techLevel>Spacer</techLevel>
+		<comps>
+			<li>
+				<compClass>CompEquippable</compClass>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<!-- Catfish -->
+
+	<ThingDef ParentName="VCEF_RawFishBase">
+		<defName>VCEF_RawCatfish</defName>
+		<label>raw catfish</label>
+		<description>Raw catfish.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/VCEF_AlphaFish</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<Mass>0.05</Mass>
+			<Nutrition>0.10</Nutrition>
+			<MarketValue>4</MarketValue>
+		</statBases>
+		<ingestible>
+			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
+		</ingestible>
+		<tools>
+			<li>
+				<label>raw catfish</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>7</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<equippedAngleOffset>-180</equippedAngleOffset>
+		<uiIconForStackCount>1</uiIconForStackCount>
+		<equipmentType>Primary</equipmentType>
+		<techLevel>Spacer</techLevel>
+		<comps>
+			<li>
+				<compClass>CompEquippable</compClass>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<!-- Lobster -->
+
+	<ThingDef ParentName="VCEF_RawFishBase">
+		<defName>VCEF_RawLobster</defName>
+		<label>raw lobster</label>
+		<description>Raw lobster.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/VCEF_AlphaFish</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<Mass>0.15</Mass>
+			<Nutrition>0.25</Nutrition>
+			<MarketValue>12</MarketValue>
+		</statBases>
+		<ingestible>
+			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
+		</ingestible>
+		<tools>
+			<li>
+				<label>raw lobster</label>
+				<capacities>
+					<li>Cut</li>
+				</capacities>
+				<power>7</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<equippedAngleOffset>-180</equippedAngleOffset>
+		<uiIconForStackCount>1</uiIconForStackCount>
+		<equipmentType>Primary</equipmentType>
+		<techLevel>Spacer</techLevel>
+		<comps>
+			<li>
+				<compClass>CompEquippable</compClass>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	<!-- Anglerfish -->
+
+	<ThingDef ParentName="VCEF_RawFishBase">
+		<defName>VCEF_RawAnglerfish</defName>
+		<label>raw anglerfish</label>
+		<description>Raw anglerfish.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/VCEF_AlphaFish</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<Mass>0.03</Mass>
+			<Nutrition>0.05</Nutrition>
+			<MarketValue>1</MarketValue>
+		</statBases>
+		<ingestible>
+			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
+		</ingestible>
+		<tools>
+			<li>
+				<label>raw anglerfish</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>3</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<equippedAngleOffset>-180</equippedAngleOffset>
+		<uiIconForStackCount>1</uiIconForStackCount>
+		<equipmentType>Primary</equipmentType>
+		<techLevel>Spacer</techLevel>
+		<comps>
+			<li>
+				<compClass>CompEquippable</compClass>
+			</li>
+		</comps>
+	</ThingDef>
+	
+		<!-- Eel -->
+
+	<ThingDef ParentName="VCEF_RawFishBase">
+		<defName>VCEF_RawEel</defName>
+		<label>raw eel</label>
+		<description>Raw eel.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/VCEF_AlphaFish</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<Mass>0.03</Mass>
+			<Nutrition>0.05</Nutrition>
+			<MarketValue>2</MarketValue>
+		</statBases>
+		<ingestible>
+			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
+		</ingestible>
+		<tools>
+			<li>
+				<label>raw eel</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>2</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<equippedAngleOffset>-180</equippedAngleOffset>
+		<uiIconForStackCount>1</uiIconForStackCount>
+		<equipmentType>Primary</equipmentType>
+		<techLevel>Spacer</techLevel>
+		<comps>
+			<li>
+				<compClass>CompEquippable</compClass>
+			</li>
+		</comps>
+	</ThingDef>
+	
+			<!-- Piranha -->
+
+	<ThingDef ParentName="VCEF_RawFishBase">
+		<defName>VCEF_RawPiranha</defName>
+		<label>raw piranha</label>
+		<description>Raw piranha.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/VCEF_AlphaFish</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<Mass>0.03</Mass>
+			<Nutrition>0.05</Nutrition>
+			<MarketValue>3</MarketValue>
+		</statBases>
+		<ingestible>
+			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
+		</ingestible>
+		<tools>
+			<li>
+				<label>raw piranha</label>
+				<capacities>
+					<li>Cut</li>
+				</capacities>
+				<power>4</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<equippedAngleOffset>-180</equippedAngleOffset>
+		<uiIconForStackCount>1</uiIconForStackCount>
+		<equipmentType>Primary</equipmentType>
+		<techLevel>Spacer</techLevel>
+		<comps>
+			<li>
+				<compClass>CompEquippable</compClass>
+			</li>
+		</comps>
+	</ThingDef>
+	
+		<!-- Sabrefish -->
+
+	<ThingDef ParentName="VCEF_RawFishBase">
+		<defName>VCEF_RawSabrefish</defName>
+		<label>raw sabrefish</label>
+		<description>Raw sabrefish.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/VCEF_AlphaFish</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<Mass>0.25</Mass>
+			<Nutrition>0.25</Nutrition>
+			<MarketValue>15</MarketValue>
+		</statBases>
+		<ingestible>
+			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
+		</ingestible>
+		<tools>
+			<li>
+				<label>raw sabrefish</label>
+				<capacities>
+					<li>Stab</li>
+				</capacities>
+				<power>10</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<equippedAngleOffset>-180</equippedAngleOffset>
+		<uiIconForStackCount>1</uiIconForStackCount>
+		<equipmentType>Primary</equipmentType>
+		<techLevel>Spacer</techLevel>
+		<comps>
+			<li>
+				<compClass>CompEquippable</compClass>
+			</li>
+		</comps>
+	</ThingDef>
+	
+			<!-- Pufferfish -->
+
+	<ThingDef ParentName="VCEF_RawFishBase">
+		<defName>VCEF_RawPufferfish</defName>
+		<label>raw pufferfish</label>
+		<description>Raw pufferfish.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/VCEF_AlphaFish</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<Mass>0.03</Mass>
+			<Nutrition>0.05</Nutrition>
+			<MarketValue>3</MarketValue>
+		</statBases>
+		<ingestible>
+			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
+		</ingestible>
+		<tools>
+			<li>
+				<label>raw pufferfish</label>
+				<capacities>
+					<li>ToxicBite</li>
+				</capacities>
+				<power>4</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<equippedAngleOffset>-180</equippedAngleOffset>
+		<uiIconForStackCount>1</uiIconForStackCount>
+		<equipmentType>Primary</equipmentType>
+		<techLevel>Spacer</techLevel>
 		<comps>
 			<li>
 				<compClass>CompEquippable</compClass>

@@ -7,7 +7,21 @@
 	<VCEF_FishingGrowingZoneDesc>Create a zone where your colonists will try to fish</VCEF_FishingGrowingZoneDesc>
 	
 	<VCEF_ChooseFish>Choose catch</VCEF_ChooseFish>
-	<VCEF_ChooseFishDesc>Choose prefered fish to catch from those inhabiting this biome. There is always a chance to catch some different fish</VCEF_ChooseFishDesc>
+	<VCEF_ChooseFishDesc>Choose prefered fish size to catch from those inhabiting this biome. Smaller fish take less time but are less nutritive, while larger fish take longer and are more nutritive. Medium fish are balanced between the two extremes. There is always a chance to catch some different fish or special items</VCEF_ChooseFishDesc>
+	
+	
+	<VCEF_ChooseFishSmallLabel>Catch Small Fish</VCEF_ChooseFishSmallLabel>
+	<VCEF_ChooseFishMediumLabel>Catch Medium Fish</VCEF_ChooseFishMediumLabel>
+	<VCEF_ChooseFishLargeLabel>Catch Large Fish</VCEF_ChooseFishLargeLabel>
+	
+	<VCEF_CommandAllowFishing>Allow Fishing</VCEF_CommandAllowFishing>
+	<VCEF_CommandAllowFishingDesc>Allow fishing to take place in this fishing zone</VCEF_CommandAllowFishingDesc>
+	
+	<VCEF_ZoneSetTo>This zone is set to catch fish of size</VCEF_ZoneSetTo>
+
+
+
+
 	
 	<VCEF_NoFish>No fish to catch in this biome</VCEF_NoFish>
 

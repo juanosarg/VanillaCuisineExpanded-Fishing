@@ -4,15 +4,18 @@
    <VCE_Fishing.FishDef>
       <defName>VCEF_MackerelFish</defName>
       <thingDef>VCEF_RawMackerel</thingDef>    
+	  <fishSizeCategory>Medium</fishSizeCategory>
       <allowedBiomes>
          <li>TemperateForest</li>
 		 <li>Tundra</li>
-      </allowedBiomes>      
+      </allowedBiomes>  
+		
    </VCE_Fishing.FishDef>
    
    <VCE_Fishing.FishDef>
       <defName>VCEF_BassFish</defName>
       <thingDef>VCEF_RawBass</thingDef>    
+	  <fishSizeCategory>Large</fishSizeCategory>
       <allowedBiomes>
          <li>TemperateForest</li>
 		 <li>Tundra</li>
