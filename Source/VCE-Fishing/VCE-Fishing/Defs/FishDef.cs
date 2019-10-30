@@ -10,6 +10,8 @@ namespace VCE_Fishing
     {
         public ThingDef thingDef;       
         public List<string> allowedBiomes;
+        public bool canBeFreshwater;
+        public bool canBeSaltwater;
         public FishSizeCategory fishSizeCategory;
 
     }

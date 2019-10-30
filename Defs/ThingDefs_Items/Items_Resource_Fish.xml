@@ -38,7 +38,7 @@
 	<ThingDef ParentName="VCEF_RawFishBase">
 		<defName>VCEF_RawAnchovy</defName>
 		<label>raw anchovy</label>
-		<description>Raw anchovy. A small, common forage fish of the family Engraulidae. Most species are found in marine waters, but several will enter brackish water and some are restricted to fresh water</description>
+		<description>Raw anchovy. A small, common forage fish of the family Engraulidae. Most species are found in marine waters, but several will enter brackish water and some are restricted to fresh water.</description>
 		<graphicData>
 			<texPath>Things/Item/Resource/VCEF_Anchovies</texPath>
 			<graphicClass>Graphic_StackCount</graphicClass>

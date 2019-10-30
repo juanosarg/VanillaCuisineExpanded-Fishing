@@ -1,27 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
-  
-   <VCE_Fishing.FishDef>
-      <defName>VCEF_MackerelFish</defName>
-      <thingDef>VCEF_RawMackerel</thingDef>    
-	  <fishSizeCategory>Medium</fishSizeCategory>
-      <allowedBiomes>
-         <li>TemperateForest</li>
-		 <li>Tundra</li>
-      </allowedBiomes>  
-		
-   </VCE_Fishing.FishDef>
-   
-   <VCE_Fishing.FishDef>
-      <defName>VCEF_BassFish</defName>
-      <thingDef>VCEF_RawBass</thingDef>    
-	  <fishSizeCategory>Large</fishSizeCategory>
-      <allowedBiomes>
-         <li>TemperateForest</li>
-		 <li>Tundra</li>
-      </allowedBiomes>      
-   </VCE_Fishing.FishDef>
-   
- 
-   
+
+<!-- All vanilla biomes for copy pasting
+
+			<li>BorealForest</li>
+			<li>Tundra</li>
+			<li>ColdBog</li>
+			<li>IceSheet</li>
+			<li>SeaIce</li>
+			<li>TemperateForest</li>
+			<li>TemperateSwamp</li>
+			<li>TropicalRainforest</li>
+			<li>TropicalSwamp</li>
+			<li>AridShrubland</li>
+			<li>Desert</li>
+			<li>ExtremeDesert</li>
+-->
+
+	<VCE_Fishing.FishDef>
+		<defName>VCEF_AnchovyFish</defName>
+		<thingDef>VCEF_RawAnchovy</thingDef>    
+		<fishSizeCategory>Small</fishSizeCategory>
+		<canBeFreshwater>true</canBeFreshwater>
+		<canBeSaltwater>true</canBeSaltwater>
+		<allowedBiomes>
+			<li>BorealForest</li>
+			<li>Tundra</li>
+			<li>ColdBog</li>
+			<li>IceSheet</li>
+			<li>SeaIce</li>
+			<li>TemperateForest</li>
+			<li>TemperateSwamp</li>
+			<li>TropicalRainforest</li>
+			<li>TropicalSwamp</li>
+			<li>AridShrubland</li>
+			<li>Desert</li>
+			<li>ExtremeDesert</li>
+		</allowedBiomes>  		
+	</VCE_Fishing.FishDef>
+
+
+
+
+
 </Defs>
