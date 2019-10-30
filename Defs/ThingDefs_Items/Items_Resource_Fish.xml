@@ -31,33 +31,33 @@
 		</thingCategories>
 	</ThingDef>
 
-
-	<!-- Mackerel -->
+	
+	<!-- Anchovy -->
 
 
 	<ThingDef ParentName="VCEF_RawFishBase">
-		<defName>VCEF_RawMackerel</defName>
-		<label>raw mackerel</label>
-		<description>Raw mackerel.</description>
+		<defName>VCEF_RawAnchovy</defName>
+		<label>raw anchovy</label>
+		<description>Raw anchovy. A small, common forage fish of the family Engraulidae. Most species are found in marine waters, but several will enter brackish water and some are restricted to fresh water</description>
 		<graphicData>
-			<texPath>Things/Item/Resource/VCEF_RawMackerel</texPath>
+			<texPath>Things/Item/Resource/VCEF_Anchovies</texPath>
 			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
 		<statBases>
-			<Mass>0.03</Mass>
-
-			<MarketValue>2</MarketValue>
+			<Mass>0.01</Mass>
+			<Nutrition>0.01</Nutrition>
+			<MarketValue>1</MarketValue>
 		</statBases>
 		<ingestible>
 			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
 		</ingestible>
 		<tools>
 			<li>
-				<label>raw mackerel</label>
+				<label>raw anchovy</label>
 				<capacities>
 					<li>Blunt</li>
 				</capacities>
-				<power>10</power>
+				<power>1</power>
 				<cooldownTime>2</cooldownTime>
 			</li>
 		</tools>
@@ -71,16 +71,95 @@
 			</li>
 		</comps>
 	</ThingDef>
+	
+	
+	<!-- Angelfish -->
 
+	<ThingDef ParentName="VCEF_RawFishBase">
+		<defName>VCEF_RawAngelfish</defName>
+		<label>raw angelfish</label>
+		<description>Raw angelfish. Angelfish refers to several species of fish, both marine and freshwater, usually sporting bright colours and deep, laterally compressed bodies.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/VCEF_Angelfish</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<Mass>0.03</Mass>
+			<Nutrition>0.05</Nutrition>
+			<MarketValue>3</MarketValue>
+		</statBases>
+		<ingestible>
+			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
+		</ingestible>
+		<tools>
+			<li>
+				<label>raw angelfish</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>5</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<equippedAngleOffset>-180</equippedAngleOffset>
+		<uiIconForStackCount>1</uiIconForStackCount>
+		<equipmentType>Primary</equipmentType>
+		<techLevel>Spacer</techLevel>
+		<comps>
+			<li>
+				<compClass>CompEquippable</compClass>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	<!-- Anglerfish -->
+
+	<ThingDef ParentName="VCEF_RawFishBase">
+		<defName>VCEF_RawAnglerfish</defName>
+		<label>raw anglerfish</label>
+		<description>Raw anglerfish. Anglerfish are bony fish named for their characteristic mode of predation, in which, a fleshy growth from the fish's head (the esca or illicium) acts as a lure towards other fish.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/VCEF_Anglerfish</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<Mass>0.03</Mass>
+			<Nutrition>0.05</Nutrition>
+			<MarketValue>1</MarketValue>
+		</statBases>
+		<ingestible>
+			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
+		</ingestible>
+		<tools>
+			<li>
+				<label>raw anglerfish</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>3</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<equippedAngleOffset>-180</equippedAngleOffset>
+		<uiIconForStackCount>1</uiIconForStackCount>
+		<equipmentType>Primary</equipmentType>
+		<techLevel>Spacer</techLevel>
+		<comps>
+			<li>
+				<compClass>CompEquippable</compClass>
+			</li>
+		</comps>
+	</ThingDef>
+	
 	<!-- Bass -->
 
 
 	<ThingDef ParentName="VCEF_RawFishBase">
 		<defName>VCEF_RawBass</defName>
 		<label>raw bass</label>
-		<description>Raw bass.</description>
+		<description>Raw bass. Bass is a name shared by many species of fish. The term encompasses both freshwater and marine species, all belonging to the large order Perciformes.</description>
 		<graphicData>
-			<texPath>Things/Item/Resource/VCEF_AlphaFish</texPath>
+			<texPath>Things/Item/Resource/VCEF_Bass</texPath>
 			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
 		<statBases>
@@ -111,16 +190,56 @@
 			</li>
 		</comps>
 	</ThingDef>
+	
+	<!-- Catfish -->
 
+	<ThingDef ParentName="VCEF_RawFishBase">
+		<defName>VCEF_RawCatfish</defName>
+		<label>raw catfish</label>
+		<description>Raw catfish. Catfish are a diverse group of ray-finned fish. Named for their prominent barbels, which resemble a cat's whiskers.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/VCEF_Catfish</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<Mass>0.05</Mass>
+			<Nutrition>0.10</Nutrition>
+			<MarketValue>4</MarketValue>
+		</statBases>
+		<ingestible>
+			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
+		</ingestible>
+		<tools>
+			<li>
+				<label>raw catfish</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>7</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<equippedAngleOffset>-180</equippedAngleOffset>
+		<uiIconForStackCount>1</uiIconForStackCount>
+		<equipmentType>Primary</equipmentType>
+		<techLevel>Spacer</techLevel>
+		<comps>
+			<li>
+				<compClass>CompEquippable</compClass>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	
 	<!-- Clownfish -->
 
 
 	<ThingDef ParentName="VCEF_RawFishBase">
 		<defName>VCEF_RawClownfish</defName>
 		<label>raw clownfish</label>
-		<description>Raw clownfish.</description>
+		<description>Raw clownfish. In the wild, clownfish form symbiotic mutualisms with sea anemones. Depending on species, clownfish are overall yellow, orange, or a reddish or blackish color, and many show white bars or patches.</description>
 		<graphicData>
-			<texPath>Things/Item/Resource/VCEF_AlphaFish</texPath>
+			<texPath>Things/Item/Resource/VCEF_Clownfish</texPath>
 			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
 		<statBases>
@@ -152,15 +271,94 @@
 		</comps>
 	</ThingDef>
 
-	<!-- Goldfish -->
+		<!-- Cod -->
+
+
+	<ThingDef ParentName="VCEF_RawFishBase">
+		<defName>VCEF_RawCod</defName>
+		<label>raw cod</label>
+		<description>Raw cod. Cod refers to several large species of fish with a voracious appetite, feeding largely on other fishes and various invertebrates. Cod has long been considered a perfect fish for human consumption, with its flaky white flesh, a high protein content and low fat content.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/VCEF_Cod</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<Mass>0.15</Mass>
+			<Nutrition>0.08</Nutrition>
+			<MarketValue>4</MarketValue>
+		</statBases>
+		<ingestible>
+			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
+		</ingestible>
+		<tools>
+			<li>
+				<label>raw cod</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>10</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<equippedAngleOffset>-180</equippedAngleOffset>
+		<uiIconForStackCount>1</uiIconForStackCount>
+		<equipmentType>Primary</equipmentType>
+		<techLevel>Spacer</techLevel>
+		<comps>
+			<li>
+				<compClass>CompEquippable</compClass>
+			</li>
+		</comps>
+	</ThingDef>
+	
+			<!-- Eel -->
+
+	<ThingDef ParentName="VCEF_RawFishBase">
+		<defName>VCEF_RawEel</defName>
+		<label>raw eel</label>
+		<description>Raw eel. An eel is any ray-finned fish belonging to the order Anguilliformes. Eels are elongated fish, possessing no pelvic fins, and many species also lacking pectoral fins. Eels swim by generating body waves which travel the length of their bodies.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/VCEF_Eel</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<Mass>0.03</Mass>
+			<Nutrition>0.05</Nutrition>
+			<MarketValue>2</MarketValue>
+		</statBases>
+		<ingestible>
+			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
+		</ingestible>
+		<tools>
+			<li>
+				<label>raw eel</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>2</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<equippedAngleOffset>-180</equippedAngleOffset>
+		<uiIconForStackCount>1</uiIconForStackCount>
+		<equipmentType>Primary</equipmentType>
+		<techLevel>Spacer</techLevel>
+		<comps>
+			<li>
+				<compClass>CompEquippable</compClass>
+			</li>
+		</comps>
+	</ThingDef>
+	
+		<!-- Goldfish -->
 
 
 	<ThingDef ParentName="VCEF_RawFishBase">
 		<defName>VCEF_RawGoldfish</defName>
 		<label>raw goldfish</label>
-		<description>Raw goldfish.</description>
+		<description>Raw goldfish. The goldfish (Carassius auratus) is a freshwater fish in the family Cyprinidae of order Cypriniformes. It is one of the most commonly kept aquarium fish.</description>
 		<graphicData>
-			<texPath>Things/Item/Resource/VCEF_AlphaFish</texPath>
+			<texPath>Things/Item/Resource/VCEF_Goldfish</texPath>
 			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
 		<statBases>
@@ -191,16 +389,17 @@
 			</li>
 		</comps>
 	</ThingDef>
-
+	
+	
 	<!-- Guppy -->
 
 
 	<ThingDef ParentName="VCEF_RawFishBase">
 		<defName>VCEF_RawGuppy</defName>
 		<label>raw guppy</label>
-		<description>Raw guppy.</description>
+		<description>Raw guppy. The guppy (Poecilia reticulata), also known as millionfish and rainbow fish, is one of the world's most widely distributed tropical fish, and one of the most popular freshwater aquarium fish species.</description>
 		<graphicData>
-			<texPath>Things/Item/Resource/VCEF_AlphaFish</texPath>
+			<texPath>Things/Item/Resource/VCEF_Guppy</texPath>
 			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
 		<statBases>
@@ -231,16 +430,135 @@
 			</li>
 		</comps>
 	</ThingDef>
+	
+		<!-- Haddock -->
 
-	<!-- Koi -->
+
+	<ThingDef ParentName="VCEF_RawFishBase">
+		<defName>VCEF_RawHaddock</defName>
+		<label>raw haddock</label>
+		<description>Raw haddock. The haddock (Melanogrammus aeglefinus) is a saltwater fish from the family Gadidae, the true cods. It is an important food fish and has traditionaly been consumed either fresh or smoked.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/VCEF_Haddock</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<Mass>0.03</Mass>
+
+			<MarketValue>2</MarketValue>
+		</statBases>
+		<ingestible>
+			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
+		</ingestible>
+		<tools>
+			<li>
+				<label>raw haddock</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>8</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<equippedAngleOffset>-180</equippedAngleOffset>
+		<uiIconForStackCount>1</uiIconForStackCount>
+		<equipmentType>Primary</equipmentType>
+		<techLevel>Spacer</techLevel>
+		<comps>
+			<li>
+				<compClass>CompEquippable</compClass>
+			</li>
+		</comps>
+	</ThingDef>
+
+			<!-- Halibut -->
+
+
+	<ThingDef ParentName="VCEF_RawFishBase">
+		<defName>VCEF_RawHalibut</defName>
+		<label>raw halibut</label>
+		<description>Raw halibut. Halibut is a common name principally applied to the two flatfish from the family of right-eye flounders. Less commonly, and in some regions only, other species of flatfish are also referred to as being halibuts.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/VCEF_Halibut</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<Mass>0.02</Mass>
+			<Nutrition>0.02</Nutrition>
+			<MarketValue>2</MarketValue>
+		</statBases>
+		<ingestible>
+			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
+		</ingestible>
+		<tools>
+			<li>
+				<label>raw halibut</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>3</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<equippedAngleOffset>-180</equippedAngleOffset>
+		<uiIconForStackCount>1</uiIconForStackCount>
+		<equipmentType>Primary</equipmentType>
+		<techLevel>Spacer</techLevel>
+		<comps>
+			<li>
+				<compClass>CompEquippable</compClass>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	<!-- Herring -->
+
+	<ThingDef ParentName="VCEF_RawFishBase">
+		<defName>VCEF_RawHerring</defName>
+		<label>raw herring</label>
+		<description>Raw herring. Herring are forage fish, mostly belonging to the family Clupeidae. Herring often move in large schools around fishing banks and near the coast.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/VCEF_Herring</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<Mass>0.02</Mass>
+			<Nutrition>0.025</Nutrition>
+			<MarketValue>2</MarketValue>
+		</statBases>
+		<ingestible>
+			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
+		</ingestible>
+		<tools>
+			<li>
+				<label>raw herring</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>2</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<equippedAngleOffset>-180</equippedAngleOffset>
+		<uiIconForStackCount>1</uiIconForStackCount>
+		<equipmentType>Primary</equipmentType>
+		<techLevel>Spacer</techLevel>
+		<comps>
+			<li>
+				<compClass>CompEquippable</compClass>
+			</li>
+		</comps>
+	</ThingDef>
+	
+		<!-- Koi -->
 
 
 	<ThingDef ParentName="VCEF_RawFishBase">
 		<defName>VCEF_RawKoi</defName>
 		<label>raw koi</label>
-		<description>Raw koi.</description>
+		<description>Raw koi. Koi are colored varieties of the Amur carp (Cyprinus rubrofuscus) that are kept for decorative purposes in outdoor koi ponds or water gardens.</description>
 		<graphicData>
-			<texPath>Things/Item/Resource/VCEF_AlphaFish</texPath>
+			<texPath>Things/Item/Resource/VCEF_Koi</texPath>
 			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
 		<statBases>
@@ -271,15 +589,99 @@
 			</li>
 		</comps>
 	</ThingDef>
+	
+	
+
+
+	
+	<!-- Lobster -->
+
+	<ThingDef ParentName="VCEF_RawFishBase">
+		<defName>VCEF_RawLobster</defName>
+		<label>raw lobster</label>
+		<description>Raw lobster. Lobsters are large marine crustaceans. Lobsters have long bodies with muscular tails. Three of their five pairs of legs have claws, including the first pair, which are usually much larger than the others.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/VCEF_Lobster</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<Mass>0.15</Mass>
+			<Nutrition>0.25</Nutrition>
+			<MarketValue>12</MarketValue>
+		</statBases>
+		<ingestible>
+			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
+		</ingestible>
+		<tools>
+			<li>
+				<label>raw lobster</label>
+				<capacities>
+					<li>Cut</li>
+				</capacities>
+				<power>7</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<equippedAngleOffset>-180</equippedAngleOffset>
+		<uiIconForStackCount>1</uiIconForStackCount>
+		<equipmentType>Primary</equipmentType>
+		<techLevel>Spacer</techLevel>
+		<comps>
+			<li>
+				<compClass>CompEquippable</compClass>
+			</li>
+		</comps>
+	</ThingDef>
+	
+		<!-- Mackerel -->
+
+
+	<ThingDef ParentName="VCEF_RawFishBase">
+		<defName>VCEF_RawMackerel</defName>
+		<label>raw mackerel</label>
+		<description>Raw mackerel. Mackerel is a common name applied to a number of different species of pelagic fish, mostly from the family Scombridae. They are found in both temperate and tropical seas, mostly living along the coast or offshore in the oceanic environment.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/VCEF_Mackerel</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<Mass>0.03</Mass>
+
+			<MarketValue>2</MarketValue>
+		</statBases>
+		<ingestible>
+			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
+		</ingestible>
+		<tools>
+			<li>
+				<label>raw mackerel</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>10</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<equippedAngleOffset>-180</equippedAngleOffset>
+		<uiIconForStackCount>1</uiIconForStackCount>
+		<equipmentType>Primary</equipmentType>
+		<techLevel>Spacer</techLevel>
+		<comps>
+			<li>
+				<compClass>CompEquippable</compClass>
+			</li>
+		</comps>
+	</ThingDef>
+
 
 	<!-- Minnow -->
 
 	<ThingDef ParentName="VCEF_RawFishBase">
 		<defName>VCEF_RawMinnow</defName>
 		<label>raw minnow</label>
-		<description>Raw minnow.</description>
+		<description>Raw minnow. Minnow is the common name for a number of species of small freshwater fish, belonging to several genera of the family Cyprinidae.</description>
 		<graphicData>
-			<texPath>Things/Item/Resource/VCEF_AlphaFish</texPath>
+			<texPath>Things/Item/Resource/VCEF_Minnow</texPath>
 			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
 		<statBases>
@@ -316,9 +718,9 @@
 	<ThingDef ParentName="VCEF_RawFishBase">
 		<defName>VCEF_RawPerch</defName>
 		<label>raw perch</label>
-		<description>Raw perch.</description>
+		<description>Raw perch. Perch is a common name for fish of the genus Perca, freshwater gamefish belonging to the family Percidae. The perch lend their name to a large order of vertebrates: the Perciformes. Many species of freshwater gamefish more or less resemble perch, but belong to different genera.</description>
 		<graphicData>
-			<texPath>Things/Item/Resource/VCEF_AlphaFish</texPath>
+			<texPath>Things/Item/Resource/VCEF_Perch</texPath>
 			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
 		<statBases>
@@ -349,15 +751,93 @@
 			</li>
 		</comps>
 	</ThingDef>
+	
+			<!-- Piranha -->
+
+	<ThingDef ParentName="VCEF_RawFishBase">
+		<defName>VCEF_RawPiranha</defName>
+		<label>raw piranha</label>
+		<description>Raw piranha. A piranha is a freshwater fish that inhabits rivers, floodplains, lakes and reservoirs. Although often described as extremely predatory and mainly feeding on fish, their dietary habits vary extensively, and they will also take plant material, leading to their classification as omnivorous.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/VCEF_Piranha</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<Mass>0.03</Mass>
+			<Nutrition>0.05</Nutrition>
+			<MarketValue>3</MarketValue>
+		</statBases>
+		<ingestible>
+			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
+		</ingestible>
+		<tools>
+			<li>
+				<label>raw piranha</label>
+				<capacities>
+					<li>Cut</li>
+				</capacities>
+				<power>4</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<equippedAngleOffset>-180</equippedAngleOffset>
+		<uiIconForStackCount>1</uiIconForStackCount>
+		<equipmentType>Primary</equipmentType>
+		<techLevel>Spacer</techLevel>
+		<comps>
+			<li>
+				<compClass>CompEquippable</compClass>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	<!-- Pufferfish -->
+
+	<ThingDef ParentName="VCEF_RawFishBase">
+		<defName>VCEF_RawPufferfish</defName>
+		<label>raw pufferfish</label>
+		<description>Raw pufferfish. Pufferfish are a family of primarily marine and estuarine fish. The majority of pufferfish species are toxic and some are among the most poisonous vertebrates in the world. In certain species, the internal organs, such as the liver, and sometimes their skin, contain tetrodotoxin and are highly toxic to most animals when eaten; nevertheless, the meat of some species is considered a delicacy when prepared by specially trained chefs.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/VCEF_Pufferfish</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<Mass>0.03</Mass>
+			<Nutrition>0.05</Nutrition>
+			<MarketValue>3</MarketValue>
+		</statBases>
+		<ingestible>
+			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
+		</ingestible>
+		<tools>
+			<li>
+				<label>raw pufferfish</label>
+				<capacities>
+					<li>ToxicBite</li>
+				</capacities>
+				<power>4</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<equippedAngleOffset>-180</equippedAngleOffset>
+		<uiIconForStackCount>1</uiIconForStackCount>
+		<equipmentType>Primary</equipmentType>
+		<techLevel>Spacer</techLevel>
+		<comps>
+			<li>
+				<compClass>CompEquippable</compClass>
+			</li>
+		</comps>
+	</ThingDef>
 
 	<!-- Salmon -->
 
 	<ThingDef ParentName="VCEF_RawFishBase">
 		<defName>VCEF_RawSalmon</defName>
 		<label>raw salmon</label>
-		<description>Raw salmon.</description>
+		<description>Raw salmon. Salmon is the common name for several species of ray-finned fish in the family Salmonidae. Typically, salmon are anadromous: they hatch in fresh water, migrate to the ocean, then return to fresh water to reproduce. However, populations of several species are restricted to fresh water through their lives.</description>
 		<graphicData>
-			<texPath>Things/Item/Resource/VCEF_AlphaFish</texPath>
+			<texPath>Things/Item/Resource/VCEF_Salmon</texPath>
 			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
 		<statBases>
@@ -388,15 +868,93 @@
 			</li>
 		</comps>
 	</ThingDef>
+	
+	<!-- Sprat -->
+
+	<ThingDef ParentName="VCEF_RawFishBase">
+		<defName>VCEF_RawSprat</defName>
+		<label>raw sprat</label>
+		<description>Raw sprat. Sprat is the common name applied to a group of forage fish belonging to the genus Sprattus in the family Clupeidae. Like most forage fishes, sprats are highly active, small, oily fish. They travel in large schools with other fish and swim continuously throughout the day.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/VCEF_Sprat</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<Mass>0.01</Mass>
+			<Nutrition>0.01</Nutrition>
+			<MarketValue>2</MarketValue>
+		</statBases>
+		<ingestible>
+			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
+		</ingestible>
+		<tools>
+			<li>
+				<label>raw sprat</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>1</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<equippedAngleOffset>-180</equippedAngleOffset>
+		<uiIconForStackCount>1</uiIconForStackCount>
+		<equipmentType>Primary</equipmentType>
+		<techLevel>Spacer</techLevel>
+		<comps>
+			<li>
+				<compClass>CompEquippable</compClass>
+			</li>
+		</comps>
+	</ThingDef>
+	
+		<!-- Swordfish -->
+
+	<ThingDef ParentName="VCEF_RawFishBase">
+		<defName>VCEF_RawSwordfish</defName>
+		<label>raw swordfish</label>
+		<description>Raw swordfish. Swordfish, also known as broadbills, are large, highly migratory, predatory fish characterized by a long, flat, pointed bill.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/VCEF_Swordfish</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<Mass>0.25</Mass>
+			<Nutrition>0.25</Nutrition>
+			<MarketValue>15</MarketValue>
+		</statBases>
+		<ingestible>
+			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
+		</ingestible>
+		<tools>
+			<li>
+				<label>raw swordfish</label>
+				<capacities>
+					<li>Stab</li>
+				</capacities>
+				<power>10</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<equippedAngleOffset>-180</equippedAngleOffset>
+		<uiIconForStackCount>1</uiIconForStackCount>
+		<equipmentType>Primary</equipmentType>
+		<techLevel>Spacer</techLevel>
+		<comps>
+			<li>
+				<compClass>CompEquippable</compClass>
+			</li>
+		</comps>
+	</ThingDef>
 
 	<!-- Trout -->
 
 	<ThingDef ParentName="VCEF_RawFishBase">
 		<defName>VCEF_RawTrout</defName>
 		<label>raw trout</label>
-		<description>Raw trout.</description>
+		<description>Raw trout. Trout is the common name for a number of species of freshwater fish. Most species of trout live in freshwater lakes and rivers exclusively, while there are others, such as the steelhead, which can spend two or three years at sea before returning to fresh water to spawn (a habit more typical of salmon).</description>
 		<graphicData>
-			<texPath>Things/Item/Resource/VCEF_AlphaFish</texPath>
+			<texPath>Things/Item/Resource/VCEF_Trout</texPath>
 			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
 		<statBases>
@@ -433,9 +991,9 @@
 	<ThingDef ParentName="VCEF_RawFishBase">
 		<defName>VCEF_RawTuna</defName>
 		<label>raw tuna</label>
-		<description>Raw tuna.</description>
+		<description>Raw tuna. Tuna are large saltwater fish. An active and agile predator, the tuna has a sleek, streamlined body, and is among the fastest-swimming pelagic fish. Tuna has been highly prized as a food fish. Besides their commercial value as food, the great size, speed, and power they display as apex predators has attracted the admiration of fishermen, writers, and scientists.</description>
 		<graphicData>
-			<texPath>Things/Item/Resource/VCEF_AlphaFish</texPath>
+			<texPath>Things/Item/Resource/VCEF_Tuna</texPath>
 			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
 		<statBases>
@@ -467,318 +1025,19 @@
 		</comps>
 	</ThingDef>
 
-	<!-- Angelfish -->
-
-	<ThingDef ParentName="VCEF_RawFishBase">
-		<defName>VCEF_RawAngelfish</defName>
-		<label>raw angelfish</label>
-		<description>Raw angelfish.</description>
-		<graphicData>
-			<texPath>Things/Item/Resource/VCEF_AlphaFish</texPath>
-			<graphicClass>Graphic_StackCount</graphicClass>
-		</graphicData>
-		<statBases>
-			<Mass>0.03</Mass>
-			<Nutrition>0.05</Nutrition>
-			<MarketValue>3</MarketValue>
-		</statBases>
-		<ingestible>
-			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
-		</ingestible>
-		<tools>
-			<li>
-				<label>raw angelfish</label>
-				<capacities>
-					<li>Blunt</li>
-				</capacities>
-				<power>5</power>
-				<cooldownTime>2</cooldownTime>
-			</li>
-		</tools>
-		<equippedAngleOffset>-180</equippedAngleOffset>
-		<uiIconForStackCount>1</uiIconForStackCount>
-		<equipmentType>Primary</equipmentType>
-		<techLevel>Spacer</techLevel>
-		<comps>
-			<li>
-				<compClass>CompEquippable</compClass>
-			</li>
-		</comps>
-	</ThingDef>
-
-	<!-- Catfish -->
-
-	<ThingDef ParentName="VCEF_RawFishBase">
-		<defName>VCEF_RawCatfish</defName>
-		<label>raw catfish</label>
-		<description>Raw catfish.</description>
-		<graphicData>
-			<texPath>Things/Item/Resource/VCEF_AlphaFish</texPath>
-			<graphicClass>Graphic_StackCount</graphicClass>
-		</graphicData>
-		<statBases>
-			<Mass>0.05</Mass>
-			<Nutrition>0.10</Nutrition>
-			<MarketValue>4</MarketValue>
-		</statBases>
-		<ingestible>
-			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
-		</ingestible>
-		<tools>
-			<li>
-				<label>raw catfish</label>
-				<capacities>
-					<li>Blunt</li>
-				</capacities>
-				<power>7</power>
-				<cooldownTime>2</cooldownTime>
-			</li>
-		</tools>
-		<equippedAngleOffset>-180</equippedAngleOffset>
-		<uiIconForStackCount>1</uiIconForStackCount>
-		<equipmentType>Primary</equipmentType>
-		<techLevel>Spacer</techLevel>
-		<comps>
-			<li>
-				<compClass>CompEquippable</compClass>
-			</li>
-		</comps>
-	</ThingDef>
-
-	<!-- Lobster -->
-
-	<ThingDef ParentName="VCEF_RawFishBase">
-		<defName>VCEF_RawLobster</defName>
-		<label>raw lobster</label>
-		<description>Raw lobster.</description>
-		<graphicData>
-			<texPath>Things/Item/Resource/VCEF_AlphaFish</texPath>
-			<graphicClass>Graphic_StackCount</graphicClass>
-		</graphicData>
-		<statBases>
-			<Mass>0.15</Mass>
-			<Nutrition>0.25</Nutrition>
-			<MarketValue>12</MarketValue>
-		</statBases>
-		<ingestible>
-			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
-		</ingestible>
-		<tools>
-			<li>
-				<label>raw lobster</label>
-				<capacities>
-					<li>Cut</li>
-				</capacities>
-				<power>7</power>
-				<cooldownTime>2</cooldownTime>
-			</li>
-		</tools>
-		<equippedAngleOffset>-180</equippedAngleOffset>
-		<uiIconForStackCount>1</uiIconForStackCount>
-		<equipmentType>Primary</equipmentType>
-		<techLevel>Spacer</techLevel>
-		<comps>
-			<li>
-				<compClass>CompEquippable</compClass>
-			</li>
-		</comps>
-	</ThingDef>
 	
-	<!-- Anglerfish -->
 
-	<ThingDef ParentName="VCEF_RawFishBase">
-		<defName>VCEF_RawAnglerfish</defName>
-		<label>raw anglerfish</label>
-		<description>Raw anglerfish.</description>
-		<graphicData>
-			<texPath>Things/Item/Resource/VCEF_AlphaFish</texPath>
-			<graphicClass>Graphic_StackCount</graphicClass>
-		</graphicData>
-		<statBases>
-			<Mass>0.03</Mass>
-			<Nutrition>0.05</Nutrition>
-			<MarketValue>1</MarketValue>
-		</statBases>
-		<ingestible>
-			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
-		</ingestible>
-		<tools>
-			<li>
-				<label>raw anglerfish</label>
-				<capacities>
-					<li>Blunt</li>
-				</capacities>
-				<power>3</power>
-				<cooldownTime>2</cooldownTime>
-			</li>
-		</tools>
-		<equippedAngleOffset>-180</equippedAngleOffset>
-		<uiIconForStackCount>1</uiIconForStackCount>
-		<equipmentType>Primary</equipmentType>
-		<techLevel>Spacer</techLevel>
-		<comps>
-			<li>
-				<compClass>CompEquippable</compClass>
-			</li>
-		</comps>
-	</ThingDef>
 	
-		<!-- Eel -->
 
-	<ThingDef ParentName="VCEF_RawFishBase">
-		<defName>VCEF_RawEel</defName>
-		<label>raw eel</label>
-		<description>Raw eel.</description>
-		<graphicData>
-			<texPath>Things/Item/Resource/VCEF_AlphaFish</texPath>
-			<graphicClass>Graphic_StackCount</graphicClass>
-		</graphicData>
-		<statBases>
-			<Mass>0.03</Mass>
-			<Nutrition>0.05</Nutrition>
-			<MarketValue>2</MarketValue>
-		</statBases>
-		<ingestible>
-			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
-		</ingestible>
-		<tools>
-			<li>
-				<label>raw eel</label>
-				<capacities>
-					<li>Blunt</li>
-				</capacities>
-				<power>2</power>
-				<cooldownTime>2</cooldownTime>
-			</li>
-		</tools>
-		<equippedAngleOffset>-180</equippedAngleOffset>
-		<uiIconForStackCount>1</uiIconForStackCount>
-		<equipmentType>Primary</equipmentType>
-		<techLevel>Spacer</techLevel>
-		<comps>
-			<li>
-				<compClass>CompEquippable</compClass>
-			</li>
-		</comps>
-	</ThingDef>
 	
-			<!-- Piranha -->
-
-	<ThingDef ParentName="VCEF_RawFishBase">
-		<defName>VCEF_RawPiranha</defName>
-		<label>raw piranha</label>
-		<description>Raw piranha.</description>
-		<graphicData>
-			<texPath>Things/Item/Resource/VCEF_AlphaFish</texPath>
-			<graphicClass>Graphic_StackCount</graphicClass>
-		</graphicData>
-		<statBases>
-			<Mass>0.03</Mass>
-			<Nutrition>0.05</Nutrition>
-			<MarketValue>3</MarketValue>
-		</statBases>
-		<ingestible>
-			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
-		</ingestible>
-		<tools>
-			<li>
-				<label>raw piranha</label>
-				<capacities>
-					<li>Cut</li>
-				</capacities>
-				<power>4</power>
-				<cooldownTime>2</cooldownTime>
-			</li>
-		</tools>
-		<equippedAngleOffset>-180</equippedAngleOffset>
-		<uiIconForStackCount>1</uiIconForStackCount>
-		<equipmentType>Primary</equipmentType>
-		<techLevel>Spacer</techLevel>
-		<comps>
-			<li>
-				<compClass>CompEquippable</compClass>
-			</li>
-		</comps>
-	</ThingDef>
 	
-		<!-- Sabrefish -->
-
-	<ThingDef ParentName="VCEF_RawFishBase">
-		<defName>VCEF_RawSabrefish</defName>
-		<label>raw sabrefish</label>
-		<description>Raw sabrefish.</description>
-		<graphicData>
-			<texPath>Things/Item/Resource/VCEF_AlphaFish</texPath>
-			<graphicClass>Graphic_StackCount</graphicClass>
-		</graphicData>
-		<statBases>
-			<Mass>0.25</Mass>
-			<Nutrition>0.25</Nutrition>
-			<MarketValue>15</MarketValue>
-		</statBases>
-		<ingestible>
-			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
-		</ingestible>
-		<tools>
-			<li>
-				<label>raw sabrefish</label>
-				<capacities>
-					<li>Stab</li>
-				</capacities>
-				<power>10</power>
-				<cooldownTime>2</cooldownTime>
-			</li>
-		</tools>
-		<equippedAngleOffset>-180</equippedAngleOffset>
-		<uiIconForStackCount>1</uiIconForStackCount>
-		<equipmentType>Primary</equipmentType>
-		<techLevel>Spacer</techLevel>
-		<comps>
-			<li>
-				<compClass>CompEquippable</compClass>
-			</li>
-		</comps>
-	</ThingDef>
 	
-			<!-- Pufferfish -->
+	
 
-	<ThingDef ParentName="VCEF_RawFishBase">
-		<defName>VCEF_RawPufferfish</defName>
-		<label>raw pufferfish</label>
-		<description>Raw pufferfish.</description>
-		<graphicData>
-			<texPath>Things/Item/Resource/VCEF_AlphaFish</texPath>
-			<graphicClass>Graphic_StackCount</graphicClass>
-		</graphicData>
-		<statBases>
-			<Mass>0.03</Mass>
-			<Nutrition>0.05</Nutrition>
-			<MarketValue>3</MarketValue>
-		</statBases>
-		<ingestible>
-			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
-		</ingestible>
-		<tools>
-			<li>
-				<label>raw pufferfish</label>
-				<capacities>
-					<li>ToxicBite</li>
-				</capacities>
-				<power>4</power>
-				<cooldownTime>2</cooldownTime>
-			</li>
-		</tools>
-		<equippedAngleOffset>-180</equippedAngleOffset>
-		<uiIconForStackCount>1</uiIconForStackCount>
-		<equipmentType>Primary</equipmentType>
-		<techLevel>Spacer</techLevel>
-		<comps>
-			<li>
-				<compClass>CompEquippable</compClass>
-			</li>
-		</comps>
-	</ThingDef>
-
+	
+	
+	
+	
 
 
 </Defs>
