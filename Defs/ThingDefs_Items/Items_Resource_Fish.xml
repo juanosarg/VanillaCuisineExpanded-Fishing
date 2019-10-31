@@ -37,7 +37,7 @@
 
 	<ThingDef ParentName="VCEF_RawFishBase">
 		<defName>VCEF_RawAnchovy</defName>
-		<label>raw anchovy</label>
+		<label>anchovy</label>
 		<description>Raw anchovy. A small, common forage fish of the family Engraulidae. Most species are found in marine waters, but several will enter brackish water and some are restricted to fresh water.</description>
 		<graphicData>
 			<texPath>Things/Item/Resource/VCEF_Anchovies</texPath>
@@ -53,7 +53,7 @@
 		</ingestible>
 		<tools>
 			<li>
-				<label>raw anchovy</label>
+				<label>anchovy</label>
 				<capacities>
 					<li>Blunt</li>
 				</capacities>
@@ -77,7 +77,7 @@
 
 	<ThingDef ParentName="VCEF_RawFishBase">
 		<defName>VCEF_RawAngelfish</defName>
-		<label>raw angelfish</label>
+		<label>angelfish</label>
 		<description>Raw angelfish. Angelfish refers to several species of fish, both marine and freshwater, usually sporting bright colours and deep, laterally compressed bodies.</description>
 		<graphicData>
 			<texPath>Things/Item/Resource/VCEF_Angelfish</texPath>
@@ -93,7 +93,7 @@
 		</ingestible>
 		<tools>
 			<li>
-				<label>raw angelfish</label>
+				<label>angelfish</label>
 				<capacities>
 					<li>Blunt</li>
 				</capacities>
@@ -116,7 +116,7 @@
 
 	<ThingDef ParentName="VCEF_RawFishBase">
 		<defName>VCEF_RawAnglerfish</defName>
-		<label>raw anglerfish</label>
+		<label>anglerfish</label>
 		<description>Raw anglerfish. Anglerfish are bony fish named for their characteristic mode of predation, in which, a fleshy growth from the fish's head (the esca or illicium) acts as a lure towards other fish.</description>
 		<graphicData>
 			<texPath>Things/Item/Resource/VCEF_Anglerfish</texPath>
@@ -132,7 +132,7 @@
 		</ingestible>
 		<tools>
 			<li>
-				<label>raw anglerfish</label>
+				<label>anglerfish</label>
 				<capacities>
 					<li>Blunt</li>
 				</capacities>
@@ -156,7 +156,7 @@
 
 	<ThingDef ParentName="VCEF_RawFishBase">
 		<defName>VCEF_RawBass</defName>
-		<label>raw bass</label>
+		<label>bass</label>
 		<description>Raw bass. Bass is a name shared by many species of fish. The term encompasses both freshwater and marine species, all belonging to the large order Perciformes.</description>
 		<graphicData>
 			<texPath>Things/Item/Resource/VCEF_Bass</texPath>
@@ -172,7 +172,7 @@
 		</ingestible>
 		<tools>
 			<li>
-				<label>raw bass</label>
+				<label>bass</label>
 				<capacities>
 					<li>Blunt</li>
 				</capacities>
@@ -195,7 +195,7 @@
 
 	<ThingDef ParentName="VCEF_RawFishBase">
 		<defName>VCEF_RawCatfish</defName>
-		<label>raw catfish</label>
+		<label>catfish</label>
 		<description>Raw catfish. Catfish are a diverse group of ray-finned fish. Named for their prominent barbels, which resemble a cat's whiskers.</description>
 		<graphicData>
 			<texPath>Things/Item/Resource/VCEF_Catfish</texPath>
@@ -211,7 +211,7 @@
 		</ingestible>
 		<tools>
 			<li>
-				<label>raw catfish</label>
+				<label>catfish</label>
 				<capacities>
 					<li>Blunt</li>
 				</capacities>
@@ -236,7 +236,7 @@
 
 	<ThingDef ParentName="VCEF_RawFishBase">
 		<defName>VCEF_RawClownfish</defName>
-		<label>raw clownfish</label>
+		<label>clownfish</label>
 		<description>Raw clownfish. In the wild, clownfish form symbiotic mutualisms with sea anemones. Depending on species, clownfish are overall yellow, orange, or a reddish or blackish color, and many show white bars or patches.</description>
 		<graphicData>
 			<texPath>Things/Item/Resource/VCEF_Clownfish</texPath>
@@ -252,7 +252,7 @@
 		</ingestible>
 		<tools>
 			<li>
-				<label>raw clownfish</label>
+				<label>clownfish</label>
 				<capacities>
 					<li>Blunt</li>
 				</capacities>
@@ -276,7 +276,7 @@
 
 	<ThingDef ParentName="VCEF_RawFishBase">
 		<defName>VCEF_RawCod</defName>
-		<label>raw cod</label>
+		<label>cod</label>
 		<description>Raw cod. Cod refers to several large species of fish with a voracious appetite, feeding largely on other fishes and various invertebrates. Cod has long been considered a perfect fish for human consumption, with its flaky white flesh, a high protein content and low fat content.</description>
 		<graphicData>
 			<texPath>Things/Item/Resource/VCEF_Cod</texPath>
@@ -292,7 +292,7 @@
 		</ingestible>
 		<tools>
 			<li>
-				<label>raw cod</label>
+				<label>cod</label>
 				<capacities>
 					<li>Blunt</li>
 				</capacities>
@@ -315,7 +315,7 @@
 
 	<ThingDef ParentName="VCEF_RawFishBase">
 		<defName>VCEF_RawEel</defName>
-		<label>raw eel</label>
+		<label>eel</label>
 		<description>Raw eel. An eel is any ray-finned fish belonging to the order Anguilliformes. Eels are elongated fish, possessing no pelvic fins, and many species also lacking pectoral fins. Eels swim by generating body waves which travel the length of their bodies.</description>
 		<graphicData>
 			<texPath>Things/Item/Resource/VCEF_Eel</texPath>
@@ -331,7 +331,7 @@
 		</ingestible>
 		<tools>
 			<li>
-				<label>raw eel</label>
+				<label>eel</label>
 				<capacities>
 					<li>Blunt</li>
 				</capacities>
@@ -355,7 +355,7 @@
 
 	<ThingDef ParentName="VCEF_RawFishBase">
 		<defName>VCEF_RawGoldfish</defName>
-		<label>raw goldfish</label>
+		<label>goldfish</label>
 		<description>Raw goldfish. The goldfish (Carassius auratus) is a freshwater fish in the family Cyprinidae of order Cypriniformes. It is one of the most commonly kept aquarium fish.</description>
 		<graphicData>
 			<texPath>Things/Item/Resource/VCEF_Goldfish</texPath>
@@ -371,7 +371,7 @@
 		</ingestible>
 		<tools>
 			<li>
-				<label>raw goldfish</label>
+				<label>goldfish</label>
 				<capacities>
 					<li>Blunt</li>
 				</capacities>
@@ -396,7 +396,7 @@
 
 	<ThingDef ParentName="VCEF_RawFishBase">
 		<defName>VCEF_RawGuppy</defName>
-		<label>raw guppy</label>
+		<label>guppy</label>
 		<description>Raw guppy. The guppy (Poecilia reticulata), also known as millionfish and rainbow fish, is one of the world's most widely distributed tropical fish, and one of the most popular freshwater aquarium fish species.</description>
 		<graphicData>
 			<texPath>Things/Item/Resource/VCEF_Guppy</texPath>
@@ -412,7 +412,7 @@
 		</ingestible>
 		<tools>
 			<li>
-				<label>raw guppy</label>
+				<label>guppy</label>
 				<capacities>
 					<li>Blunt</li>
 				</capacities>
@@ -436,7 +436,7 @@
 
 	<ThingDef ParentName="VCEF_RawFishBase">
 		<defName>VCEF_RawHaddock</defName>
-		<label>raw haddock</label>
+		<label>haddock</label>
 		<description>Raw haddock. The haddock (Melanogrammus aeglefinus) is a saltwater fish from the family Gadidae, the true cods. It is an important food fish and has traditionaly been consumed either fresh or smoked.</description>
 		<graphicData>
 			<texPath>Things/Item/Resource/VCEF_Haddock</texPath>
@@ -452,7 +452,7 @@
 		</ingestible>
 		<tools>
 			<li>
-				<label>raw haddock</label>
+				<label>haddock</label>
 				<capacities>
 					<li>Blunt</li>
 				</capacities>
@@ -476,7 +476,7 @@
 
 	<ThingDef ParentName="VCEF_RawFishBase">
 		<defName>VCEF_RawHalibut</defName>
-		<label>raw halibut</label>
+		<label>halibut</label>
 		<description>Raw halibut. Halibut is a common name principally applied to the two flatfish from the family of right-eye flounders. Less commonly, and in some regions only, other species of flatfish are also referred to as being halibuts.</description>
 		<graphicData>
 			<texPath>Things/Item/Resource/VCEF_Halibut</texPath>
@@ -492,7 +492,7 @@
 		</ingestible>
 		<tools>
 			<li>
-				<label>raw halibut</label>
+				<label>halibut</label>
 				<capacities>
 					<li>Blunt</li>
 				</capacities>
@@ -515,7 +515,7 @@
 
 	<ThingDef ParentName="VCEF_RawFishBase">
 		<defName>VCEF_RawHerring</defName>
-		<label>raw herring</label>
+		<label>herring</label>
 		<description>Raw herring. Herring are forage fish, mostly belonging to the family Clupeidae. Herring often move in large schools around fishing banks and near the coast.</description>
 		<graphicData>
 			<texPath>Things/Item/Resource/VCEF_Herring</texPath>
@@ -531,7 +531,7 @@
 		</ingestible>
 		<tools>
 			<li>
-				<label>raw herring</label>
+				<label>herring</label>
 				<capacities>
 					<li>Blunt</li>
 				</capacities>
@@ -555,7 +555,7 @@
 
 	<ThingDef ParentName="VCEF_RawFishBase">
 		<defName>VCEF_RawKoi</defName>
-		<label>raw koi</label>
+		<label>koi</label>
 		<description>Raw koi. Koi are colored varieties of the Amur carp (Cyprinus rubrofuscus) that are kept for decorative purposes in outdoor koi ponds or water gardens.</description>
 		<graphicData>
 			<texPath>Things/Item/Resource/VCEF_Koi</texPath>
@@ -571,7 +571,7 @@
 		</ingestible>
 		<tools>
 			<li>
-				<label>raw koi</label>
+				<label>koi</label>
 				<capacities>
 					<li>Blunt</li>
 				</capacities>
@@ -598,7 +598,7 @@
 
 	<ThingDef ParentName="VCEF_RawFishBase">
 		<defName>VCEF_RawLobster</defName>
-		<label>raw lobster</label>
+		<label>lobster</label>
 		<description>Raw lobster. Lobsters are large marine crustaceans. Lobsters have long bodies with muscular tails. Three of their five pairs of legs have claws, including the first pair, which are usually much larger than the others.</description>
 		<graphicData>
 			<texPath>Things/Item/Resource/VCEF_Lobster</texPath>
@@ -614,7 +614,7 @@
 		</ingestible>
 		<tools>
 			<li>
-				<label>raw lobster</label>
+				<label>lobster</label>
 				<capacities>
 					<li>Cut</li>
 				</capacities>
@@ -638,7 +638,7 @@
 
 	<ThingDef ParentName="VCEF_RawFishBase">
 		<defName>VCEF_RawMackerel</defName>
-		<label>raw mackerel</label>
+		<label>mackerel</label>
 		<description>Raw mackerel. Mackerel is a common name applied to a number of different species of pelagic fish, mostly from the family Scombridae. They are found in both temperate and tropical seas, mostly living along the coast or offshore in the oceanic environment.</description>
 		<graphicData>
 			<texPath>Things/Item/Resource/VCEF_Mackerel</texPath>
@@ -654,7 +654,7 @@
 		</ingestible>
 		<tools>
 			<li>
-				<label>raw mackerel</label>
+				<label>mackerel</label>
 				<capacities>
 					<li>Blunt</li>
 				</capacities>
@@ -678,7 +678,7 @@
 
 	<ThingDef ParentName="VCEF_RawFishBase">
 		<defName>VCEF_RawMinnow</defName>
-		<label>raw minnow</label>
+		<label>minnow</label>
 		<description>Raw minnow. Minnow is the common name for a number of species of small freshwater fish, belonging to several genera of the family Cyprinidae.</description>
 		<graphicData>
 			<texPath>Things/Item/Resource/VCEF_Minnow</texPath>
@@ -694,7 +694,7 @@
 		</ingestible>
 		<tools>
 			<li>
-				<label>raw minnow</label>
+				<label>minnow</label>
 				<capacities>
 					<li>Blunt</li>
 				</capacities>
@@ -717,7 +717,7 @@
 
 	<ThingDef ParentName="VCEF_RawFishBase">
 		<defName>VCEF_RawPerch</defName>
-		<label>raw perch</label>
+		<label>perch</label>
 		<description>Raw perch. Perch is a common name for fish of the genus Perca, freshwater gamefish belonging to the family Percidae. The perch lend their name to a large order of vertebrates: the Perciformes. Many species of freshwater gamefish more or less resemble perch, but belong to different genera.</description>
 		<graphicData>
 			<texPath>Things/Item/Resource/VCEF_Perch</texPath>
@@ -733,7 +733,7 @@
 		</ingestible>
 		<tools>
 			<li>
-				<label>raw perch</label>
+				<label>perch</label>
 				<capacities>
 					<li>Blunt</li>
 				</capacities>
@@ -756,7 +756,7 @@
 
 	<ThingDef ParentName="VCEF_RawFishBase">
 		<defName>VCEF_RawPiranha</defName>
-		<label>raw piranha</label>
+		<label>piranha</label>
 		<description>Raw piranha. A piranha is a freshwater fish that inhabits rivers, floodplains, lakes and reservoirs. Although often described as extremely predatory and mainly feeding on fish, their dietary habits vary extensively, and they will also take plant material, leading to their classification as omnivorous.</description>
 		<graphicData>
 			<texPath>Things/Item/Resource/VCEF_Piranha</texPath>
@@ -772,7 +772,7 @@
 		</ingestible>
 		<tools>
 			<li>
-				<label>raw piranha</label>
+				<label>piranha</label>
 				<capacities>
 					<li>Cut</li>
 				</capacities>
@@ -795,7 +795,7 @@
 
 	<ThingDef ParentName="VCEF_RawFishBase">
 		<defName>VCEF_RawPufferfish</defName>
-		<label>raw pufferfish</label>
+		<label>pufferfish</label>
 		<description>Raw pufferfish. Pufferfish are a family of primarily marine and estuarine fish. The majority of pufferfish species are toxic and some are among the most poisonous vertebrates in the world. In certain species, the internal organs, such as the liver, and sometimes their skin, contain tetrodotoxin and are highly toxic to most animals when eaten; nevertheless, the meat of some species is considered a delicacy when prepared by specially trained chefs.</description>
 		<graphicData>
 			<texPath>Things/Item/Resource/VCEF_Pufferfish</texPath>
@@ -811,7 +811,7 @@
 		</ingestible>
 		<tools>
 			<li>
-				<label>raw pufferfish</label>
+				<label>pufferfish</label>
 				<capacities>
 					<li>ToxicBite</li>
 				</capacities>
@@ -834,7 +834,7 @@
 
 	<ThingDef ParentName="VCEF_RawFishBase">
 		<defName>VCEF_RawSalmon</defName>
-		<label>raw salmon</label>
+		<label>salmon</label>
 		<description>Raw salmon. Salmon is the common name for several species of ray-finned fish in the family Salmonidae. Typically, salmon are anadromous: they hatch in fresh water, migrate to the ocean, then return to fresh water to reproduce. However, populations of several species are restricted to fresh water through their lives.</description>
 		<graphicData>
 			<texPath>Things/Item/Resource/VCEF_Salmon</texPath>
@@ -850,7 +850,7 @@
 		</ingestible>
 		<tools>
 			<li>
-				<label>raw salmon</label>
+				<label>salmon</label>
 				<capacities>
 					<li>Blunt</li>
 				</capacities>
@@ -873,7 +873,7 @@
 
 	<ThingDef ParentName="VCEF_RawFishBase">
 		<defName>VCEF_RawSprat</defName>
-		<label>raw sprat</label>
+		<label>sprat</label>
 		<description>Raw sprat. Sprat is the common name applied to a group of forage fish belonging to the genus Sprattus in the family Clupeidae. Like most forage fishes, sprats are highly active, small, oily fish. They travel in large schools with other fish and swim continuously throughout the day.</description>
 		<graphicData>
 			<texPath>Things/Item/Resource/VCEF_Sprat</texPath>
@@ -889,7 +889,7 @@
 		</ingestible>
 		<tools>
 			<li>
-				<label>raw sprat</label>
+				<label>sprat</label>
 				<capacities>
 					<li>Blunt</li>
 				</capacities>
@@ -912,7 +912,7 @@
 
 	<ThingDef ParentName="VCEF_RawFishBase">
 		<defName>VCEF_RawSwordfish</defName>
-		<label>raw swordfish</label>
+		<label>swordfish</label>
 		<description>Raw swordfish. Swordfish, also known as broadbills, are large, highly migratory, predatory fish characterized by a long, flat, pointed bill.</description>
 		<graphicData>
 			<texPath>Things/Item/Resource/VCEF_Swordfish</texPath>
@@ -928,7 +928,7 @@
 		</ingestible>
 		<tools>
 			<li>
-				<label>raw swordfish</label>
+				<label>swordfish</label>
 				<capacities>
 					<li>Stab</li>
 				</capacities>
@@ -951,7 +951,7 @@
 
 	<ThingDef ParentName="VCEF_RawFishBase">
 		<defName>VCEF_RawTrout</defName>
-		<label>raw trout</label>
+		<label>trout</label>
 		<description>Raw trout. Trout is the common name for a number of species of freshwater fish. Most species of trout live in freshwater lakes and rivers exclusively, while there are others, such as the steelhead, which can spend two or three years at sea before returning to fresh water to spawn (a habit more typical of salmon).</description>
 		<graphicData>
 			<texPath>Things/Item/Resource/VCEF_Trout</texPath>
@@ -967,7 +967,7 @@
 		</ingestible>
 		<tools>
 			<li>
-				<label>raw trout</label>
+				<label>trout</label>
 				<capacities>
 					<li>Blunt</li>
 				</capacities>
@@ -990,7 +990,7 @@
 
 	<ThingDef ParentName="VCEF_RawFishBase">
 		<defName>VCEF_RawTuna</defName>
-		<label>raw tuna</label>
+		<label>tuna</label>
 		<description>Raw tuna. Tuna are large saltwater fish. An active and agile predator, the tuna has a sleek, streamlined body, and is among the fastest-swimming pelagic fish. Tuna has been highly prized as a food fish. Besides their commercial value as food, the great size, speed, and power they display as apex predators has attracted the admiration of fishermen, writers, and scientists.</description>
 		<graphicData>
 			<texPath>Things/Item/Resource/VCEF_Tuna</texPath>
@@ -1006,7 +1006,7 @@
 		</ingestible>
 		<tools>
 			<li>
-				<label>raw tuna</label>
+				<label>tuna</label>
 				<capacities>
 					<li>Blunt</li>
 				</capacities>

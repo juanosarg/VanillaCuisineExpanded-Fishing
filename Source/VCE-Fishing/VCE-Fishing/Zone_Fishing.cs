@@ -19,6 +19,8 @@ namespace VCE_Fishing
 
         private static int nextFishingZoneColorIndex = 0;
 
+        public List<ThingDef> fishInThisZone = new List<ThingDef>();
+
 
 
         public override bool IsMultiselectable
@@ -68,19 +70,30 @@ namespace VCE_Fishing
             return result;
         }
 
-
+        public void initialSetZoneFishList()
+        {
+            fishInThisZone.Clear();
+            foreach (FishDef element in DefDatabase<FishDef>.AllDefs.Where(element => element.fishSizeCategory == FishSizeCategory.Medium))
+            {
+                foreach (string biome in element.allowedBiomes)
+                {
+                    if (this.Map.Biome.defName == biome)
+                    {
+                    
+                        fishInThisZone.Add(element.thingDef);
+                    }
+                }
+            }
+        }
 
         public Zone_Fishing()
         {
-            
-            
-           
-
-
+            initialSetZoneFishList();
         }
 
-        public Zone_Fishing(ZoneManager zoneManager) : base("GrowingZone".Translate(), zoneManager)
+        public Zone_Fishing(ZoneManager zoneManager) : base("VCEF_FishingGrowingZone".Translate(), zoneManager)
         {
+            initialSetZoneFishList();
         }
 
         public override void ExposeData()
@@ -94,8 +107,16 @@ namespace VCE_Fishing
         {
             string text = string.Empty;
             text += "VCEF_ZoneSetTo".Translate()+": "+GetFishToCatch().ToString();
-           
-            return text;
+            if (this.fishInThisZone != null) {
+                text += "\nFishes in this zone: ";
+                foreach (ThingDef fish in this.fishInThisZone)
+                {
+                    text += fish.label + ", ";
+                }
+            }
+            
+
+                return text;
         }
 
        

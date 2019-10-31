@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Verse.AI;
 using Verse;
+using System.Linq;
+
 
 
 namespace VCE_Fishing
@@ -47,15 +49,30 @@ namespace VCE_Fishing
             }
 
 
-            
+        }
 
-            
+        public void setZoneFishList(Zone_Fishing zone,FishSizeCategory size)
+        {
+            if (zone.fishInThisZone != null) {
+                zone.fishInThisZone.Clear();
 
-            
+            }
 
+            foreach (FishDef element in DefDatabase<FishDef>.AllDefs.Where(element => element.fishSizeCategory == size))
+            {
+             
 
+               
+                    foreach (string biome in element.allowedBiomes)
+                    {
+                        if (map.Biome.defName == biome)
+                        {
+                            zone.fishInThisZone.Add(element.thingDef);
+                        }
+                    }
+                
 
-
+            }
         }
 
         public override void ProcessInput(Event ev)
@@ -67,19 +84,25 @@ namespace VCE_Fishing
            list.Add(new FloatMenuOption("VCEF_ChooseFishSmallLabel".Translate(), delegate
            {
             zone.SetFishToCatch(FishSizeCategory.Small);
-           
-                          
+            setZoneFishList(zone,FishSizeCategory.Small);
+
+
+
            }, MenuOptionPriority.Default, null, null, 29f, null, null));
             list.Add(new FloatMenuOption("VCEF_ChooseFishMediumLabel".Translate(), delegate
             {
                 zone.SetFishToCatch(FishSizeCategory.Medium);
-              
+                setZoneFishList(zone, FishSizeCategory.Medium);
+
+
 
             }, MenuOptionPriority.Default, null, null, 29f, null, null));
             list.Add(new FloatMenuOption("VCEF_ChooseFishLargeLabel".Translate(), delegate
             {
                 zone.SetFishToCatch(FishSizeCategory.Large);
-              
+                setZoneFishList(zone, FishSizeCategory.Large);
+
+
 
             }, MenuOptionPriority.Default, null, null, 29f, null, null));
 
