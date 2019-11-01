@@ -8,5 +8,6 @@ namespace VCE_Fishing
     class FishableTerrainDef: Def
     {
         public List<string> allowedTerrains;
+        public bool isOcean;
     }
 }

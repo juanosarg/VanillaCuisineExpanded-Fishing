@@ -9,6 +9,8 @@ namespace VCE_Fishing
     class JobDriver_Fish : JobDriver
     {
         public float pawnFishingSkill;
+        public FishSizeCategory sizeAtBeginning;
+        public ThingDef fishCaught;
 
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
@@ -36,6 +38,9 @@ namespace VCE_Fishing
 
         protected override IEnumerable<Toil> MakeNewToils()
         {
+            Zone_Fishing fishingZone = this.Map.zoneManager.ZoneAt(this.TargetA.Cell) as Zone_Fishing;
+            sizeAtBeginning = fishingZone.GetFishToCatch();
+            fishCaught = SelectFishToCatch(fishingZone);
 
             this.FailOnDespawnedNullOrForbidden(TargetIndex.A);
             this.FailOnBurningImmobile(TargetIndex.A);
@@ -84,21 +89,21 @@ namespace VCE_Fishing
             }
             fishToil.defaultCompleteMode = ToilCompleteMode.Delay;
 
-            Zone_Fishing fishingZone = this.Map.zoneManager.ZoneAt(this.TargetA.Cell) as Zone_Fishing;
+            
 
-            switch (fishingZone.GetFishToCatch())
+            switch (sizeAtBeginning)
             {
                 case FishSizeCategory.Small:
-                    fishToil.defaultDuration = 1000;
-                    break;
-                case FishSizeCategory.Medium:
-                    fishToil.defaultDuration = 2000;
-                    break;
-                case FishSizeCategory.Large:
                     fishToil.defaultDuration = 3000;
                     break;
+                case FishSizeCategory.Medium:
+                    fishToil.defaultDuration = 6000;
+                    break;
+                case FishSizeCategory.Large:
+                    fishToil.defaultDuration = 9000;
+                    break;
                 default:
-                    fishToil.defaultDuration = 2000;
+                    fishToil.defaultDuration = 6000;
                     break;
             }
 
@@ -109,7 +114,8 @@ namespace VCE_Fishing
             {
                 initAction = delegate
                 {
-                    Thing newFish = ThingMaker.MakeThing(DefDatabase<ThingDef>.GetNamed("VCEF_RawMackerel", true));
+                    
+                    Thing newFish = ThingMaker.MakeThing(fishCaught);
                     GenSpawn.Spawn(newFish, this.TargetA.Cell - GenAdj.CardinalDirections[0], this.Map);
                     StoragePriority currentPriority = StoreUtility.CurrentStoragePriorityOf(newFish);
                     IntVec3 c;
@@ -141,6 +147,13 @@ namespace VCE_Fishing
 
             
             yield break;
+        }
+
+        public ThingDef SelectFishToCatch(Zone_Fishing fishingZone)
+        {
+            ThingDef fishCaught = fishingZone.fishInThisZone.RandomElement();
+            return fishCaught;
+
         }
 
     }

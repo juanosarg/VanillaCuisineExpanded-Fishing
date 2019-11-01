@@ -67,7 +67,16 @@ namespace VCE_Fishing
                     {
                         if (map.Biome.defName == biome)
                         {
-                            zone.fishInThisZone.Add(element.thingDef);
+
+                            if (zone.isOcean && element.canBeSaltwater)
+                            {
+                                zone.fishInThisZone.Add(element.thingDef);
+                            }
+                            if (!zone.isOcean && element.canBeFreshwater)
+                            {
+                                zone.fishInThisZone.Add(element.thingDef);
+
+                            }
                         }
                     }
                 

@@ -50,6 +50,7 @@
     <Compile Include="Command_SetFishList.cs" />
     <Compile Include="Defs\FishableTerrainDef.cs" />
     <Compile Include="Defs\FishDef.cs" />
+    <Compile Include="FishingMapComponent.cs" />
     <Compile Include="FishSizeCategory.cs" />
     <Compile Include="FishToCatchSettableUtility.cs" />
     <Compile Include="JobDriver_Fish.cs" />

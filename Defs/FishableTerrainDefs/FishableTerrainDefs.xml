@@ -2,15 +2,23 @@
 <Defs>
   
    <VCE_Fishing.FishableTerrainDef>
-      <defName>VCEF_VanillaFishableTerrains</defName>        
+      <defName>VCEF_VanillaFishableTerrainsFresh</defName>  
+	  <isOcean>false</isOcean>
       <allowedTerrains>
          <li>WaterDeep</li>
-		 <li>WaterOceanDeep</li>
 		 <li>WaterMovingChestDeep</li>
 		 <li>WaterShallow</li>
-		 <li>WaterOceanShallow</li>
 		 <li>WaterMovingShallow</li>
 		 <li>Marsh</li>
+      </allowedTerrains>      
+   </VCE_Fishing.FishableTerrainDef>
+   
+   <VCE_Fishing.FishableTerrainDef>
+      <defName>VCEF_VanillaFishableTerrainsOcean</defName>     
+	  <isOcean>true</isOcean>	  
+      <allowedTerrains>         
+		 <li>WaterOceanDeep</li>		
+		 <li>WaterOceanShallow</li>		
       </allowedTerrains>      
    </VCE_Fishing.FishableTerrainDef>
    
