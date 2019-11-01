@@ -35,18 +35,23 @@ namespace VCE_Fishing
                     {
                         Log.ErrorOnce("Fishing zone has 0 cells (this should never happen): " + fishingZone, -563487, false);
                     }
-                    if (fishingZone.allowFishing) { 
-                        if (!fishingZone.ContainsStaticFire)
-                        {
-                            if (pawn.CanReserveAndReach(fishingZone.Cells[0], PathEndMode.OnCell, maxDanger))
+                    if (fishingZone.allowFishing) {
+                        if (fishingZone.isZoneBigEnough) {
+                            if (!fishingZone.ContainsStaticFire)
                             {
-                                for (int k = 0; k < fishingZone.cells.Count; k++)
+                                if (pawn.CanReserveAndReach(fishingZone.Cells[0], PathEndMode.OnCell, maxDanger))
                                 {
-                                    yield return fishingZone.cells[k];
-                                }
+                                    for (int k = 0; k < fishingZone.cells.Count; k++)
+                                    {
+                                        yield return fishingZone.cells[k];
+                                    }
 
+                                }
                             }
+
+
                         }
+                        
                      }
                     
                 }
@@ -56,7 +61,9 @@ namespace VCE_Fishing
 
         public override Job JobOnCell(Pawn pawn, IntVec3 c, bool forced = false)
         {
+           
             LocalTargetInfo target = c;
+           
             if (!pawn.CanReserve(target, 1, -1, null, false))
             {
                 return null;

@@ -17,6 +17,9 @@ namespace VCE_Fishing
 
         public bool isOcean = false;
 
+        public bool isZoneBigEnough = false;
+
+
         private static List<Color> fishingZoneColors = new List<Color>();
 
         private static int nextFishingZoneColorIndex = 0;
@@ -76,6 +79,11 @@ namespace VCE_Fishing
 
         public void initialSetZoneFishList()
         {
+            if (this.cells.Count < 25)
+            {
+                isZoneBigEnough = false;
+            }
+            else isZoneBigEnough = true;
             fishInThisZone.Clear();
             foreach (FishDef element in DefDatabase<FishDef>.AllDefs.Where(element => element.fishSizeCategory == this.fishSizeToCatch))
             {
@@ -99,7 +107,7 @@ namespace VCE_Fishing
 
         public Zone_Fishing()
         {
-            initialSetZoneFishList();
+           
         }
 
         public Zone_Fishing(ZoneManager zoneManager) : base("VCEF_FishingGrowingZone".Translate(), zoneManager)
@@ -110,32 +118,45 @@ namespace VCE_Fishing
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Deep.Look<FishSizeCategory>(ref this.fishSizeToCatch, "fishSizeToCatch");
+            Scribe_Collections.Look<ThingDef>(ref this.fishInThisZone, "fishInThisZone", LookMode.Undefined, new object[0]);
+            Scribe_Values.Look<FishSizeCategory>(ref this.fishSizeToCatch, "fishSizeToCatch", FishSizeCategory.Medium, false);
             Scribe_Values.Look<bool>(ref this.allowFishing, "allowFishing", true, false);
-            Scribe_Values.Look<bool>(ref this.isOcean, "isOcean", true, false);
+            Scribe_Values.Look<bool>(ref this.isOcean, "isOcean", false, false);
+            Scribe_Values.Look<bool>(ref this.isZoneBigEnough, "isZoneBigEnough", true, false);
+
 
         }
+
 
         public override string GetInspectString()
         {
             string text = string.Empty;
-            text += "VCEF_ZoneSetTo".Translate()+": "+GetFishToCatch().ToString();
-            if (this.fishInThisZone != null) {
-                text += "\n"+ "VCEF_FishesInThisZone".Translate();
-                IList<string> fishInThisZoneString = new List<string>();
-                foreach (ThingDef fish in this.fishInThisZone)
+            if (isZoneBigEnough) {
+                text += "VCEF_ZoneSetTo".Translate() + ": " + GetFishToCatch().ToString();
+                if (this.fishInThisZone != null)
                 {
-                    fishInThisZoneString.Add(fish.label);
+                    text += "\n" + "VCEF_FishesInThisZone".Translate();
+                    IList<string> fishInThisZoneString = new List<string>();
+                    foreach (ThingDef fish in this.fishInThisZone)
+                    {
+                        fishInThisZoneString.Add(fish.label);
+                    }
+                    string[] array = fishInThisZoneString.ToArray();
+                    string joined = string.Join(", ", array);
+                    text += joined;
                 }
-                string[] array = fishInThisZoneString.ToArray();
-                string joined = string.Join(", ", array);
-                text += joined;
-            }
-            text += "\n" + "VCEF_IsZoneOceanZone".Translate();
-            if (this.isOcean)
+                text += "\n" + "VCEF_IsZoneOceanZone".Translate();
+                if (this.isOcean)
+                {
+                    text += "VCEF_Yes".Translate();
+                }
+                else text += "VCEF_No".Translate();
+
+            } else
             {
-                text += "VCEF_Yes".Translate();
-            } else text += "VCEF_No".Translate();
+                text += "VCEF_ZoneTooSmall".Translate();
+            }
+            
 
             return text;
         }

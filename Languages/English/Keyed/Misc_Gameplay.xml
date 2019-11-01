@@ -22,6 +22,7 @@
 	<VCEF_IsZoneOceanZone>Oceanic fishing zone: </VCEF_IsZoneOceanZone>
 	<VCEF_Yes>Yes</VCEF_Yes>
 	<VCEF_No>No</VCEF_No>
+	<VCEF_ZoneTooSmall>This zone is too small. Fishing zones need to be at least 25 tiles to be valid</VCEF_ZoneTooSmall>
 
 
 

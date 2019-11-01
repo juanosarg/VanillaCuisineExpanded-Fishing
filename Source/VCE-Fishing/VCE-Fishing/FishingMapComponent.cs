@@ -29,6 +29,12 @@ namespace VCE_Fishing
                 {
                     
                     Zone_Fishing zoneFishing = zone as Zone_Fishing;
+
+                    if (zoneFishing.cells.Count < 25)
+                    {
+                        zoneFishing.isZoneBigEnough = false;
+                    } else zoneFishing.isZoneBigEnough = true;
+
                     int index = 0;
                     while (index < zoneFishing.cells.Count)
                     {
