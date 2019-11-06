@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Command_SetFishList.cs" />
+    <Compile Include="Defs\BiomeTempDef.cs" />
     <Compile Include="Defs\FishableTerrainDef.cs" />
     <Compile Include="Defs\FishDef.cs" />
     <Compile Include="FishingMapComponent.cs" />

@@ -60,28 +60,36 @@ namespace VCE_Fishing
 
             foreach (FishDef element in DefDatabase<FishDef>.AllDefs.Where(element => element.fishSizeCategory == size))
             {
-             
+                foreach (string biomeTemp in element.allowedBiomes)
+                {
 
-               
-                    foreach (string biome in element.allowedBiomes)
+                    foreach (BiomeTempDef biometempdef in DefDatabase<BiomeTempDef>.AllDefs.Where(biometempdef => biometempdef.biomeTempLabel == biomeTemp))
                     {
-                        if (map.Biome.defName == biome)
+                        foreach (string biome in biometempdef.biomes)
                         {
 
-                            if (zone.isOcean && element.canBeSaltwater)
-                            {
-                                zone.fishInThisZone.Add(element.thingDef);
-                            }
-                            if (!zone.isOcean && element.canBeFreshwater)
-                            {
-                                zone.fishInThisZone.Add(element.thingDef);
 
+                            if (map.Biome.defName == biome)
+                            {
+
+                                if (zone.isOcean && element.canBeSaltwater)
+                                {
+                                    zone.fishInThisZone.Add(element.thingDef);
+                                }
+                                if (!zone.isOcean && element.canBeFreshwater)
+                                {
+                                    zone.fishInThisZone.Add(element.thingDef);
+
+                                }
                             }
                         }
                     }
-                
-
+                }
             }
+
+
+
+           
         }
 
         public override void ProcessInput(Event ev)

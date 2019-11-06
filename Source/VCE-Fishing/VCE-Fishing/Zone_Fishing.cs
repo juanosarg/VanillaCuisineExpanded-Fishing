@@ -87,18 +87,27 @@ namespace VCE_Fishing
             fishInThisZone.Clear();
             foreach (FishDef element in DefDatabase<FishDef>.AllDefs.Where(element => element.fishSizeCategory == this.fishSizeToCatch))
             {
-                foreach (string biome in element.allowedBiomes)
+                foreach (string biomeTemp in element.allowedBiomes)
                 {
-                    if (this.Map.Biome.defName == biome)
-                    {
-                        if (this.isOcean && element.canBeSaltwater)
-                        {
-                            this.fishInThisZone.Add(element.thingDef);
-                        }
-                        if (!this.isOcean && element.canBeFreshwater)
-                        {
-                            this.fishInThisZone.Add(element.thingDef);
 
+                    foreach (BiomeTempDef biometempdef in DefDatabase<BiomeTempDef>.AllDefs.Where(biometempdef => biometempdef.biomeTempLabel == biomeTemp))
+                    {
+                        foreach (string biome in biometempdef.biomes)
+                        {
+
+
+                            if (this.Map.Biome.defName == biome)
+                            {
+                                if (this.isOcean && element.canBeSaltwater)
+                                {
+                                    this.fishInThisZone.Add(element.thingDef);
+                                }
+                                if (!this.isOcean && element.canBeFreshwater)
+                                {
+                                    this.fishInThisZone.Add(element.thingDef);
+
+                                }
+                            }
                         }
                     }
                 }
