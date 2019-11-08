@@ -37,17 +37,23 @@ namespace VCE_Fishing
                     }
                     if (fishingZone.allowFishing) {
                         if (fishingZone.isZoneBigEnough) {
-                            if (!fishingZone.ContainsStaticFire)
+                            if (!fishingZone.isZoneEmpty)
                             {
-                                if (pawn.CanReserveAndReach(fishingZone.Cells[0], PathEndMode.OnCell, maxDanger))
+                                if (!fishingZone.ContainsStaticFire)
                                 {
-                                    for (int k = 0; k < fishingZone.cells.Count; k++)
+                                    if (pawn.CanReserveAndReach(fishingZone.Cells[0], PathEndMode.OnCell, maxDanger))
                                     {
-                                        yield return fishingZone.cells[k];
-                                    }
+                                        for (int k = 0; k < fishingZone.cells.Count; k++)
+                                        {
+                                            yield return fishingZone.cells[k];
+                                        }
 
+                                    }
                                 }
+
+
                             }
+                            
 
 
                         }

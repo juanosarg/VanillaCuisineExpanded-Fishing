@@ -13,6 +13,7 @@ namespace VCE_Fishing
         public bool canBeFreshwater;
         public bool canBeSaltwater;
         public FishSizeCategory fishSizeCategory;
+        public int baseFishingYield = 1;
 
     }
 }

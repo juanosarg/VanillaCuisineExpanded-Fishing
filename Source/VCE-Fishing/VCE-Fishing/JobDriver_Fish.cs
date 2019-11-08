@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using Verse;
 using Verse.AI;
 using RimWorld;
+using System.Linq;
+
 
 namespace VCE_Fishing
 {
@@ -11,6 +13,9 @@ namespace VCE_Fishing
         public float pawnFishingSkill = 10;
         public FishSizeCategory sizeAtBeginning = FishSizeCategory.Medium;
         public ThingDef fishCaught = DefDatabase<ThingDef>.GetNamed("VCEF_RawMackerel");
+        public int fishAmount = 1;
+        public int fishAmountWithSkill;
+        public int minFishingSkillForMinYield = 6;
         public float skillGainperTick = 0.025f;
         public float fishingSkill = 1;
         Zone_Fishing fishingZone;
@@ -25,6 +30,8 @@ namespace VCE_Fishing
         {
             base.ExposeData();
             Scribe_Values.Look<float>(ref this.pawnFishingSkill, "pawnFishingSkill", 0f, true);
+            Scribe_Values.Look<int>(ref this.fishAmount, "fishAmount", 1, true);
+            Scribe_Values.Look<int>(ref this.fishAmountWithSkill, "fishAmountWithSkill", 1, true);
             Scribe_Values.Look<FishSizeCategory>(ref this.sizeAtBeginning, "sizeAtBeginning", FishSizeCategory.Medium, true);
             Scribe_Defs.Look<ThingDef>(ref this.fishCaught, "fishCaught");
             Scribe_References.Look<Zone_Fishing>(ref this.fishingZone, "fishingZone");
@@ -39,7 +46,21 @@ namespace VCE_Fishing
             fishingZone = this.Map.zoneManager.ZoneAt(this.job.targetA.Cell) as Zone_Fishing;
             sizeAtBeginning = fishingZone.GetFishToCatch();
             fishCaught = SelectFishToCatch(fishingZone);
-            pawnFishingSkill = this.pawn.skills.AverageOfRelevantSkillsFor(DefDatabase<WorkTypeDef>.GetNamed("VCEF_Fishing"));
+            foreach (FishDef element in DefDatabase<FishDef>.AllDefs.Where(element => element.thingDef == fishCaught))
+            {
+                fishAmount = element.baseFishingYield;
+            }
+
+            fishingSkill = this.pawn.skills.AverageOfRelevantSkillsFor(DefDatabase<WorkTypeDef>.GetNamed("VCEF_Fishing"));
+
+            if (fishingSkill>= minFishingSkillForMinYield)
+            {
+                fishAmountWithSkill = fishAmount + (int)((fishingSkill - minFishingSkillForMinYield) / 2);
+            } else
+            {
+                fishAmountWithSkill = (int)(fishAmount - (minFishingSkillForMinYield-fishingSkill));
+            }
+            if (fishAmountWithSkill < 1) { fishAmountWithSkill = 1; }
 
             Pawn pawn = this.pawn;
             LocalTargetInfo target = this.job.targetA;
@@ -139,8 +160,7 @@ namespace VCE_Fishing
                         fishToil.defaultDuration = mediumFishDurationFactor;
                         break;
                 }
-                fishToil.defaultDuration = mediumFishDurationFactor;
-
+               
                 //Log.Message(fishToil.defaultDuration.ToString());       
                 fishToil.FailOnCannotTouch(TargetIndex.A, PathEndMode.Touch);
                 yield return fishToil.WithProgressBarToilDelay(TargetIndex.A, true);
@@ -150,6 +170,7 @@ namespace VCE_Fishing
                     {
 
                         Thing newFish = ThingMaker.MakeThing(fishCaught);
+                        newFish.stackCount = fishAmountWithSkill;
                         GenSpawn.Spawn(newFish, this.TargetA.Cell - GenAdj.CardinalDirections[0], this.Map);
                         StoragePriority currentPriority = StoreUtility.CurrentStoragePriorityOf(newFish);
                         IntVec3 c;

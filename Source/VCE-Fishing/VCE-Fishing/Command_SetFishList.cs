@@ -86,10 +86,15 @@ namespace VCE_Fishing
                     }
                 }
             }
+            if (zone.fishInThisZone.Count > 0)
+            {
+                zone.isZoneEmpty = false;
+            }
+            else zone.isZoneEmpty = true;
 
 
 
-           
+
         }
 
         public override void ProcessInput(Event ev)

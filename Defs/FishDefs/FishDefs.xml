@@ -28,7 +28,8 @@
 		<allowedBiomes>
 			<li>Cold</li>
 			<li>Warm</li>		
-		</allowedBiomes>  		
+		</allowedBiomes>
+		<baseFishingYield>40</baseFishingYield>  		
 	</VCE_Fishing.FishDef>
 	
 	<VCE_Fishing.FishDef>
@@ -40,7 +41,8 @@
 		<allowedBiomes>
 			<li>Hot</li>
 			<li>Warm</li>		
-		</allowedBiomes>  		
+		</allowedBiomes>  	
+		<baseFishingYield>8</baseFishingYield>		
 	</VCE_Fishing.FishDef>
 	
 	<VCE_Fishing.FishDef>
@@ -51,7 +53,8 @@
 		<canBeSaltwater>true</canBeSaltwater>
 		<allowedBiomes>	
 			<li>Warm</li>			
-		</allowedBiomes>  		
+		</allowedBiomes>  	
+		<baseFishingYield>40</baseFishingYield>		
 	</VCE_Fishing.FishDef>
 	
 	<VCE_Fishing.FishDef>
@@ -65,6 +68,7 @@
 			<li>Cold</li>
 			<li>Hot</li>			
 		</allowedBiomes>  		
+		<baseFishingYield>16</baseFishingYield>
 	</VCE_Fishing.FishDef>
 	
 	<!--  Medium, marine and freshwater -->
@@ -79,6 +83,7 @@
 			<li>Warm</li>
 			<li>Cold</li>
 		</allowedBiomes>  		
+		<baseFishingYield>16</baseFishingYield>
 	</VCE_Fishing.FishDef>
 	
 	<VCE_Fishing.FishDef>
@@ -91,7 +96,8 @@
 			<li>Warm</li>
 			<li>Cold</li>
 			<li>Hot</li>
-		</allowedBiomes>  		
+		</allowedBiomes>  	
+		<baseFishingYield>16</baseFishingYield>		
 	</VCE_Fishing.FishDef>
 	
 	<VCE_Fishing.FishDef>
@@ -104,7 +110,9 @@
 			<li>Warm</li>
 			<li>Cold</li>
 			<li>Hot</li>	
-		</allowedBiomes>  		
+		</allowedBiomes>  	
+		<baseFishingYield>16</baseFishingYield>		
+		
 	</VCE_Fishing.FishDef>	
 	
 	<!--  Large, marine and freshwater -->
@@ -119,7 +127,9 @@
 			<li>Warm</li>
 			<li>Cold</li>
 			<li>Hot</li>
-		</allowedBiomes>  		
+		</allowedBiomes>  	
+		<baseFishingYield>5</baseFishingYield>		
+		
 	</VCE_Fishing.FishDef>
 	
 	<!--  Small, freshwater  -->
@@ -132,7 +142,9 @@
 		<canBeSaltwater>false</canBeSaltwater>
 		<allowedBiomes>
 			<li>Warm</li>		
-		</allowedBiomes>  		
+		</allowedBiomes>  	
+		<baseFishingYield>40</baseFishingYield>		
+		
 	</VCE_Fishing.FishDef>	
 	
 	<VCE_Fishing.FishDef>
@@ -145,7 +157,9 @@
 			<li>Warm</li>
 			<li>Cold</li>
 			<li>Hot</li>					
-		</allowedBiomes>  		
+		</allowedBiomes>  
+		<baseFishingYield>40</baseFishingYield>		
+		
 	</VCE_Fishing.FishDef>	
 	
 	<!--  Medium, freshwater  -->
@@ -160,7 +174,9 @@
 			<li>Warm</li>
 			<li>Cold</li>
 			<li>Hot</li>	
-		</allowedBiomes>  		
+		</allowedBiomes>  
+		<baseFishingYield>8</baseFishingYield>		
+		
 	</VCE_Fishing.FishDef>	
 	
 	<VCE_Fishing.FishDef>
@@ -173,7 +189,9 @@
 			<li>Warm</li>
 			<li>Cold</li>
 					
-		</allowedBiomes>  		
+		</allowedBiomes>  	
+		<baseFishingYield>16</baseFishingYield>		
+		
 	</VCE_Fishing.FishDef>	
 	
 	<VCE_Fishing.FishDef>
@@ -185,7 +203,9 @@
 		<allowedBiomes>	
 			<li>Warm</li>
 			
-		</allowedBiomes>  		
+		</allowedBiomes>  
+		<baseFishingYield>16</baseFishingYield>		
+		
 	</VCE_Fishing.FishDef>	
 
 	
@@ -202,7 +222,9 @@
 			<li>Warm</li>
 			<li>Cold</li>
 					
-		</allowedBiomes>  		
+		</allowedBiomes>  	
+		<baseFishingYield>8</baseFishingYield>		
+		
 	</VCE_Fishing.FishDef>	
 	
 	<!--  Small, marine  -->
@@ -217,7 +239,9 @@
 			<li>Warm</li>
 			<li>Cold</li>
 			<li>Hot</li>
-		</allowedBiomes>  		
+		</allowedBiomes>  	
+		<baseFishingYield>20</baseFishingYield>		
+		
 	</VCE_Fishing.FishDef>	
 	
 	<VCE_Fishing.FishDef>
@@ -229,7 +253,9 @@
 		<allowedBiomes>
 			<li>Warm</li>
 			<li>Cold</li>
-		</allowedBiomes>  		
+		</allowedBiomes>  	
+		<baseFishingYield>20</baseFishingYield>		
+		
 	</VCE_Fishing.FishDef>	
 	
 	<VCE_Fishing.FishDef>
@@ -242,7 +268,9 @@
 			<li>Warm</li>
 			<li>Cold</li>
 			<li>Hot</li>	
-		</allowedBiomes>  		
+		</allowedBiomes>  
+		<baseFishingYield>40</baseFishingYield>		
+		
 	</VCE_Fishing.FishDef>	
 	
 	<!--  Medium, marine  -->
@@ -257,7 +285,9 @@
 			<li>Warm</li>
 			<li>Cold</li>
 			<li>Hot</li>	
-		</allowedBiomes>  		
+		</allowedBiomes>  	
+		<baseFishingYield>16</baseFishingYield>		
+		
 	</VCE_Fishing.FishDef>	
 	
 	<VCE_Fishing.FishDef>
@@ -270,7 +300,9 @@
 			<li>Warm</li>
 			<li>Cold</li>
 			
-		</allowedBiomes>  		
+		</allowedBiomes>  
+		<baseFishingYield>16</baseFishingYield>		
+		
 	</VCE_Fishing.FishDef>	
 
 	<VCE_Fishing.FishDef>
@@ -283,7 +315,9 @@
 			<li>Warm</li>
 			<li>Hot</li>
 			
-		</allowedBiomes>  		
+		</allowedBiomes>  	
+		<baseFishingYield>16</baseFishingYield>		
+		
 	</VCE_Fishing.FishDef>	
 	
 	<VCE_Fishing.FishDef>
@@ -297,7 +331,9 @@
 			<li>Cold</li>
 			<li>Hot</li>	
 			
-		</allowedBiomes>  		
+		</allowedBiomes>  	
+		<baseFishingYield>16</baseFishingYield>		
+		
 	</VCE_Fishing.FishDef>	
 	
 	<!--  Large, marine  -->
@@ -312,7 +348,9 @@
 			<li>Warm</li>
 			<li>Cold</li>
 			
-		</allowedBiomes>  		
+		</allowedBiomes>  
+		<baseFishingYield>15</baseFishingYield>		
+		
 	</VCE_Fishing.FishDef>	
 	
 	<VCE_Fishing.FishDef>
@@ -325,7 +363,9 @@
 
 			<li>Cold</li>
 			
-		</allowedBiomes>  		
+		</allowedBiomes>  	
+		<baseFishingYield>5</baseFishingYield>		
+		
 	</VCE_Fishing.FishDef>	
 	
 	<VCE_Fishing.FishDef>
@@ -338,7 +378,9 @@
 
 			<li>Cold</li>
 		
-		</allowedBiomes>  		
+		</allowedBiomes>  	
+		<baseFishingYield>5</baseFishingYield>		
+		
 	</VCE_Fishing.FishDef>	
 	
 	<VCE_Fishing.FishDef>
@@ -351,7 +393,9 @@
 			<li>Warm</li>
 			<li>Cold</li>
 		
-		</allowedBiomes>  		
+		</allowedBiomes>  	
+		<baseFishingYield>12</baseFishingYield>		
+		
 	</VCE_Fishing.FishDef>	
 	
 

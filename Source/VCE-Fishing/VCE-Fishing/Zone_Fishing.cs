@@ -19,6 +19,8 @@ namespace VCE_Fishing
 
         public bool isZoneBigEnough = false;
 
+        public bool isZoneEmpty = true;
+
 
         private static List<Color> fishingZoneColors = new List<Color>();
 
@@ -112,6 +114,10 @@ namespace VCE_Fishing
                     }
                 }
             }
+            if (fishInThisZone.Count > 0)
+            {
+                isZoneEmpty = false;
+            } else isZoneEmpty = true;
         }
 
         public Zone_Fishing()
@@ -132,6 +138,8 @@ namespace VCE_Fishing
             Scribe_Values.Look<bool>(ref this.allowFishing, "allowFishing", true, false);
             Scribe_Values.Look<bool>(ref this.isOcean, "isOcean", false, false);
             Scribe_Values.Look<bool>(ref this.isZoneBigEnough, "isZoneBigEnough", true, false);
+            Scribe_Values.Look<bool>(ref this.isZoneEmpty, "isZoneEmpty", true, false);
+
 
 
         }
@@ -141,25 +149,34 @@ namespace VCE_Fishing
         {
             string text = string.Empty;
             if (isZoneBigEnough) {
-                text += "VCEF_ZoneSetTo".Translate() + ": " + GetFishToCatch().ToString();
-                if (this.fishInThisZone != null)
-                {
-                    text += "\n" + "VCEF_FishesInThisZone".Translate();
-                    IList<string> fishInThisZoneString = new List<string>();
-                    foreach (ThingDef fish in this.fishInThisZone)
+                if (!isZoneEmpty) {
+                    text += "VCEF_ZoneSetTo".Translate() + ": " + GetFishToCatch().ToString();
+                    if (this.fishInThisZone != null)
                     {
-                        fishInThisZoneString.Add(fish.label);
+                        text += "\n" + "VCEF_FishesInThisZone".Translate();
+                        IList<string> fishInThisZoneString = new List<string>();
+                        foreach (ThingDef fish in this.fishInThisZone)
+                        {
+                            fishInThisZoneString.Add(fish.label);
+                        }
+                        string[] array = fishInThisZoneString.ToArray();
+                        string joined = string.Join(", ", array);
+                        text += joined;
                     }
-                    string[] array = fishInThisZoneString.ToArray();
-                    string joined = string.Join(", ", array);
-                    text += joined;
+                    text += "\n" + "VCEF_IsZoneOceanZone".Translate();
+                    if (this.isOcean)
+                    {
+                        text += "VCEF_Yes".Translate();
+                    }
+                    else text += "VCEF_No".Translate();
+
+
                 }
-                text += "\n" + "VCEF_IsZoneOceanZone".Translate();
-                if (this.isOcean)
+                else
                 {
-                    text += "VCEF_Yes".Translate();
+                    text += "VCEF_NoFish".Translate();
                 }
-                else text += "VCEF_No".Translate();
+
 
             } else
             {
