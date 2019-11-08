@@ -244,19 +244,7 @@
 		
 	</VCE_Fishing.FishDef>	
 	
-	<VCE_Fishing.FishDef>
-		<defName>VCEF_HalibutFish</defName>
-		<thingDef>VCEF_RawHalibut</thingDef>    
-		<fishSizeCategory>Small</fishSizeCategory>
-		<canBeFreshwater>false</canBeFreshwater>
-		<canBeSaltwater>true</canBeSaltwater>
-		<allowedBiomes>
-			<li>Warm</li>
-			<li>Cold</li>
-		</allowedBiomes>  	
-		<baseFishingYield>20</baseFishingYield>		
-		
-	</VCE_Fishing.FishDef>	
+	
 	
 	<VCE_Fishing.FishDef>
 		<defName>VCEF_SpratFish</defName>
@@ -338,6 +326,20 @@
 	
 	<!--  Large, marine  -->
 
+	<VCE_Fishing.FishDef>
+		<defName>VCEF_HalibutFish</defName>
+		<thingDef>VCEF_RawHalibut</thingDef>    
+		<fishSizeCategory>Large</fishSizeCategory>
+		<canBeFreshwater>false</canBeFreshwater>
+		<canBeSaltwater>true</canBeSaltwater>
+		<allowedBiomes>
+			<li>Warm</li>
+			<li>Cold</li>
+		</allowedBiomes>  	
+		<baseFishingYield>15</baseFishingYield>		
+		
+	</VCE_Fishing.FishDef>	
+	
 	<VCE_Fishing.FishDef>
 		<defName>VCEF_CodFish</defName>
 		<thingDef>VCEF_RawCod</thingDef>    

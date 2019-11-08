@@ -483,9 +483,9 @@
 			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
 		<statBases>
-			<Mass>0.02</Mass>
-			<Nutrition>0.02</Nutrition>
-			<MarketValue>2</MarketValue>
+			<Mass>0.15</Mass>
+			<Nutrition>0.08</Nutrition>
+			<MarketValue>7</MarketValue>
 		</statBases>
 		<ingestible>
 			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
