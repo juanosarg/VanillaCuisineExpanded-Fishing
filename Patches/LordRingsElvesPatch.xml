@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="ModCheck.isModLoaded">
+				<modName>Lord of the Rims - Elves</modName>
+				<yourMod>Vanilla Cuisine Expanded - Fishing</yourMod>
+			</li>
+
+			<li Class="PatchOperationAdd"> 
+				<xpath>/Defs/VCE_Fishing.BiomeTempDef[defName="VCEF_BiomeWarm"]/biomes</xpath>
+				<value>
+					<li>LotRE_MallornForest</li>
+						
+				</value>
+			</li>
+
+
+			
+			
+		</operations>
+	</Operation>
+
+
+</Patch>
+
