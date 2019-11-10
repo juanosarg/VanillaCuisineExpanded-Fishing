@@ -14,6 +14,7 @@ namespace VCE_Fishing
         public bool canBeSaltwater;
         public FishSizeCategory fishSizeCategory;
         public int baseFishingYield = 1;
+        public float commonality = 1f;
 
     }
 }

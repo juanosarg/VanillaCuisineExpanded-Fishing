@@ -143,7 +143,7 @@
 		<allowedBiomes>
 			<li>Warm</li>		
 		</allowedBiomes>  	
-		<baseFishingYield>40</baseFishingYield>		
+		<baseFishingYield>20</baseFishingYield>		
 		
 	</VCE_Fishing.FishDef>	
 	
@@ -400,7 +400,84 @@
 		
 	</VCE_Fishing.FishDef>	
 	
-
+	
+	
+	<!-- Special items (once every 100 catches on average -> 1%) -->
+	
+	<VCE_Fishing.FishDef>
+		<defName>VCEF_SpecialWood</defName>
+		<thingDef>WoodLog</thingDef>    
+		<fishSizeCategory>Special</fishSizeCategory>
+		<canBeFreshwater>true</canBeFreshwater>
+		<canBeSaltwater>true</canBeSaltwater>
+		<allowedBiomes>
+			<li>Warm</li>
+			<li>Cold</li>
+			<li>Hot</li>		
+		</allowedBiomes>  	
+		<commonality>1.0</commonality>		
+		<baseFishingYield>15</baseFishingYield>		
+	</VCE_Fishing.FishDef>	
+	
+	<VCE_Fishing.FishDef>
+		<defName>VCEF_SpecialBeer</defName>
+		<thingDef>Beer</thingDef>    
+		<fishSizeCategory>Special</fishSizeCategory>
+		<canBeFreshwater>true</canBeFreshwater>
+		<canBeSaltwater>true</canBeSaltwater>
+		<allowedBiomes>
+			<li>Warm</li>
+			<li>Cold</li>
+			<li>Hot</li>		
+		</allowedBiomes>  	
+		<commonality>1.0</commonality>		
+		<baseFishingYield>1</baseFishingYield>		
+	</VCE_Fishing.FishDef>	
+	
+	<VCE_Fishing.FishDef>
+		<defName>VCEF_SpecialSteel</defName>
+		<thingDef>Steel</thingDef>    
+		<fishSizeCategory>Special</fishSizeCategory>
+		<canBeFreshwater>true</canBeFreshwater>
+		<canBeSaltwater>true</canBeSaltwater>
+		<allowedBiomes>
+			<li>Warm</li>
+			<li>Cold</li>
+			<li>Hot</li>		
+		</allowedBiomes>  	
+		<commonality>0.75</commonality>			
+		<baseFishingYield>15</baseFishingYield>		
+	</VCE_Fishing.FishDef>	
+	
+	<VCE_Fishing.FishDef>
+		<defName>VCEF_SpecialGold</defName>
+		<thingDef>Gold</thingDef>    
+		<fishSizeCategory>Special</fishSizeCategory>
+		<canBeFreshwater>true</canBeFreshwater>
+		<canBeSaltwater>true</canBeSaltwater>
+		<allowedBiomes>
+			<li>Warm</li>
+			<li>Cold</li>
+			<li>Hot</li>		
+		</allowedBiomes>  	
+		<commonality>0.5</commonality>			
+		<baseFishingYield>10</baseFishingYield>		
+	</VCE_Fishing.FishDef>	
+	
+	<VCE_Fishing.FishDef>
+		<defName>VCEF_SpecialJade</defName>
+		<thingDef>Jade</thingDef>    
+		<fishSizeCategory>Special</fishSizeCategory>
+		<canBeFreshwater>true</canBeFreshwater>
+		<canBeSaltwater>true</canBeSaltwater>
+		<allowedBiomes>
+			<li>Warm</li>
+			<li>Cold</li>
+			<li>Hot</li>		
+		</allowedBiomes>  	
+		<commonality>0.1</commonality>			
+		<baseFishingYield>10</baseFishingYield>		
+	</VCE_Fishing.FishDef>	
 
 
 

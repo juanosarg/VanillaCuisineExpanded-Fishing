@@ -20,6 +20,8 @@ namespace VCE_Fishing
         public float fishingSkill = 1;
         Zone_Fishing fishingZone;
 
+        private System.Random rand = new System.Random();
+
 
 
         public const int smallFishDurationFactor = 3000;
@@ -209,8 +211,21 @@ namespace VCE_Fishing
         public ThingDef SelectFishToCatch(Zone_Fishing fishingZone)
         {
             if (fishingZone.fishInThisZone.Count > 0) {
-                ThingDef fishCaught = fishingZone.fishInThisZone.RandomElement();
-                return fishCaught;
+                if (rand.NextDouble() > 0.99) {
+                    List<FishDef> tempSpecialFish = new List<FishDef>();
+                    tempSpecialFish.Clear();
+                    foreach (FishDef element in DefDatabase<FishDef>.AllDefs.Where(element => element.fishSizeCategory == FishSizeCategory.Special))
+                    {
+                        tempSpecialFish.Add(element);
+                    }
+                    return tempSpecialFish.RandomElementByWeight(((FishDef s) => s.commonality)).thingDef;
+
+                } else {
+                    ThingDef fishCaught = fishingZone.fishInThisZone.RandomElement();
+                    return fishCaught;
+
+                }
+                
             } else return null;
 
 

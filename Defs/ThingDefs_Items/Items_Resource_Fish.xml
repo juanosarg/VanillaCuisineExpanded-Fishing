@@ -363,7 +363,7 @@
 		</graphicData>
 		<statBases>
 			<Mass>0.01</Mass>
-			<Nutrition>0.01</Nutrition>
+			<Nutrition>0.02</Nutrition>
 			<MarketValue>10</MarketValue>
 		</statBases>
 		<ingestible>
