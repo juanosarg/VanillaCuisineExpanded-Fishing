@@ -44,6 +44,10 @@ namespace VCE_Fishing
                     {
                         return true;
 
+                    }else if ((allowed == terrainDef.defName) && element.addEvenIfNotPassable)
+                    {
+                        return true;
+
                     }
 
                 }

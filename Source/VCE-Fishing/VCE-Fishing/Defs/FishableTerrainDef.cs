@@ -9,5 +9,6 @@ namespace VCE_Fishing
     {
         public List<string> allowedTerrains;
         public bool isOcean;
+        public bool addEvenIfNotPassable = false;
     }
 }
