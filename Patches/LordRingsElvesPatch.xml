@@ -5,7 +5,7 @@
 		<operations>
 			<li Class="ModCheck.isModLoaded">
 				<modName>Lord of the Rims - Elves</modName>
-				<yourMod>Vanilla Cuisine Expanded - Fishing</yourMod>
+				<yourMod>Vanilla Fishing Expanded</yourMod>
 			</li>
 
 			<li Class="PatchOperationAdd"> 
