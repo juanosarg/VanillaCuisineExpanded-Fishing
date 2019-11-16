@@ -52,7 +52,7 @@ namespace VCE_Fishing
             {
                 fishAmount = element.baseFishingYield;
             }
-            fishingZone.someoneFishing = true;
+            //fishingZone.someoneFishing = true;
             fishingSkill = this.pawn.skills.AverageOfRelevantSkillsFor(DefDatabase<WorkTypeDef>.GetNamed("VCEF_Fishing"));
 
             if (fishingSkill>= minFishingSkillForMinYield)
