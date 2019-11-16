@@ -52,7 +52,7 @@ namespace VCE_Fishing
             {
                 fishAmount = element.baseFishingYield;
             }
-
+            fishingZone.someoneFishing = true;
             fishingSkill = this.pawn.skills.AverageOfRelevantSkillsFor(DefDatabase<WorkTypeDef>.GetNamed("VCEF_Fishing"));
 
             if (fishingSkill>= minFishingSkillForMinYield)
@@ -77,6 +77,7 @@ namespace VCE_Fishing
             }
             else
             {
+                fishingZone.someoneFishing = false;
                 result = false;
             }
             return result;
@@ -97,9 +98,11 @@ namespace VCE_Fishing
             if (fishCaught == null)
              {
                  this.EndJobWith(JobCondition.Incompletable);
-             }
+                fishingZone.someoneFishing = false;
 
-                this.FailOnDespawnedNullOrForbidden(TargetIndex.A);
+            }
+
+            this.FailOnDespawnedNullOrForbidden(TargetIndex.A);
                 this.FailOnBurningImmobile(TargetIndex.A);
                 yield return Toils_Goto.GotoCell(TargetIndex.A, PathEndMode.Touch);
                 this.pawn.rotationTracker.FaceTarget(base.TargetA);
@@ -112,6 +115,8 @@ namespace VCE_Fishing
                         if (!fishingZone.isZoneBigEnough)
                         {
                             this.EndJobWith(JobCondition.Incompletable);
+                            fishingZone.someoneFishing = false;
+
                         }
                     }
                 };
@@ -181,11 +186,13 @@ namespace VCE_Fishing
                             this.job.SetTarget(TargetIndex.C, c);
                             this.job.SetTarget(TargetIndex.B, newFish);
                             this.job.count = newFish.stackCount;
+                            fishingZone.someoneFishing = false;
 
                         }
                         else
                         {
                             this.EndJobWith(JobCondition.Incompletable);
+                            fishingZone.someoneFishing = false;
 
 
                         }

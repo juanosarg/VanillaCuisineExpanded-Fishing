@@ -21,6 +21,8 @@ namespace VCE_Fishing
 
         public bool isZoneEmpty = true;
 
+        public bool someoneFishing = false;
+
 
         private static List<Color> fishingZoneColors = new List<Color>();
 
