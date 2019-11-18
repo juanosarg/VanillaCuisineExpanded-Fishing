@@ -4,6 +4,8 @@ using Verse;
 using Verse.AI;
 using RimWorld;
 using System.Linq;
+using UnityEngine;
+
 
 
 namespace VCE_Fishing
@@ -19,14 +21,17 @@ namespace VCE_Fishing
         public float skillGainperTick = 0.025f;
         public float fishingSkill = 1;
         Zone_Fishing fishingZone;
+        public bool caughtSomethingSpecial = false;
 
         private System.Random rand = new System.Random();
 
+        public const int smallFishDurationFactor = 4500;
+        public const int mediumFishDurationFactor = 9000;
+        public const int largeFishDurationFactor = 13500;
 
+        public const float minMapTempForLowFish = 0f;
+        public const float maxMapTempForLowFish = 50.0f;
 
-        public const int smallFishDurationFactor = 3000;
-        public const int mediumFishDurationFactor = 6000;
-        public const int largeFishDurationFactor = 9000;
 
         public override void ExposeData()
         {
@@ -37,6 +42,7 @@ namespace VCE_Fishing
             Scribe_Values.Look<FishSizeCategory>(ref this.sizeAtBeginning, "sizeAtBeginning", FishSizeCategory.Medium, true);
             Scribe_Defs.Look<ThingDef>(ref this.fishCaught, "fishCaught");
             Scribe_References.Look<Zone_Fishing>(ref this.fishingZone, "fishingZone");
+            Scribe_Values.Look<bool>(ref this.caughtSomethingSpecial, "caughtSomethingSpecial",false,true);
 
 
 
@@ -47,22 +53,14 @@ namespace VCE_Fishing
            
             fishingZone = this.Map.zoneManager.ZoneAt(this.job.targetA.Cell) as Zone_Fishing;
             sizeAtBeginning = fishingZone.GetFishToCatch();
+            caughtSomethingSpecial = false;
             fishCaught = SelectFishToCatch(fishingZone);
             foreach (FishDef element in DefDatabase<FishDef>.AllDefs.Where(element => element.thingDef == fishCaught))
             {
                 fishAmount = element.baseFishingYield;
             }
-            //fishingZone.someoneFishing = true;
-            fishingSkill = this.pawn.skills.AverageOfRelevantSkillsFor(DefDatabase<WorkTypeDef>.GetNamed("VCEF_Fishing"));
 
-            if (fishingSkill>= minFishingSkillForMinYield)
-            {
-                fishAmountWithSkill = fishAmount + (int)((fishingSkill - minFishingSkillForMinYield) / 2);
-            } else
-            {
-                fishAmountWithSkill = (int)(fishAmount - (minFishingSkillForMinYield-fishingSkill));
-            }
-            if (fishAmountWithSkill < 1) { fishAmountWithSkill = 1; }
+            fishAmountWithSkill = CalculateFishAmountWithSkillAndConditions(fishAmount);
 
             Pawn pawn = this.pawn;
             LocalTargetInfo target = this.job.targetA;
@@ -73,11 +71,21 @@ namespace VCE_Fishing
                 pawn = this.pawn;
                 target = this.job.targetA.Cell;
                 job = this.job;
+                int index = 0;
+                LocalTargetInfo moreTargetCells;
+                while (index < fishingZone.cells.Count)
+                {
+                    moreTargetCells = fishingZone.cells[index];
+                    pawn.Reserve(moreTargetCells, job, 1, -1, null, errorOnFailed);
+                    index++;
+                }
+
+
                 result = pawn.Reserve(target, job, 1, -1, null, errorOnFailed);
             }
             else
             {
-                fishingZone.someoneFishing = false;
+                
                 result = false;
             }
             return result;
@@ -98,8 +106,7 @@ namespace VCE_Fishing
             if (fishCaught == null)
              {
                  this.EndJobWith(JobCondition.Incompletable);
-                fishingZone.someoneFishing = false;
-
+               
             }
 
             this.FailOnDespawnedNullOrForbidden(TargetIndex.A);
@@ -115,7 +122,7 @@ namespace VCE_Fishing
                         if (!fishingZone.isZoneBigEnough)
                         {
                             this.EndJobWith(JobCondition.Incompletable);
-                            fishingZone.someoneFishing = false;
+                           
 
                         }
                     }
@@ -155,13 +162,13 @@ namespace VCE_Fishing
                 switch (sizeAtBeginning)
                 {
                     case FishSizeCategory.Small:
-                        fishToil.defaultDuration = (int)(-150 * fishingSkill + smallFishDurationFactor * 1.5);
+                        fishToil.defaultDuration = (int)(-(smallFishDurationFactor/20) * fishingSkill + smallFishDurationFactor * 1.5);
                         break;
                     case FishSizeCategory.Medium:
-                        fishToil.defaultDuration = (int)(-300 * fishingSkill + mediumFishDurationFactor * 1.5);
+                        fishToil.defaultDuration = (int)(-(mediumFishDurationFactor / 20) * fishingSkill + mediumFishDurationFactor * 1.5);
                         break;
                     case FishSizeCategory.Large:
-                        fishToil.defaultDuration = (int)(-450 * fishingSkill + largeFishDurationFactor * 1.5);
+                        fishToil.defaultDuration = (int)(-(largeFishDurationFactor / 20) * fishingSkill + largeFishDurationFactor * 1.5);
                         break;
                     default:
                         fishToil.defaultDuration = mediumFishDurationFactor;
@@ -179,6 +186,11 @@ namespace VCE_Fishing
                         Thing newFish = ThingMaker.MakeThing(fishCaught);
                         newFish.stackCount = fishAmountWithSkill;
                         GenSpawn.Spawn(newFish, this.TargetA.Cell - GenAdj.CardinalDirections[0], this.Map);
+                        if (caughtSomethingSpecial)
+                        {
+                            Messages.Message("VCEF_CaughtSpecial".Translate(this.pawn.LabelCap, newFish.LabelCap), this.pawn, MessageTypeDefOf.NeutralEvent);
+                            caughtSomethingSpecial = false;
+                        }
                         StoragePriority currentPriority = StoreUtility.CurrentStoragePriorityOf(newFish);
                         IntVec3 c;
                         if (StoreUtility.TryFindBestBetterStoreCellFor(newFish, this.pawn, this.Map, currentPriority, this.pawn.Faction, out c, true))
@@ -186,15 +198,15 @@ namespace VCE_Fishing
                             this.job.SetTarget(TargetIndex.C, c);
                             this.job.SetTarget(TargetIndex.B, newFish);
                             this.job.count = newFish.stackCount;
-                            fishingZone.someoneFishing = false;
+                            
+                            
+
 
                         }
                         else
                         {
                             this.EndJobWith(JobCondition.Incompletable);
-                            fishingZone.someoneFishing = false;
-
-
+                          
                         }
 
                     },
@@ -215,6 +227,43 @@ namespace VCE_Fishing
            
         }
 
+        public int CalculateFishAmountWithSkillAndConditions(int amount)
+        {
+            int fishAmountFinal = 0;
+            fishingSkill = this.pawn.skills.AverageOfRelevantSkillsFor(DefDatabase<WorkTypeDef>.GetNamed("VCEF_Fishing"));
+
+            if (fishingSkill >= minFishingSkillForMinYield)
+            {
+                fishAmountFinal = amount + (int)((fishingSkill - minFishingSkillForMinYield) / 2);
+            }
+            else
+            {
+                fishAmountFinal = (int)(amount - (minFishingSkillForMinYield - fishingSkill));
+            }
+            float currentTempInMap = this.Map.mapTemperature.OutdoorTemp;
+
+            if (currentTempInMap < minMapTempForLowFish)
+            {
+              
+
+                fishAmountFinal = (int)(fishAmountFinal * Mathf.InverseLerp(minMapTempForLowFish - 20f, minMapTempForLowFish, currentTempInMap));
+               
+            }
+            else if (currentTempInMap > maxMapTempForLowFish)
+            {
+               
+
+                fishAmountFinal = (int)(fishAmountFinal * Mathf.InverseLerp(maxMapTempForLowFish+15, maxMapTempForLowFish, currentTempInMap));
+              
+            }
+
+            if (fishAmountFinal < 1) { fishAmountFinal = 1; }
+
+            return fishAmountFinal;
+
+        }
+
+
         public ThingDef SelectFishToCatch(Zone_Fishing fishingZone)
         {
             if (fishingZone.fishInThisZone.Count > 0) {
@@ -225,6 +274,7 @@ namespace VCE_Fishing
                     {
                         tempSpecialFish.Add(element);
                     }
+                    caughtSomethingSpecial = true;
                     return tempSpecialFish.RandomElementByWeight(((FishDef s) => s.commonality)).thingDef;
 
                 } else {

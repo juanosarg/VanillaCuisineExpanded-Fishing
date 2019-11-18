@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="ModCheck.isModLoaded">
+				<modName>[RF] Realistic Planets [1.0]</modName>
+				<yourMod>Vanilla Fishing Expanded</yourMod>
+			</li>
+
+			<li Class="PatchOperationAdd"> 
+				<xpath>/Defs/VCE_Fishing.BiomeTempDef[defName="VCEF_BiomeWarm"]/biomes</xpath>
+				<value>
+					<li>RRP_Grassland</li>
+					<li>RRP_Steppes</li>
+						
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd"> 
+				<xpath>/Defs/VCE_Fishing.BiomeTempDef[defName="VCEF_BiomeHot"]/biomes</xpath>
+				<value>
+					<li>RRP_Savanna</li>
+					<li>RRP_TemperateDesert</li>		
+					<li>RRP_Oasis</li>					
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd"> 
+				<xpath>/Defs/VCE_Fishing.BiomeTempDef[defName="VCEF_BiomeCold"]/biomes</xpath>
+				<value>
+					<li>RRP_Permafrost</li>
+							
+				</value>
+			</li>
+			
+			
+			
+			
+
+			
+
+
+		</operations>
+	</Operation>
+
+
+</Patch>
+

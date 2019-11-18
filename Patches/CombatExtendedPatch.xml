@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="ModCheck.isModLoaded">
+				<modName>Combat Extended</modName>
+				<yourMod>Vanilla Fishing Expanded</yourMod>
+			</li>
+
+
+
+			<li Class="PatchOperationAdd"> 
+				<xpath>/Defs/ThingDef[defName="VCEF_RawAnchovy"]/tools/li</xpath>
+				<value>
+					<armorPenetration>0.08</armorPenetration>
+								
+				</value>
+			</li>
+			<li Class="PatchOperationAdd"> 
+				<xpath>/Defs/ThingDef[defName="VCEF_RawAngelfish"]/tools/li</xpath>
+				<value>
+					<armorPenetration>0.08</armorPenetration>
+								
+				</value>
+			</li>
+			<li Class="PatchOperationAdd"> 
+				<xpath>/Defs/ThingDef[defName="VCEF_RawAnglerfish"]/tools/li</xpath>
+				<value>
+					<armorPenetration>0.08</armorPenetration>
+								
+				</value>
+			</li>
+			<li Class="PatchOperationAdd"> 
+				<xpath>/Defs/ThingDef[defName="VCEF_RawBass"]/tools/li</xpath>
+				<value>
+					<armorPenetration>0.08</armorPenetration>
+								
+				</value>
+			</li>
+			<li Class="PatchOperationAdd"> 
+				<xpath>/Defs/ThingDef[defName="VCEF_RawCatfish"]/tools/li</xpath>
+				<value>
+					<armorPenetration>0.08</armorPenetration>
+								
+				</value>
+			</li>
+			<li Class="PatchOperationAdd"> 
+				<xpath>/Defs/ThingDef[defName="VCEF_RawClownfish"]/tools/li</xpath>
+				<value>
+					<armorPenetration>0.08</armorPenetration>
+								
+				</value>
+			</li>
+			<li Class="PatchOperationAdd"> 
+				<xpath>/Defs/ThingDef[defName="VCEF_RawCod"]/tools/li</xpath>
+				<value>
+					<armorPenetration>0.08</armorPenetration>
+								
+				</value>
+			</li>
+			<li Class="PatchOperationAdd"> 
+				<xpath>/Defs/ThingDef[defName="VCEF_RawEel"]/tools/li</xpath>
+				<value>
+					<armorPenetration>0.08</armorPenetration>
+								
+				</value>
+			</li>
+			<li Class="PatchOperationAdd"> 
+				<xpath>/Defs/ThingDef[defName="VCEF_RawGoldfish"]/tools/li</xpath>
+				<value>
+					<armorPenetration>0.08</armorPenetration>
+								
+				</value>
+			</li>
+			<li Class="PatchOperationAdd"> 
+				<xpath>/Defs/ThingDef[defName="VCEF_RawGuppy"]/tools/li</xpath>
+				<value>
+					<armorPenetration>0.08</armorPenetration>
+								
+				</value>
+			</li>
+			<li Class="PatchOperationAdd"> 
+				<xpath>/Defs/ThingDef[defName="VCEF_RawHaddock"]/tools/li</xpath>
+				<value>
+					<armorPenetration>0.08</armorPenetration>
+								
+				</value>
+			</li>
+			<li Class="PatchOperationAdd"> 
+				<xpath>/Defs/ThingDef[defName="VCEF_RawHalibut"]/tools/li</xpath>
+				<value>
+					<armorPenetration>0.08</armorPenetration>
+								
+				</value>
+			</li>
+			<li Class="PatchOperationAdd"> 
+				<xpath>/Defs/ThingDef[defName="VCEF_RawHerring"]/tools/li</xpath>
+				<value>
+					<armorPenetration>0.08</armorPenetration>
+								
+				</value>
+			</li>
+			<li Class="PatchOperationAdd"> 
+				<xpath>/Defs/ThingDef[defName="VCEF_RawKoi"]/tools/li</xpath>
+				<value>
+					<armorPenetration>0.08</armorPenetration>
+								
+				</value>
+			</li>
+			<li Class="PatchOperationAdd"> 
+				<xpath>/Defs/ThingDef[defName="VCEF_RawLobster"]/tools/li</xpath>
+				<value>
+					<armorPenetration>0.08</armorPenetration>
+								
+				</value>
+			</li>
+			<li Class="PatchOperationAdd"> 
+				<xpath>/Defs/ThingDef[defName="VCEF_RawMackerel"]/tools/li</xpath>
+				<value>
+					<armorPenetration>0.08</armorPenetration>
+								
+				</value>
+			</li>
+			<li Class="PatchOperationAdd"> 
+				<xpath>/Defs/ThingDef[defName="VCEF_RawMinnow"]/tools/li</xpath>
+				<value>
+					<armorPenetration>0.08</armorPenetration>
+								
+				</value>
+			</li>
+			<li Class="PatchOperationAdd"> 
+				<xpath>/Defs/ThingDef[defName="VCEF_RawPerch"]/tools/li</xpath>
+				<value>
+					<armorPenetration>0.08</armorPenetration>
+								
+				</value>
+			</li>
+			<li Class="PatchOperationAdd"> 
+				<xpath>/Defs/ThingDef[defName="VCEF_RawPiranha"]/tools/li</xpath>
+				<value>
+					<armorPenetration>0.08</armorPenetration>
+								
+				</value>
+			</li>
+			<li Class="PatchOperationAdd"> 
+				<xpath>/Defs/ThingDef[defName="VCEF_RawPufferfish"]/tools/li</xpath>
+				<value>
+					<armorPenetration>0.08</armorPenetration>
+								
+				</value>
+			</li>
+			<li Class="PatchOperationAdd"> 
+				<xpath>/Defs/ThingDef[defName="VCEF_RawSalmon"]/tools/li</xpath>
+				<value>
+					<armorPenetration>0.08</armorPenetration>
+								
+				</value>
+			</li>
+			<li Class="PatchOperationAdd"> 
+				<xpath>/Defs/ThingDef[defName="VCEF_RawSprat"]/tools/li</xpath>
+				<value>
+					<armorPenetration>0.08</armorPenetration>
+								
+				</value>
+			</li>
+			<li Class="PatchOperationAdd"> 
+				<xpath>/Defs/ThingDef[defName="VCEF_RawSwordfish"]/tools/li</xpath>
+				<value>
+					<armorPenetration>0.08</armorPenetration>
+								
+				</value>
+			</li>
+			<li Class="PatchOperationAdd"> 
+				<xpath>/Defs/ThingDef[defName="VCEF_RawTrout"]/tools/li</xpath>
+				<value>
+					<armorPenetration>0.08</armorPenetration>
+								
+				</value>
+			</li>
+			<li Class="PatchOperationAdd"> 
+				<xpath>/Defs/ThingDef[defName="VCEF_RawTuna"]/tools/li</xpath>
+				<value>
+					<armorPenetration>0.08</armorPenetration>
+								
+				</value>
+			</li>
+			
+			
+
+			
+
+		
+			
+		</operations>
+	</Operation>
+
+
+</Patch>
+

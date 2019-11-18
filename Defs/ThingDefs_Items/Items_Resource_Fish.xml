@@ -29,6 +29,7 @@
 		<thingCategories>
 			<li>VCEF_RawFishCategory</li>
 		</thingCategories>
+		<generateCommonality>0</generateCommonality>
 	</ThingDef>
 
 	
