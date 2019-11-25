@@ -25,14 +25,6 @@ namespace VCE_Fishing
 
         private System.Random rand = new System.Random();
 
-        public const int smallFishDurationFactor = 4500;
-        public const int mediumFishDurationFactor = 9000;
-        public const int largeFishDurationFactor = 13500;
-
-        public const float minMapTempForLowFish = 0f;
-        public const float maxMapTempForLowFish = 50.0f;
-
-
         public override void ExposeData()
         {
             base.ExposeData();
@@ -114,6 +106,11 @@ namespace VCE_Fishing
                 yield return Toils_Goto.GotoCell(TargetIndex.A, PathEndMode.Touch);
                 this.pawn.rotationTracker.FaceTarget(base.TargetA);
                 Toil fishToil = new Toil();
+                if (this.pawn.story.traits.HasTrait(TraitDef.Named("VCEF_Fisherman")))
+                {
+
+                    this.pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDef.Named("VCEF_FishingThought"));
+                }
                 fishToil.tickAction = delegate ()
                 {
                     this.pawn.skills.Learn(SkillDefOf.Animals, skillGainperTick);
@@ -162,16 +159,18 @@ namespace VCE_Fishing
                 switch (sizeAtBeginning)
                 {
                     case FishSizeCategory.Small:
-                        fishToil.defaultDuration = (int)(-(smallFishDurationFactor/20) * fishingSkill + smallFishDurationFactor * 1.5);
+                        fishToil.defaultDuration = (int)(-(Options.VCE_Fishing_Settings.VCEF_smallFishDurationFactor/ 20) * fishingSkill + Options.VCE_Fishing_Settings.VCEF_smallFishDurationFactor * 1.5);
                         break;
                     case FishSizeCategory.Medium:
+                        int mediumFishDurationFactor = Options.VCE_Fishing_Settings.VCEF_smallFishDurationFactor * 2;
                         fishToil.defaultDuration = (int)(-(mediumFishDurationFactor / 20) * fishingSkill + mediumFishDurationFactor * 1.5);
                         break;
                     case FishSizeCategory.Large:
+                        int largeFishDurationFactor = Options.VCE_Fishing_Settings.VCEF_smallFishDurationFactor * 3;
                         fishToil.defaultDuration = (int)(-(largeFishDurationFactor / 20) * fishingSkill + largeFishDurationFactor * 1.5);
                         break;
                     default:
-                        fishToil.defaultDuration = mediumFishDurationFactor;
+                        fishToil.defaultDuration = Options.VCE_Fishing_Settings.VCEF_smallFishDurationFactor * 2;
                         break;
                 }
                
@@ -212,13 +211,17 @@ namespace VCE_Fishing
                     },
                     defaultCompleteMode = ToilCompleteMode.Instant
                 };
-                yield return Toils_Reserve.Reserve(TargetIndex.B, 1, -1, null);
-                yield return Toils_Reserve.Reserve(TargetIndex.C, 1, -1, null);
-                yield return Toils_Goto.GotoThing(TargetIndex.B, PathEndMode.ClosestTouch);
-                yield return Toils_Haul.StartCarryThing(TargetIndex.B, false, false, false);
-                Toil carryToCell = Toils_Haul.CarryHauledThingToCell(TargetIndex.C);
-                yield return carryToCell;
-                yield return Toils_Haul.PlaceHauledThingInCell(TargetIndex.C, carryToCell, true);
+                if (!Options.VCE_Fishing_Settings.VCEF_dropFish) {
+                    yield return Toils_Reserve.Reserve(TargetIndex.B, 1, -1, null);
+                    yield return Toils_Reserve.Reserve(TargetIndex.C, 1, -1, null);
+                    yield return Toils_Goto.GotoThing(TargetIndex.B, PathEndMode.ClosestTouch);
+                    yield return Toils_Haul.StartCarryThing(TargetIndex.B, false, false, false);
+                    Toil carryToCell = Toils_Haul.CarryHauledThingToCell(TargetIndex.C);
+                    yield return carryToCell;
+                    yield return Toils_Haul.PlaceHauledThingInCell(TargetIndex.C, carryToCell, true);
+
+                }
+                
 
 
 
@@ -242,18 +245,18 @@ namespace VCE_Fishing
             }
             float currentTempInMap = this.Map.mapTemperature.OutdoorTemp;
 
-            if (currentTempInMap < minMapTempForLowFish)
+            if (currentTempInMap < Options.VCE_Fishing_Settings.VCEF_minMapTempForLowFish)
             {
               
 
-                fishAmountFinal = (int)(fishAmountFinal * Mathf.InverseLerp(minMapTempForLowFish - 20f, minMapTempForLowFish, currentTempInMap));
+                fishAmountFinal = (int)(fishAmountFinal * Mathf.InverseLerp(Options.VCE_Fishing_Settings.VCEF_minMapTempForLowFish - 20f, Options.VCE_Fishing_Settings.VCEF_minMapTempForLowFish, currentTempInMap));
                
             }
-            else if (currentTempInMap > maxMapTempForLowFish)
+            else if (currentTempInMap > Options.VCE_Fishing_Settings.VCEF_maxMapTempForLowFish)
             {
                
 
-                fishAmountFinal = (int)(fishAmountFinal * Mathf.InverseLerp(maxMapTempForLowFish+15, maxMapTempForLowFish, currentTempInMap));
+                fishAmountFinal = (int)(fishAmountFinal * Mathf.InverseLerp(Options.VCE_Fishing_Settings.VCEF_maxMapTempForLowFish + 15, Options.VCE_Fishing_Settings.VCEF_maxMapTempForLowFish, currentTempInMap));
               
             }
 
@@ -267,7 +270,8 @@ namespace VCE_Fishing
         public ThingDef SelectFishToCatch(Zone_Fishing fishingZone)
         {
             if (fishingZone.fishInThisZone.Count > 0) {
-                if (rand.NextDouble() > 0.99) {
+                //Log.Message(((float)(100 - Options.VCE_Fishing_Settings.VCEF_chanceForSpecials) / 100).ToString());
+                if (rand.NextDouble() > ((float)(100 - Options.VCE_Fishing_Settings.VCEF_chanceForSpecials)/100)  ) {
                     List<FishDef> tempSpecialFish = new List<FishDef>();
                     tempSpecialFish.Clear();
                     foreach (FishDef element in DefDatabase<FishDef>.AllDefs.Where(element => element.fishSizeCategory == FishSizeCategory.Special))

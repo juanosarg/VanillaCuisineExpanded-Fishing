@@ -83,7 +83,7 @@ namespace VCE_Fishing
 
         public void initialSetZoneFishList()
         {
-            if (this.cells.Count < 25)
+            if (this.cells.Count < Options.VCE_Fishing_Settings.VCEF_minimumZoneSize)
             {
                 isZoneBigEnough = false;
             }
@@ -182,7 +182,7 @@ namespace VCE_Fishing
 
             } else
             {
-                text += "VCEF_ZoneTooSmall".Translate();
+                text += "VCEF_ZoneTooSmall".Translate(Options.VCE_Fishing_Settings.VCEF_minimumZoneSize);
             }
             
 

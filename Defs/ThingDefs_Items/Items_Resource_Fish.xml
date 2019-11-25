@@ -65,7 +65,7 @@
 		<equippedAngleOffset>-180</equippedAngleOffset>
 		<uiIconForStackCount>1</uiIconForStackCount>
 		<equipmentType>Primary</equipmentType>
-		<techLevel>Spacer</techLevel>
+		<techLevel>Neolithic</techLevel>
 		<comps>
 			<li>
 				<compClass>CompEquippable</compClass>
@@ -105,7 +105,7 @@
 		<equippedAngleOffset>-180</equippedAngleOffset>
 		<uiIconForStackCount>1</uiIconForStackCount>
 		<equipmentType>Primary</equipmentType>
-		<techLevel>Spacer</techLevel>
+		<techLevel>Neolithic</techLevel>
 		<comps>
 			<li>
 				<compClass>CompEquippable</compClass>
@@ -144,7 +144,7 @@
 		<equippedAngleOffset>-180</equippedAngleOffset>
 		<uiIconForStackCount>1</uiIconForStackCount>
 		<equipmentType>Primary</equipmentType>
-		<techLevel>Spacer</techLevel>
+		<techLevel>Neolithic</techLevel>
 		<comps>
 			<li>
 				<compClass>CompEquippable</compClass>
@@ -184,7 +184,7 @@
 		<equippedAngleOffset>-180</equippedAngleOffset>
 		<uiIconForStackCount>1</uiIconForStackCount>
 		<equipmentType>Primary</equipmentType>
-		<techLevel>Spacer</techLevel>
+		<techLevel>Neolithic</techLevel>
 		<comps>
 			<li>
 				<compClass>CompEquippable</compClass>
@@ -223,7 +223,7 @@
 		<equippedAngleOffset>-180</equippedAngleOffset>
 		<uiIconForStackCount>1</uiIconForStackCount>
 		<equipmentType>Primary</equipmentType>
-		<techLevel>Spacer</techLevel>
+		<techLevel>Neolithic</techLevel>
 		<comps>
 			<li>
 				<compClass>CompEquippable</compClass>
@@ -264,7 +264,7 @@
 		<equippedAngleOffset>-180</equippedAngleOffset>
 		<uiIconForStackCount>1</uiIconForStackCount>
 		<equipmentType>Primary</equipmentType>
-		<techLevel>Spacer</techLevel>
+		<techLevel>Neolithic</techLevel>
 		<comps>
 			<li>
 				<compClass>CompEquippable</compClass>
@@ -304,7 +304,7 @@
 		<equippedAngleOffset>-180</equippedAngleOffset>
 		<uiIconForStackCount>1</uiIconForStackCount>
 		<equipmentType>Primary</equipmentType>
-		<techLevel>Spacer</techLevel>
+		<techLevel>Neolithic</techLevel>
 		<comps>
 			<li>
 				<compClass>CompEquippable</compClass>
@@ -343,7 +343,7 @@
 		<equippedAngleOffset>-180</equippedAngleOffset>
 		<uiIconForStackCount>1</uiIconForStackCount>
 		<equipmentType>Primary</equipmentType>
-		<techLevel>Spacer</techLevel>
+		<techLevel>Neolithic</techLevel>
 		<comps>
 			<li>
 				<compClass>CompEquippable</compClass>
@@ -383,7 +383,7 @@
 		<equippedAngleOffset>-180</equippedAngleOffset>
 		<uiIconForStackCount>1</uiIconForStackCount>
 		<equipmentType>Primary</equipmentType>
-		<techLevel>Spacer</techLevel>
+		<techLevel>Neolithic</techLevel>
 		<comps>
 			<li>
 				<compClass>CompEquippable</compClass>
@@ -424,7 +424,7 @@
 		<equippedAngleOffset>-180</equippedAngleOffset>
 		<uiIconForStackCount>1</uiIconForStackCount>
 		<equipmentType>Primary</equipmentType>
-		<techLevel>Spacer</techLevel>
+		<techLevel>Neolithic</techLevel>
 		<comps>
 			<li>
 				<compClass>CompEquippable</compClass>
@@ -464,7 +464,7 @@
 		<equippedAngleOffset>-180</equippedAngleOffset>
 		<uiIconForStackCount>1</uiIconForStackCount>
 		<equipmentType>Primary</equipmentType>
-		<techLevel>Spacer</techLevel>
+		<techLevel>Neolithic</techLevel>
 		<comps>
 			<li>
 				<compClass>CompEquippable</compClass>
@@ -504,7 +504,7 @@
 		<equippedAngleOffset>-180</equippedAngleOffset>
 		<uiIconForStackCount>1</uiIconForStackCount>
 		<equipmentType>Primary</equipmentType>
-		<techLevel>Spacer</techLevel>
+		<techLevel>Neolithic</techLevel>
 		<comps>
 			<li>
 				<compClass>CompEquippable</compClass>
@@ -543,7 +543,7 @@
 		<equippedAngleOffset>-180</equippedAngleOffset>
 		<uiIconForStackCount>1</uiIconForStackCount>
 		<equipmentType>Primary</equipmentType>
-		<techLevel>Spacer</techLevel>
+		<techLevel>Neolithic</techLevel>
 		<comps>
 			<li>
 				<compClass>CompEquippable</compClass>
@@ -583,7 +583,7 @@
 		<equippedAngleOffset>-180</equippedAngleOffset>
 		<uiIconForStackCount>1</uiIconForStackCount>
 		<equipmentType>Primary</equipmentType>
-		<techLevel>Spacer</techLevel>
+		<techLevel>Neolithic</techLevel>
 		<comps>
 			<li>
 				<compClass>CompEquippable</compClass>
@@ -626,7 +626,7 @@
 		<equippedAngleOffset>-180</equippedAngleOffset>
 		<uiIconForStackCount>1</uiIconForStackCount>
 		<equipmentType>Primary</equipmentType>
-		<techLevel>Spacer</techLevel>
+		<techLevel>Neolithic</techLevel>
 		<comps>
 			<li>
 				<compClass>CompEquippable</compClass>
@@ -666,7 +666,7 @@
 		<equippedAngleOffset>-180</equippedAngleOffset>
 		<uiIconForStackCount>1</uiIconForStackCount>
 		<equipmentType>Primary</equipmentType>
-		<techLevel>Spacer</techLevel>
+		<techLevel>Neolithic</techLevel>
 		<comps>
 			<li>
 				<compClass>CompEquippable</compClass>
@@ -706,7 +706,7 @@
 		<equippedAngleOffset>-180</equippedAngleOffset>
 		<uiIconForStackCount>1</uiIconForStackCount>
 		<equipmentType>Primary</equipmentType>
-		<techLevel>Spacer</techLevel>
+		<techLevel>Neolithic</techLevel>
 		<comps>
 			<li>
 				<compClass>CompEquippable</compClass>
@@ -745,7 +745,7 @@
 		<equippedAngleOffset>-180</equippedAngleOffset>
 		<uiIconForStackCount>1</uiIconForStackCount>
 		<equipmentType>Primary</equipmentType>
-		<techLevel>Spacer</techLevel>
+		<techLevel>Neolithic</techLevel>
 		<comps>
 			<li>
 				<compClass>CompEquippable</compClass>
@@ -784,7 +784,7 @@
 		<equippedAngleOffset>-180</equippedAngleOffset>
 		<uiIconForStackCount>1</uiIconForStackCount>
 		<equipmentType>Primary</equipmentType>
-		<techLevel>Spacer</techLevel>
+		<techLevel>Neolithic</techLevel>
 		<comps>
 			<li>
 				<compClass>CompEquippable</compClass>
@@ -823,7 +823,7 @@
 		<equippedAngleOffset>-180</equippedAngleOffset>
 		<uiIconForStackCount>1</uiIconForStackCount>
 		<equipmentType>Primary</equipmentType>
-		<techLevel>Spacer</techLevel>
+		<techLevel>Neolithic</techLevel>
 		<comps>
 			<li>
 				<compClass>CompEquippable</compClass>
@@ -862,7 +862,7 @@
 		<equippedAngleOffset>-180</equippedAngleOffset>
 		<uiIconForStackCount>1</uiIconForStackCount>
 		<equipmentType>Primary</equipmentType>
-		<techLevel>Spacer</techLevel>
+		<techLevel>Neolithic</techLevel>
 		<comps>
 			<li>
 				<compClass>CompEquippable</compClass>
@@ -901,7 +901,7 @@
 		<equippedAngleOffset>-180</equippedAngleOffset>
 		<uiIconForStackCount>1</uiIconForStackCount>
 		<equipmentType>Primary</equipmentType>
-		<techLevel>Spacer</techLevel>
+		<techLevel>Neolithic</techLevel>
 		<comps>
 			<li>
 				<compClass>CompEquippable</compClass>
@@ -940,7 +940,7 @@
 		<equippedAngleOffset>-180</equippedAngleOffset>
 		<uiIconForStackCount>1</uiIconForStackCount>
 		<equipmentType>Primary</equipmentType>
-		<techLevel>Spacer</techLevel>
+		<techLevel>Neolithic</techLevel>
 		<comps>
 			<li>
 				<compClass>CompEquippable</compClass>
@@ -979,7 +979,7 @@
 		<equippedAngleOffset>-180</equippedAngleOffset>
 		<uiIconForStackCount>1</uiIconForStackCount>
 		<equipmentType>Primary</equipmentType>
-		<techLevel>Spacer</techLevel>
+		<techLevel>Neolithic</techLevel>
 		<comps>
 			<li>
 				<compClass>CompEquippable</compClass>
@@ -1018,7 +1018,7 @@
 		<equippedAngleOffset>-180</equippedAngleOffset>
 		<uiIconForStackCount>1</uiIconForStackCount>
 		<equipmentType>Primary</equipmentType>
-		<techLevel>Spacer</techLevel>
+		<techLevel>Neolithic</techLevel>
 		<comps>
 			<li>
 				<compClass>CompEquippable</compClass>

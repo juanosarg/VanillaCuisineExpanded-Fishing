@@ -30,7 +30,7 @@ namespace VCE_Fishing
                     
                     Zone_Fishing zoneFishing = zone as Zone_Fishing;
 
-                    if (zoneFishing.cells.Count < 25)
+                    if (zoneFishing.cells.Count < Options.VCE_Fishing_Settings.VCEF_minimumZoneSize)
                     {
                         zoneFishing.isZoneBigEnough = false;
                     } else zoneFishing.isZoneBigEnough = true;
