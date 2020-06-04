@@ -15,6 +15,7 @@ namespace VCE_Fishing
         public FishSizeCategory fishSizeCategory;
         public int baseFishingYield = 1;
         public float commonality = 1f;
+        public bool dontScaleFishingYieldWithScale = false;
 
     }
 }

@@ -47,12 +47,14 @@ namespace VCE_Fishing
             sizeAtBeginning = fishingZone.GetFishToCatch();
             caughtSomethingSpecial = false;
             fishCaught = SelectFishToCatch(fishingZone);
+            bool dontScaleFishingYieldWithSkill = false;
             foreach (FishDef element in DefDatabase<FishDef>.AllDefs.Where(element => element.thingDef == fishCaught))
             {
                 fishAmount = element.baseFishingYield;
+                dontScaleFishingYieldWithSkill = element.dontScaleFishingYieldWithScale;
             }
 
-            fishAmountWithSkill = CalculateFishAmountWithSkillAndConditions(fishAmount);
+            fishAmountWithSkill = CalculateFishAmountWithSkillAndConditions(fishAmount, dontScaleFishingYieldWithSkill);
 
             Pawn pawn = this.pawn;
             LocalTargetInfo target = this.job.targetA;
@@ -230,9 +232,14 @@ namespace VCE_Fishing
            
         }
 
-        public int CalculateFishAmountWithSkillAndConditions(int amount)
+        public int CalculateFishAmountWithSkillAndConditions(int amount, bool dontScaleFishingYieldWithSkill)
         {
             int fishAmountFinal = 0;
+            if (dontScaleFishingYieldWithSkill)
+            {
+                return amount;
+            }
+
             fishingSkill = this.pawn.skills.AverageOfRelevantSkillsFor(DefDatabase<WorkTypeDef>.GetNamed("VCEF_Fishing"));
 
             if (fishingSkill >= minFishingSkillForMinYield)
