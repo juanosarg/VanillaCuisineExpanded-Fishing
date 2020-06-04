@@ -51,7 +51,7 @@ namespace VCE_Fishing
             foreach (FishDef element in DefDatabase<FishDef>.AllDefs.Where(element => element.thingDef == fishCaught))
             {
                 fishAmount = element.baseFishingYield;
-                dontScaleFishingYieldWithSkill = element.dontScaleFishingYieldWithScale;
+                dontScaleFishingYieldWithSkill = element.dontScaleFishingYieldWithSkill;
             }
 
             fishAmountWithSkill = CalculateFishAmountWithSkillAndConditions(fishAmount, dontScaleFishingYieldWithSkill);
