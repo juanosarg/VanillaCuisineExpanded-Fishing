@@ -19,3 +19,8 @@ E:\SteamLibrary\steamapps\common\RimWorld\Mods\VanillaCuisineExpanded-Fishing\1.
 E:\SteamLibrary\steamapps\common\RimWorld\Mods\VanillaCuisineExpanded-Fishing\1.2\Source\VCE-Fishing\VCE-Fishing\obj\Debug\VCE-Fishing.csproj.CoreCompileInputs.cache
 E:\SteamLibrary\steamapps\common\RimWorld\Mods\VanillaCuisineExpanded-Fishing\1.2\Source\VCE-Fishing\VCE-Fishing\obj\Debug\VCE-Fishing.csproj.CopyComplete
 E:\SteamLibrary\steamapps\common\RimWorld\Mods\VanillaCuisineExpanded-Fishing\1.2\Source\VCE-Fishing\VCE-Fishing\obj\Debug\VCE-Fishing.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\VanillaCuisineExpanded-Fishing\1.2\Assemblies\VCE-Fishing.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\VanillaCuisineExpanded-Fishing\1.2\Source\VCE-Fishing\VCE-Fishing\obj\Debug\VCE-Fishing.csprojAssemblyReference.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\VanillaCuisineExpanded-Fishing\1.2\Source\VCE-Fishing\VCE-Fishing\obj\Debug\VCE-Fishing.csproj.CoreCompileInputs.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\VanillaCuisineExpanded-Fishing\1.2\Source\VCE-Fishing\VCE-Fishing\obj\Debug\VCE-Fishing.csproj.CopyComplete
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\VanillaCuisineExpanded-Fishing\1.2\Source\VCE-Fishing\VCE-Fishing\obj\Debug\VCE-Fishing.dll

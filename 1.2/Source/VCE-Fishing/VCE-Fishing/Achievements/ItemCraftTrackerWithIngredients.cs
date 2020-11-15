@@ -22,7 +22,7 @@ namespace AchievementsExpanded
         public ItemCraftTrackerWithIngredients()
         {
         }
-
+        public override (float percent, string text) PercentComplete => count > 1 ? ((float)triggeredCount / count, $"{triggeredCount} / {count}") : base.PercentComplete;
         public ItemCraftTrackerWithIngredients(ItemCraftTrackerWithIngredients reference) : base(reference)
         {
             def = reference.def;
