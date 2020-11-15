@@ -17,7 +17,10 @@
 	</modDependencies>
 	
 		<packageId>VanillaExpanded.VCEF</packageId>
-	
+	<loadAfter>
+	   <li>vanillaexpanded.achievements</li>
+     
+    </loadAfter>
 	<description>
 Vanilla Fishing Expanded is a first module in a brand new mod series “Vanilla Cuisine Expanded” from the Vanilla Expanded team. With such an important mechanic missing from the base game, we Oskar and Sarg have decided to introduce a way to catch fish in your local water sources, adding a bit of purpose for settling near running water and ocean side.
 
@@ -34,6 +37,7 @@ Extra compatibility with Alpha Biomes (19 specific fish)
 
 &lt;size=24&gt;Changelog&lt;/size&gt;
 
+v2.05: Added 3 new achievements for Vanilla Achievements Expanded (15/11/20) 
 v2.0: Updated to RimWorld 1.1 (20/02/20) 
 v1.03: Added extensive mod options. Added the Fisherman trait (25/11/19)
 v1.02: CE patch fixed (22/11/19)
