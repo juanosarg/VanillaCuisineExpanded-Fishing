@@ -9,21 +9,30 @@ using RimWorld.Planet;
 
 namespace AchievementsExpanded
 {
-    public class QuestManager_Notify_ThingsProduced_Patch
+    public class VanillaFishing_QuestManager_Notify_ThingsProduced_Patch
     {
 
         public static void CheckItemCraftedIngredients(Pawn worker, List<Thing> things)
         {
-            foreach (var card in AchievementPointManager.GetCards<ItemCraftTrackerWithIngredients>())
+            if (things != null && worker != null)
             {
-                foreach (Thing thing in things)
+                foreach (var card in AchievementPointManager.GetCards<ItemCraftTrackerWithIngredientsFishing>())
                 {
-                    if ((card.tracker as ItemCraftTrackerWithIngredients).Trigger(thing))
+
+                    foreach (Thing thing in things)
                     {
-                        card.UnlockCard();
+                        if (thing != null && card != null)
+                        {
+                            if ((card.tracker as ItemCraftTrackerWithIngredientsFishing).Trigger(thing))
+                            {
+                                card.UnlockCard();
+                            }
+                        }
+
                     }
                 }
             }
+
         }
     }
 }

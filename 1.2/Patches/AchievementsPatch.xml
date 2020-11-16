@@ -30,7 +30,7 @@
 							<description>Make a Lavish meal with lobster</description>
 							<bgtexPath>Achievements/VCEF_AchievementBackground</bgtexPath>
 							<tab>VCE_Achievements</tab>
-							<tracker Class="AchievementsExpanded.ItemCraftTrackerWithIngredients">
+							<tracker Class="AchievementsExpanded.ItemCraftTrackerWithIngredientsFishing">
 								<def>MealLavish</def>
 								<includeingredient>VCEF_RawLobster</includeingredient>
 								<count>1</count>
@@ -38,7 +38,7 @@
 
 							<texPath>Achievements/VCE_AchievementFeelingALittleShellfish</texPath>
 							<points>15</points>
-						</AchievementsExpanded.AchievementDef>	
+						</AchievementsExpanded.AchievementDef>
 
 						<AchievementsExpanded.AchievementDef>
 							<defName>VCE_AchievementFugu</defName>
