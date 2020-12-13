@@ -47,7 +47,7 @@
 		<statBases>
 			<Mass>0.01</Mass>
 			<Nutrition>0.01</Nutrition>
-			<MarketValue>1</MarketValue>
+			<MarketValue>0.22</MarketValue>
 		</statBases>
 		<ingestible>
 			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
@@ -87,7 +87,7 @@
 		<statBases>
 			<Mass>0.03</Mass>
 			<Nutrition>0.05</Nutrition>
-			<MarketValue>3</MarketValue>
+			<MarketValue>1.1</MarketValue>
 		</statBases>
 		<ingestible>
 			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
@@ -126,7 +126,7 @@
 		<statBases>
 			<Mass>0.03</Mass>
 			<Nutrition>0.05</Nutrition>
-			<MarketValue>1</MarketValue>
+			<MarketValue>1.1</MarketValue>
 		</statBases>
 		<ingestible>
 			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
@@ -166,7 +166,7 @@
 		<statBases>
 			<Mass>0.03</Mass>
 
-			<MarketValue>2</MarketValue>
+			<MarketValue>1.1</MarketValue>
 		</statBases>
 		<ingestible>
 			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
@@ -205,7 +205,7 @@
 		<statBases>
 			<Mass>0.05</Mass>
 			<Nutrition>0.10</Nutrition>
-			<MarketValue>4</MarketValue>
+			<MarketValue>2.2</MarketValue>
 		</statBases>
 		<ingestible>
 			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
@@ -246,7 +246,7 @@
 		<statBases>
 			<Mass>0.02</Mass>
 			<Nutrition>0.02</Nutrition>
-			<MarketValue>1</MarketValue>
+			<MarketValue>0.44</MarketValue>
 		</statBases>
 		<ingestible>
 			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
@@ -286,7 +286,7 @@
 		<statBases>
 			<Mass>0.15</Mass>
 			<Nutrition>0.08</Nutrition>
-			<MarketValue>4</MarketValue>
+			<MarketValue>1.76</MarketValue>
 		</statBases>
 		<ingestible>
 			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
@@ -325,7 +325,7 @@
 		<statBases>
 			<Mass>0.03</Mass>
 			<Nutrition>0.05</Nutrition>
-			<MarketValue>2</MarketValue>
+			<MarketValue>1.1</MarketValue>
 		</statBases>
 		<ingestible>
 			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
@@ -365,7 +365,7 @@
 		<statBases>
 			<Mass>0.01</Mass>
 			<Nutrition>0.02</Nutrition>
-			<MarketValue>10</MarketValue>
+			<MarketValue>2</MarketValue>
 		</statBases>
 		<ingestible>
 			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
@@ -406,7 +406,7 @@
 		<statBases>
 			<Mass>0.01</Mass>
 			<Nutrition>0.01</Nutrition>
-			<MarketValue>1</MarketValue>
+			<MarketValue>0.22</MarketValue>
 		</statBases>
 		<ingestible>
 			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
@@ -446,7 +446,7 @@
 		<statBases>
 			<Mass>0.03</Mass>
 
-			<MarketValue>2</MarketValue>
+			<MarketValue>1.1</MarketValue>
 		</statBases>
 		<ingestible>
 			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
@@ -486,7 +486,7 @@
 		<statBases>
 			<Mass>0.15</Mass>
 			<Nutrition>0.08</Nutrition>
-			<MarketValue>7</MarketValue>
+			<MarketValue>1.76</MarketValue>
 		</statBases>
 		<ingestible>
 			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
@@ -525,7 +525,7 @@
 		<statBases>
 			<Mass>0.02</Mass>
 			<Nutrition>0.025</Nutrition>
-			<MarketValue>2</MarketValue>
+			<MarketValue>0.55</MarketValue>
 		</statBases>
 		<ingestible>
 			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
@@ -565,7 +565,7 @@
 		<statBases>
 			<Mass>0.1</Mass>
 			<Nutrition>0.1</Nutrition>
-			<MarketValue>4</MarketValue>
+			<MarketValue>2.2</MarketValue>
 		</statBases>
 		<ingestible>
 			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
@@ -608,7 +608,7 @@
 		<statBases>
 			<Mass>0.15</Mass>
 			<Nutrition>0.25</Nutrition>
-			<MarketValue>12</MarketValue>
+			<MarketValue>5.5</MarketValue>
 		</statBases>
 		<ingestible>
 			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
@@ -648,7 +648,7 @@
 		<statBases>
 			<Mass>0.03</Mass>
 
-			<MarketValue>2</MarketValue>
+			<MarketValue>1.1</MarketValue>
 		</statBases>
 		<ingestible>
 			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
@@ -688,7 +688,7 @@
 		<statBases>
 			<Mass>0.01</Mass>
 			<Nutrition>0.01</Nutrition>
-			<MarketValue>1</MarketValue>
+			<MarketValue>0.22</MarketValue>
 		</statBases>
 		<ingestible>
 			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
@@ -727,7 +727,7 @@
 		<statBases>
 			<Mass>0.03</Mass>
 
-			<MarketValue>2</MarketValue>
+			<MarketValue>1.1</MarketValue>
 		</statBases>
 		<ingestible>
 			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
@@ -766,7 +766,7 @@
 		<statBases>
 			<Mass>0.03</Mass>
 			<Nutrition>0.05</Nutrition>
-			<MarketValue>3</MarketValue>
+			<MarketValue>1.1</MarketValue>
 		</statBases>
 		<ingestible>
 			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
@@ -805,7 +805,7 @@
 		<statBases>
 			<Mass>0.03</Mass>
 			<Nutrition>0.05</Nutrition>
-			<MarketValue>3</MarketValue>
+			<MarketValue>1.1</MarketValue>
 		</statBases>
 		<ingestible>
 			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
@@ -851,7 +851,7 @@
 		<statBases>
 			<Mass>0.10</Mass>
 			<Nutrition>0.25</Nutrition>
-			<MarketValue>10</MarketValue>
+			<MarketValue>5.5</MarketValue>
 		</statBases>
 		<ingestible>
 			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
@@ -890,7 +890,7 @@
 		<statBases>
 			<Mass>0.01</Mass>
 			<Nutrition>0.01</Nutrition>
-			<MarketValue>2</MarketValue>
+			<MarketValue>0.22</MarketValue>
 		</statBases>
 		<ingestible>
 			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
@@ -929,7 +929,7 @@
 		<statBases>
 			<Mass>0.25</Mass>
 			<Nutrition>0.25</Nutrition>
-			<MarketValue>15</MarketValue>
+			<MarketValue>5.5</MarketValue>
 		</statBases>
 		<ingestible>
 			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
@@ -968,7 +968,7 @@
 		<statBases>
 			<Mass>0.03</Mass>
 			<Nutrition>0.05</Nutrition>
-			<MarketValue>2</MarketValue>
+			<MarketValue>1.1</MarketValue>
 		</statBases>
 		<ingestible>
 			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
@@ -1007,7 +1007,7 @@
 		<statBases>
 			<Mass>0.25</Mass>
 			<Nutrition>0.10</Nutrition>
-			<MarketValue>4</MarketValue>
+			<MarketValue>2.2</MarketValue>
 		</statBases>
 		<ingestible>
 			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
