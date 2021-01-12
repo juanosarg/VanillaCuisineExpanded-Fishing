@@ -10,7 +10,7 @@
     <gerundLabel>fishing</gerundLabel>
     <description>Catch fish in designated work zones.</description>
     <verb>Fish</verb>
-    <naturalPriority>925</naturalPriority>
+    <naturalPriority>90</naturalPriority>
 	<requireCapableColonist>true</requireCapableColonist>
     <relevantSkills>
    
