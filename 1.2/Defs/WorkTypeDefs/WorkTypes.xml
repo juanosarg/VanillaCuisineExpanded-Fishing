@@ -11,6 +11,7 @@
     <description>Catch fish in designated work zones.</description>
     <verb>Fish</verb>
     <naturalPriority>925</naturalPriority>
+	<requireCapableColonist>true</requireCapableColonist>
     <relevantSkills>
    
       <li>Animals</li>
