@@ -302,21 +302,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Achievements\ItemCraftTrackerWithIngredients.cs" />
-    <Compile Include="Command_SetFishList.cs" />
+    <Compile Include="Commands\Command_SetFishList.cs" />
     <Compile Include="Defs\BiomeTempDef.cs" />
     <Compile Include="Defs\FishableTerrainDef.cs" />
     <Compile Include="Defs\FishDef.cs" />
-    <Compile Include="FishingMapComponent.cs" />
+    <Compile Include="MapComponents\FishingMapComponent.cs" />
     <Compile Include="Defs\FishSizeCategory.cs" />
-    <Compile Include="FishToCatchSettableUtility.cs" />
+    <Compile Include="Commands\FishToCatchSettableUtility.cs" />
     <Compile Include="Harmony\QuestManager_Notify_ThingsProduced_Patch.cs" />
-    <Compile Include="JobDriver_Fish.cs" />
+    <Compile Include="AI\JobDriver_Fish.cs" />
     <Compile Include="Options\Settings_Controller.cs" />
     <Compile Include="Options\VCE_Fishing_Settings.cs" />
-    <Compile Include="WorkGiver_Fish.cs" />
-    <Compile Include="Zone_Fishing.cs" />
-    <Compile Include="Designator_ZoneAdd_Fishing_Expand.cs" />
-    <Compile Include="Designator_ZoneAdd_Fishing.cs" />
+    <Compile Include="AI\WorkGiver_Fish.cs" />
+    <Compile Include="Zones\Zone_Fishing.cs" />
+    <Compile Include="Designators\Designator_ZoneAdd_Fishing_Expand.cs" />
+    <Compile Include="Designators\Designator_ZoneAdd_Fishing.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
