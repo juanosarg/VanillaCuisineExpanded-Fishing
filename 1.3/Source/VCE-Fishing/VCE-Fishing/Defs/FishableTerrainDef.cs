@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace VCE_Fishing
 {
-    class FishableTerrainDef: Def
+    public class FishableTerrainDef: Def
     {
         public List<string> allowedTerrains;
         public bool isOcean;
