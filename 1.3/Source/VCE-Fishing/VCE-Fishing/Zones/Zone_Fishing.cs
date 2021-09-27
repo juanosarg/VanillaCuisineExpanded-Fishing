@@ -89,8 +89,35 @@ namespace VCE_Fishing
             }
             else isZoneBigEnough = true;
             fishInThisZone.Clear();
+
+            bool considerPrecepts = false;
+            Ideo ideo = null;
+
+            if (ModLister.IdeologyInstalled)
+            {
+                ideo = Current.Game.World.factionManager.OfPlayer.ideos.PrimaryIdeo;
+                considerPrecepts = true;               
+
+            }
+
             foreach (FishDef element in DefDatabase<FishDef>.AllDefs.Where(element => element.fishSizeCategory == this.fishSizeToCatch))
             {
+                bool flagNoPrecepts = false;
+                if (considerPrecepts && element.preceptsRequired != null)
+                {
+                    
+                    foreach (string requiredPrecept in element.preceptsRequired)
+                    {
+                        if (ideo.HasPrecept(DefDatabase<PreceptDef>.GetNamedSilentFail(requiredPrecept)))
+                        {
+                            flagNoPrecepts = true;
+                        }
+                    }
+
+                }
+                else { flagNoPrecepts = true; }
+
+                if (flagNoPrecepts) { 
                 foreach (string biomeTemp in element.allowedBiomes)
                 {
 
@@ -115,6 +142,10 @@ namespace VCE_Fishing
                         }
                     }
                 }
+                
+                
+                }
+                
             }
             if (fishInThisZone.Count > 0)
             {

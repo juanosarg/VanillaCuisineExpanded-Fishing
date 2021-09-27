@@ -58,33 +58,65 @@ namespace VCE_Fishing
 
             }
 
+            bool considerPrecepts = false;
+            Ideo ideo = null;
+
+            if (ModLister.IdeologyInstalled)
+            {
+                ideo = Current.Game.World.factionManager.OfPlayer.ideos.PrimaryIdeo;
+                considerPrecepts = true;
+
+            }
+
             foreach (FishDef element in DefDatabase<FishDef>.AllDefs.Where(element => element.fishSizeCategory == size))
             {
-                foreach (string biomeTemp in element.allowedBiomes)
+                bool flagNoPrecepts = false;
+                if (considerPrecepts && element.preceptsRequired != null)
                 {
 
-                    foreach (BiomeTempDef biometempdef in DefDatabase<BiomeTempDef>.AllDefs.Where(biometempdef => biometempdef.biomeTempLabel == biomeTemp))
+                    foreach (string requiredPrecept in element.preceptsRequired)
                     {
-                        foreach (string biome in biometempdef.biomes)
+                        if (ideo.HasPrecept(DefDatabase<PreceptDef>.GetNamedSilentFail(requiredPrecept)))
                         {
+                            flagNoPrecepts = true;
+                        }
+                    }
 
+                }
+                else { flagNoPrecepts = true; }
 
-                            if (map.Biome.defName == biome)
+                if (flagNoPrecepts)
+                {
+                    foreach (string biomeTemp in element.allowedBiomes)
+                    {
+
+                        foreach (BiomeTempDef biometempdef in DefDatabase<BiomeTempDef>.AllDefs.Where(biometempdef => biometempdef.biomeTempLabel == biomeTemp))
+                        {
+                            foreach (string biome in biometempdef.biomes)
                             {
 
-                                if (zone.isOcean && element.canBeSaltwater)
-                                {
-                                    zone.fishInThisZone.Add(element.thingDef);
-                                }
-                                if (!zone.isOcean && element.canBeFreshwater)
-                                {
-                                    zone.fishInThisZone.Add(element.thingDef);
 
+                                if (map.Biome.defName == biome)
+                                {
+
+                                    if (zone.isOcean && element.canBeSaltwater)
+                                    {
+                                        zone.fishInThisZone.Add(element.thingDef);
+                                    }
+                                    if (!zone.isOcean && element.canBeFreshwater)
+                                    {
+                                        zone.fishInThisZone.Add(element.thingDef);
+
+                                    }
                                 }
                             }
                         }
                     }
+
                 }
+
+
+               
             }
             if (zone.fishInThisZone.Count > 0)
             {

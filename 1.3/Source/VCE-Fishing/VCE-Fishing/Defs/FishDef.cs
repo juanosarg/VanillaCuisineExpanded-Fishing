@@ -16,6 +16,7 @@ namespace VCE_Fishing
         public int baseFishingYield = 1;
         public float commonality = 1f;
         public bool dontScaleFishingYieldWithSkill = false;
+        public List<string> preceptsRequired = null;
 
     }
 }

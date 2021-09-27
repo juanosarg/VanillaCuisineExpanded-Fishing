@@ -34,7 +34,7 @@ namespace VCE_Fishing
             Scribe_Values.Look<FishSizeCategory>(ref this.sizeAtBeginning, "sizeAtBeginning", FishSizeCategory.Medium, true);
             Scribe_Defs.Look<ThingDef>(ref this.fishCaught, "fishCaught");
             Scribe_References.Look<Zone_Fishing>(ref this.fishingZone, "fishingZone");
-            Scribe_Values.Look<bool>(ref this.caughtSomethingSpecial, "caughtSomethingSpecial",false,true);
+            Scribe_Values.Look<bool>(ref this.caughtSomethingSpecial, "caughtSomethingSpecial", false, true);
 
 
 
@@ -42,7 +42,7 @@ namespace VCE_Fishing
 
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
-           
+
             fishingZone = this.Map.zoneManager.ZoneAt(this.job.targetA.Cell) as Zone_Fishing;
             sizeAtBeginning = fishingZone.GetFishToCatch();
             caughtSomethingSpecial = false;
@@ -79,158 +79,171 @@ namespace VCE_Fishing
             }
             else
             {
-                
+
                 result = false;
             }
             return result;
 
-           
-           
+
+
         }
 
         protected override IEnumerable<Toil> MakeNewToils()
         {
 
-           
-          
 
-           
-            
+
+
+
+
 
             if (fishCaught == null)
-             {
-                 this.EndJobWith(JobCondition.Incompletable);
-               
+            {
+                this.EndJobWith(JobCondition.Incompletable);
+
             }
 
             this.FailOnDespawnedNullOrForbidden(TargetIndex.A);
-                this.FailOnBurningImmobile(TargetIndex.A);
-                yield return Toils_Goto.GotoCell(TargetIndex.A, PathEndMode.Touch);
-                this.pawn.rotationTracker.FaceTarget(base.TargetA);
-                Toil fishToil = new Toil();
-                if (this.pawn.story.traits.HasTrait(TraitDef.Named("VCEF_Fisherman")))
-                {
+            this.FailOnBurningImmobile(TargetIndex.A);
+            yield return Toils_Goto.GotoCell(TargetIndex.A, PathEndMode.Touch);
+            this.pawn.rotationTracker.FaceTarget(base.TargetA);
+            Toil fishToil = new Toil();
+            if (this.pawn.story.traits.HasTrait(TraitDef.Named("VCEF_Fisherman")))
+            {
 
-                    this.pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDef.Named("VCEF_FishingThought"));
-                }
-                fishToil.tickAction = delegate ()
+                this.pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDef.Named("VCEF_FishingThought"));
+            }
+            fishToil.tickAction = delegate ()
+            {
+                this.pawn.skills.Learn(SkillDefOf.Animals, skillGainperTick);
+                if (fishingZone != null)
                 {
-                    this.pawn.skills.Learn(SkillDefOf.Animals, skillGainperTick);
-                    if (fishingZone != null)
+                    if (!fishingZone.isZoneBigEnough)
                     {
-                        if (!fishingZone.isZoneBigEnough)
-                        {
-                            this.EndJobWith(JobCondition.Incompletable);
-                           
+                        this.EndJobWith(JobCondition.Incompletable);
 
-                        }
+
                     }
-                };
-
-                Rot4 pawnRotation = pawn.Rotation;
-                IntVec3 facingCell = pawnRotation.FacingCell;
-                if (facingCell == new IntVec3(0, 0, 1))
-                {
-                    //Log.Message("Looking north");
-                    fishToil.WithEffect(() => DefDatabase<EffecterDef>.GetNamed("VCEF_FishingEffectNorth"), () => this.TargetA.Cell + new IntVec3(0, 0, 1));
-
-
                 }
-                else if (facingCell == new IntVec3(1, 0, 0))
+            };
+
+            Rot4 pawnRotation = pawn.Rotation;
+            IntVec3 facingCell = pawnRotation.FacingCell;
+            if (facingCell == new IntVec3(0, 0, 1))
+            {
+                //Log.Message("Looking north");
+                fishToil.WithEffect(() => DefDatabase<EffecterDef>.GetNamed("VCEF_FishingEffectNorth"), () => this.TargetA.Cell + new IntVec3(0, 0, 1));
+
+
+            }
+            else if (facingCell == new IntVec3(1, 0, 0))
+            {
+                // Log.Message("Looking east");
+
+                fishToil.WithEffect(() => DefDatabase<EffecterDef>.GetNamed("VCEF_FishingEffectEast"), () => this.TargetA.Cell + new IntVec3(1, 0, 0));
+
+            }
+            else if (facingCell == new IntVec3(0, 0, -1))
+            {
+                // Log.Message("Looking south");
+                fishToil.WithEffect(() => DefDatabase<EffecterDef>.GetNamed("VCEF_FishingEffectSouth"), () => this.TargetA.Cell + new IntVec3(0, 0, -1));
+
+
+            }
+            else if (facingCell == new IntVec3(-1, 0, 0))
+            {
+                //  Log.Message("Looking west");
+                fishToil.WithEffect(() => DefDatabase<EffecterDef>.GetNamed("VCEF_FishingEffectWest"), () => this.TargetA.Cell + new IntVec3(-1, 0, 0));
+
+            }
+            fishToil.defaultCompleteMode = ToilCompleteMode.Delay;
+
+            switch (sizeAtBeginning)
+            {
+                case FishSizeCategory.Small:
+                    fishToil.defaultDuration = (int)(-(Options.VCE_Fishing_Settings.VCEF_smallFishDurationFactor / 20) * fishingSkill + Options.VCE_Fishing_Settings.VCEF_smallFishDurationFactor * 1.5);
+                    break;
+                case FishSizeCategory.Medium:
+                    int mediumFishDurationFactor = Options.VCE_Fishing_Settings.VCEF_smallFishDurationFactor * 2;
+                    fishToil.defaultDuration = (int)(-(mediumFishDurationFactor / 20) * fishingSkill + mediumFishDurationFactor * 1.5);
+                    break;
+                case FishSizeCategory.Large:
+                    int largeFishDurationFactor = Options.VCE_Fishing_Settings.VCEF_smallFishDurationFactor * 3;
+                    fishToil.defaultDuration = (int)(-(largeFishDurationFactor / 20) * fishingSkill + largeFishDurationFactor * 1.5);
+                    break;
+                default:
+                    fishToil.defaultDuration = Options.VCE_Fishing_Settings.VCEF_smallFishDurationFactor * 2;
+                    break;
+            }
+
+            List<Apparel> wornApparel = this.pawn.apparel.WornApparel;
+            for (int i = 0; i < wornApparel.Count; i++)
+            {
+                if (wornApparel[i].def.defName=="VME_TackleBox")
                 {
-                    // Log.Message("Looking east");
-
-                    fishToil.WithEffect(() => DefDatabase<EffecterDef>.GetNamed("VCEF_FishingEffectEast"), () => this.TargetA.Cell + new IntVec3(1, 0, 0));
-
+                    fishToil.defaultDuration = (int)(fishToil.defaultDuration*0.8f);
                 }
-                else if (facingCell == new IntVec3(0, 0, -1))
-                {
-                    // Log.Message("Looking south");
-                    fishToil.WithEffect(() => DefDatabase<EffecterDef>.GetNamed("VCEF_FishingEffectSouth"), () => this.TargetA.Cell + new IntVec3(0, 0, -1));
+            }
 
-
-                }
-                else if (facingCell == new IntVec3(-1, 0, 0))
+            //Log.Message(fishToil.defaultDuration.ToString());       
+            fishToil.FailOnCannotTouch(TargetIndex.A, PathEndMode.Touch);
+            yield return fishToil.WithProgressBarToilDelay(TargetIndex.A, true);
+            yield return new Toil
+            {
+                initAction = delegate
                 {
-                    //  Log.Message("Looking west");
-                    fishToil.WithEffect(() => DefDatabase<EffecterDef>.GetNamed("VCEF_FishingEffectWest"), () => this.TargetA.Cell + new IntVec3(-1, 0, 0));
-
-                }
-                fishToil.defaultCompleteMode = ToilCompleteMode.Delay;
-
-                switch (sizeAtBeginning)
-                {
-                    case FishSizeCategory.Small:
-                        fishToil.defaultDuration = (int)(-(Options.VCE_Fishing_Settings.VCEF_smallFishDurationFactor/ 20) * fishingSkill + Options.VCE_Fishing_Settings.VCEF_smallFishDurationFactor * 1.5);
-                        break;
-                    case FishSizeCategory.Medium:
-                        int mediumFishDurationFactor = Options.VCE_Fishing_Settings.VCEF_smallFishDurationFactor * 2;
-                        fishToil.defaultDuration = (int)(-(mediumFishDurationFactor / 20) * fishingSkill + mediumFishDurationFactor * 1.5);
-                        break;
-                    case FishSizeCategory.Large:
-                        int largeFishDurationFactor = Options.VCE_Fishing_Settings.VCEF_smallFishDurationFactor * 3;
-                        fishToil.defaultDuration = (int)(-(largeFishDurationFactor / 20) * fishingSkill + largeFishDurationFactor * 1.5);
-                        break;
-                    default:
-                        fishToil.defaultDuration = Options.VCE_Fishing_Settings.VCEF_smallFishDurationFactor * 2;
-                        break;
-                }
-               
-                //Log.Message(fishToil.defaultDuration.ToString());       
-                fishToil.FailOnCannotTouch(TargetIndex.A, PathEndMode.Touch);
-                yield return fishToil.WithProgressBarToilDelay(TargetIndex.A, true);
-                yield return new Toil
-                {
-                    initAction = delegate
+                    if (ModLister.IdeologyInstalled && this.pawn.ideo.Ideo.HasPrecept(DefDatabase<PreceptDef>.GetNamedSilentFail("VME_Recreation_Fishing")))
                     {
-
-                        Thing newFish = ThingMaker.MakeThing(fishCaught);
-                        newFish.stackCount = fishAmountWithSkill;
-                        GenSpawn.Spawn(newFish, this.TargetA.Cell - GenAdj.CardinalDirections[0], this.Map);
-                        if (caughtSomethingSpecial)
-                        {
-                            Messages.Message("VCEF_CaughtSpecial".Translate(this.pawn.LabelCap, newFish.LabelCap), this.pawn, MessageTypeDefOf.NeutralEvent);
-                            this.pawn.health.AddHediff(HediffDef.Named("VCEF_CaughtSpecialHediff"));
-                            caughtSomethingSpecial = false;
-                        }
-                        StoragePriority currentPriority = StoreUtility.CurrentStoragePriorityOf(newFish);
-                        IntVec3 c;
-                        if (StoreUtility.TryFindBestBetterStoreCellFor(newFish, this.pawn, this.Map, currentPriority, this.pawn.Faction, out c, true))
-                        {
-                            this.job.SetTarget(TargetIndex.C, c);
-                            this.job.SetTarget(TargetIndex.B, newFish);
-                            this.job.count = newFish.stackCount;
-                            
-                            
-
-
-                        }
-                        else
-                        {
-                            this.EndJobWith(JobCondition.Incompletable);
-                          
-                        }
-
-                    },
-                    defaultCompleteMode = ToilCompleteMode.Instant
-                };
-                if (!Options.VCE_Fishing_Settings.VCEF_dropFish) {
-                    yield return Toils_Reserve.Reserve(TargetIndex.B, 1, -1, null);
-                    yield return Toils_Reserve.Reserve(TargetIndex.C, 1, -1, null);
-                    yield return Toils_Goto.GotoThing(TargetIndex.B, PathEndMode.ClosestTouch);
-                    yield return Toils_Haul.StartCarryThing(TargetIndex.B, false, false, false);
-                    Toil carryToCell = Toils_Haul.CarryHauledThingToCell(TargetIndex.C);
-                    yield return carryToCell;
-                    yield return Toils_Haul.PlaceHauledThingInCell(TargetIndex.C, carryToCell, true);
-
-                }
-                
+                        this.pawn.needs.joy.GainJoy(0.1f, JoyKindDefOf.Meditative);
+                    }
+                    Thing newFish = ThingMaker.MakeThing(fishCaught);
+                    newFish.stackCount = fishAmountWithSkill;
+                    GenSpawn.Spawn(newFish, this.TargetA.Cell - GenAdj.CardinalDirections[0], this.Map);
+                    if (caughtSomethingSpecial)
+                    {
+                        Messages.Message("VCEF_CaughtSpecial".Translate(this.pawn.LabelCap, newFish.LabelCap), this.pawn, MessageTypeDefOf.NeutralEvent);
+                        this.pawn.health.AddHediff(HediffDef.Named("VCEF_CaughtSpecialHediff"));
+                        caughtSomethingSpecial = false;
+                    }
+                    StoragePriority currentPriority = StoreUtility.CurrentStoragePriorityOf(newFish);
+                    IntVec3 c;
+                    if (StoreUtility.TryFindBestBetterStoreCellFor(newFish, this.pawn, this.Map, currentPriority, this.pawn.Faction, out c, true))
+                    {
+                        this.job.SetTarget(TargetIndex.C, c);
+                        this.job.SetTarget(TargetIndex.B, newFish);
+                        this.job.count = newFish.stackCount;
 
 
 
-                yield break;
-         
-           
+
+                    }
+                    else
+                    {
+                        this.EndJobWith(JobCondition.Incompletable);
+
+                    }
+
+                },
+                defaultCompleteMode = ToilCompleteMode.Instant
+            };
+            if (!Options.VCE_Fishing_Settings.VCEF_dropFish)
+            {
+                yield return Toils_Reserve.Reserve(TargetIndex.B, 1, -1, null);
+                yield return Toils_Reserve.Reserve(TargetIndex.C, 1, -1, null);
+                yield return Toils_Goto.GotoThing(TargetIndex.B, PathEndMode.ClosestTouch);
+                yield return Toils_Haul.StartCarryThing(TargetIndex.B, false, false, false);
+                Toil carryToCell = Toils_Haul.CarryHauledThingToCell(TargetIndex.C);
+                yield return carryToCell;
+                yield return Toils_Haul.PlaceHauledThingInCell(TargetIndex.C, carryToCell, true);
+
+            }
+
+
+
+
+            yield break;
+
+
         }
 
         public int CalculateFishAmountWithSkillAndConditions(int amount, bool dontScaleFishingYieldWithSkill)
@@ -255,17 +268,17 @@ namespace VCE_Fishing
 
             if (currentTempInMap < Options.VCE_Fishing_Settings.VCEF_minMapTempForLowFish)
             {
-              
+
 
                 fishAmountFinal = (int)(fishAmountFinal * Mathf.InverseLerp(Options.VCE_Fishing_Settings.VCEF_minMapTempForLowFish - 20f, Options.VCE_Fishing_Settings.VCEF_minMapTempForLowFish, currentTempInMap));
-               
+
             }
             else if (currentTempInMap > Options.VCE_Fishing_Settings.VCEF_maxMapTempForLowFish)
             {
-               
+
 
                 fishAmountFinal = (int)(fishAmountFinal * Mathf.InverseLerp(Options.VCE_Fishing_Settings.VCEF_maxMapTempForLowFish + 15, Options.VCE_Fishing_Settings.VCEF_maxMapTempForLowFish, currentTempInMap));
-              
+
             }
 
             if (fishAmountFinal < 1) { fishAmountFinal = 1; }
@@ -277,9 +290,11 @@ namespace VCE_Fishing
 
         public ThingDef SelectFishToCatch(Zone_Fishing fishingZone)
         {
-            if (fishingZone.fishInThisZone.Count > 0) {
+            if (fishingZone.fishInThisZone.Count > 0)
+            {
                 //Log.Message(((float)(100 - Options.VCE_Fishing_Settings.VCEF_chanceForSpecials) / 100).ToString());
-                if (rand.NextDouble() > ((float)(100 - Options.VCE_Fishing_Settings.VCEF_chanceForSpecials)/100)  ) {
+                if (rand.NextDouble() > ((float)(100 - Options.VCE_Fishing_Settings.VCEF_chanceForSpecials) / 100))
+                {
                     List<FishDef> tempSpecialFish = new List<FishDef>();
                     tempSpecialFish.Clear();
                     foreach (FishDef element in DefDatabase<FishDef>.AllDefs.Where(element => element.fishSizeCategory == FishSizeCategory.Special))
@@ -289,13 +304,16 @@ namespace VCE_Fishing
                     caughtSomethingSpecial = true;
                     return tempSpecialFish.RandomElementByWeight(((FishDef s) => s.commonality)).thingDef;
 
-                } else {
+                }
+                else
+                {
                     ThingDef fishCaught = fishingZone.fishInThisZone.RandomElement();
                     return fishCaught;
 
                 }
-                
-            } else return null;
+
+            }
+            else return null;
 
 
         }
