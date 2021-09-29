@@ -176,14 +176,18 @@ namespace VCE_Fishing
                     break;
             }
 
-            List<Apparel> wornApparel = this.pawn.apparel.WornApparel;
-            for (int i = 0; i < wornApparel.Count; i++)
-            {
-                if (wornApparel[i].def.defName=="VME_TackleBox")
+            List<Apparel> wornApparel = this.pawn.apparel?.WornApparel;
+            if (wornApparel != null) {
+                for (int i = 0; i < wornApparel.Count; i++)
                 {
-                    fishToil.defaultDuration = (int)(fishToil.defaultDuration*0.8f);
+                    if (wornApparel[i].def.defName == "VME_TackleBox")
+                    {
+                        fishToil.defaultDuration = (int)(fishToil.defaultDuration * 0.8f);
+                    }
                 }
+
             }
+            
 
             //Log.Message(fishToil.defaultDuration.ToString());       
             fishToil.FailOnCannotTouch(TargetIndex.A, PathEndMode.Touch);
@@ -192,7 +196,7 @@ namespace VCE_Fishing
             {
                 initAction = delegate
                 {
-                    if (ModLister.IdeologyInstalled && this.pawn.ideo.Ideo.HasPrecept(DefDatabase<PreceptDef>.GetNamedSilentFail("VME_Recreation_Fishing")))
+                    if (ModLister.IdeologyInstalled && this.pawn.ideo?.Ideo?.HasPrecept(DefDatabase<PreceptDef>.GetNamedSilentFail("VME_Recreation_Fishing"))==true)
                     {
                         this.pawn.needs.joy.GainJoy(0.1f, JoyKindDefOf.Meditative);
                     }
