@@ -108,7 +108,7 @@ namespace VCE_Fishing
             yield return Toils_Goto.GotoCell(TargetIndex.A, PathEndMode.Touch);
             this.pawn.rotationTracker.FaceTarget(base.TargetA);
             Toil fishToil = new Toil();
-            if (this.pawn.story.traits.HasTrait(TraitDef.Named("VCEF_Fisherman")))
+            if (this.pawn.story?.traits?.HasTrait(DefDatabase<TraitDef>.GetNamedSilentFail("VCEF_Fisherman"))==true)
             {
 
                 this.pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDef.Named("VCEF_FishingThought"));
