@@ -80,6 +80,10 @@ namespace VCE_Fishing
             {
                 return null;
             }
+            if (ModsConfig.IdeologyActive && DefDatabase<HistoryEventDef>.GetNamedSilentFail("VME_Fishing")!=null && !new HistoryEvent(DefDatabase<HistoryEventDef>.GetNamedSilentFail("VME_Fishing"), pawn.Named(HistoryEventArgsNames.Doer)).Notify_PawnAboutToDo_Job())
+            {
+                return null;
+            }
             Job job = new Job(DefDatabase<JobDef>.GetNamed("VCEF_FishJob"),c);
             return job;
         }
